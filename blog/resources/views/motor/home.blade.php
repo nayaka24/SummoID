@@ -59,18 +59,18 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="{{url ('/home')}}">Beranda</a></li>
-								<li><a href="{{url ('/about')}}">Tentang Kami</a></li>
-								<li><a href="{{url ('/hotel')}}">Booking Hotel</a></li>
-								<li><a href="{{url ('/wisata')}}">Paket Wisata</a></li>
+								<li><a href="{{url ('/abouts')}}">Tentang Kami</a></li>
+								<li><a href="{{url ('/hotels')}}">Booking Hotel</a></li>
+								<li><a href="{{url ('/wisatas')}}">Paket Wisata</a></li>
 								<li><a href="{{url ('/news')}}">Berita</a></li>
 								<li><a href="{{url ('/contact')}}">Kontak</a></li>
 								
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="login" href="login.html"><i class="fas fa-sign-in-alt">  Masuk</i></a>
-										<a class="register" href="register.html"><i class="fas fa-user-plus">  Daftar</i></a>
+										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
+										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
 									</div>
 								</li>
 							</ul>
@@ -143,7 +143,7 @@
 						</div>
 						<h3>Honda Scoopy</h3>
 						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center manual">
@@ -153,7 +153,7 @@
 						</div>
 						<h3>Honda Revo</h3>
 						<p class="product-price"><span>Per Hari</span> Rp. 250.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center manual">
@@ -163,7 +163,7 @@
 						</div>
 						<h3>Honda Supra X</h3>
 						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center matic">
@@ -173,7 +173,7 @@
 						</div>
 						<h3>Honda Beat</h3>
 						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 				
@@ -184,7 +184,7 @@
 						</div>
 						<h3>Honda Vario 125</h3>
 						<p class="product-price"><span>Per Hari</span> Rp. 250.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 			</div>
@@ -233,9 +233,9 @@
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
 							<li><a href="{{url ('/home')}}">Beranda</a></li>
-							<li><a href="{{url ('/about')}}">Tentang Kami</a></li>
-							<li><a href="{{url ('/hotel')}}">Booking Hotel</a></li>
-							<li><a href="{{url ('/wisata')}}">Paket Wisata</a></li>
+							<li><a href="{{url ('/abouts')}}">Tentang Kami</a></li>
+							<li><a href="{{url ('/hotels')}}">Booking Hotel</a></li>
+							<li><a href="{{url ('/wisatas')}}">Paket Wisata</a></li>
 							<li><a href="{{url ('/news')}}">Berita</a></li>
 							<li><a href="{{url ('/contact')}}">Kontak</a></li>
 						</ul>

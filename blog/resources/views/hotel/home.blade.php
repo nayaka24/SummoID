@@ -67,15 +67,15 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="{{ url('/home') }}">Beranda</a></li>
-								<li><a href="{{ url('/about') }}">Tentang Kami</a></li>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-								<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
+								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/hotels') }}">Booking Hotel</a></li>
+								<li><a href="{{ url('/wisatas') }}">Paket Wisata</a></li>
 								<li><a href="{{ url('/news') }}">Berita</a></li>
 								<li><a href="{{ url('/contact') }}">Kontak</a></li>
 								
 								<li>
 									<div class="header-icons">
-									<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
 										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
@@ -260,9 +260,9 @@
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
-							<li><a href="{{ url('/about') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+							<li><a href="{{ url('/hotels') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/wisatas') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>
 							<li><a href="{{ url('/contact') }}">Kontak</a></li>
 						</ul>
