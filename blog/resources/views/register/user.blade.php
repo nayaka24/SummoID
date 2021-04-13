@@ -49,9 +49,6 @@
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
-        <div class="login100-pic js-tilt" data-tilt>
-          <img src="assets/login/images/summo.png" alt="IMG">
-        </div>
 
         <form class="register100-form validate-form">
           <span class="register100-form-title">
@@ -80,6 +77,23 @@
             </span>
           </div>
 
+          <div class="wrap-input100 validate-input" data-validate = "Foto harus Valid!">
+            <input class="input100" type="file" name="fotoktp" placeholder="Foto KTP">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fas fa-camera-retro" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Foto harus Valid!">
+            <input class="input100" type="file" name="fotojaminan" placeholder="Foto Jaminan">
+            <input class="input100" type="file" name="fotojaminan" placeholder="Foto Jaminan">
+            <input class="input100" type="file" name="fotojaminan" placeholder="Foto Jaminan">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fas fa-camera-retro" aria-hidden="true"></i>
+            </span>
+          </div>
 
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
             <input class="input100" type="text" name="nohp" placeholder="No.HP">

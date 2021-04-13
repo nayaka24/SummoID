@@ -49,9 +49,6 @@
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
-        <div class="login100-pic js-tilt" data-tilt>
-          <img src="assets/login/images/summo.png" alt="IMG">
-        </div>
 
         <form class="register100-form validate-form">
           <span class="register100-form-title">
@@ -229,7 +226,7 @@
     })
   </script>
 <!--===============================================================================================-->
-  <script src="{{asset ('assets/login/js/main.js'}}"></script>
+  <script src="{{asset ('assets/login/js/main.js')}}"></script>
 
 </body>
 </html>

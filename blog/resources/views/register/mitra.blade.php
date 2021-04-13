@@ -14,7 +14,7 @@
   <!-- fontawesome -->
   <link rel="stylesheet" href="{{asset ('assets/css/all.min.css')}}">
   <!-- bootstrap -->
-  <link rel="stylesheet" href="{{{asset ('assets/bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset ('assets/bootstrap/css/bootstrap.min.css')}}">
   <!-- owl carousel -->
   <link rel="stylesheet" href="{{asset ('assets/css/owl.carousel.css')}}">
   <!-- magnific popup -->
@@ -24,7 +24,7 @@
   <!-- mean menu css -->
   <link rel="stylesheet" href="{{asset ('assets/css/meanmenu.min.css')}}">
   <!-- main style -->
-  <link rel="stylesheet" href="{{assset ('assets/css/main.css')}}">
+  <link rel="stylesheet" href="{{asset ('assets/css/main.css')}}">
   <!-- responsive -->
   <link rel="stylesheet" href="{{asset ('assets/css/responsive.css')}}">
 <!--===============================================================================================-->  
@@ -49,9 +49,6 @@
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
-        <div class="login100-pic js-tilt" data-tilt>
-          <img src="assets/login/images/summo.png" alt="IMG">
-        </div>
 
         <form class="register100-form validate-form">
           <span class="register100-form-title">
@@ -217,7 +214,7 @@
 <!--===============================================================================================-->  
   <script src="{{asset ('assets/login/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
-  <script src="{{asset ('assets/login/vendor/bootstrap/js/popper.js'')}}"></script>
+  <script src="{{asset ('assets/login/vendor/bootstrap/js/popper.js')}}"></script>
   <script src="{{asset ('assets/login/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <!--===============================================================================================-->
   <script src="{{asset ('assets/login/vendor/select2/select2.min.js')}}"></script>
