@@ -21,6 +21,12 @@ class PagesController extends Controller
     public function register(){
         return view('register.user');
     }
+    public function affiliate(){
+        return view('register.affiliate');
+    }
+    public function mitra(){
+        return view('register.mitra');
+    }
     
 }
     

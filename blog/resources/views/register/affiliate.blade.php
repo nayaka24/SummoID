@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Daftar Mitra</title>
+  <title>Daftar Affiliate</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 <!-- favicon -->
-  <link rel="shortcut icon"href="{{asset ('assets/img/summo2.png')}}">
+  <link rel="shortcut icon"href="assets/img/summo2.png">
   <!-- google font -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
   <!-- fontawesome -->
   <link rel="stylesheet" href="{{asset ('assets/css/all.min.css')}}">
   <!-- bootstrap -->
-  <link rel="stylesheet" href="{{{asset ('assets/bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset ('assets/bootstrap/css/bootstrap.min.css')}}">
   <!-- owl carousel -->
   <link rel="stylesheet" href="{{asset ('assets/css/owl.carousel.css')}}">
   <!-- magnific popup -->
@@ -24,7 +24,7 @@
   <!-- mean menu css -->
   <link rel="stylesheet" href="{{asset ('assets/css/meanmenu.min.css')}}">
   <!-- main style -->
-  <link rel="stylesheet" href="{{assset ('assets/css/main.css')}}">
+  <link rel="stylesheet" href="{{asset ('assets/css/main.css')}}">
   <!-- responsive -->
   <link rel="stylesheet" href="{{asset ('assets/css/responsive.css')}}">
 <!--===============================================================================================-->  
@@ -55,12 +55,12 @@
 
         <form class="register100-form validate-form">
           <span class="register100-form-title">
-            Ayo Gabung Menjadi Mitra Kami!
+            Ayo Gabung Menjadi Affiliate Kami!
           </span>
           <nav class="menu-daftar">
             <ul>
               <li><a href="{{ url('/register') }}"><u>Daftar Pengguna</u></a></li>
-              <li><a href="{{url ('/affiliate')}}"><u>Daftar Affiliate</u></a></li>
+              <li><a href="{{url ('/mitra')}}"><u>Daftar Mitra</u></a></li>
             </ul>
           </nav>
 
@@ -110,7 +110,7 @@
           </div>
 
           <div class="text-center p-t-80">
-            <a class="txt2" href="{{ url('/login') }}">
+            <a class="txt2" href="login.html">
               Sudah Punya Akun?
               <i class="fas fa-arrow-right m-l-5" aria-hidden="true"></i>
             </a>
@@ -210,14 +210,14 @@
   <!-- mean menu -->
   <script src="{{asset ('assets/js/jquery.meanmenu.min.js')}}"></script>
   <!-- sticker js -->
-  <script src="{{asset ('assets/js/sticker.js')}}"></script>
+  <script src="{{('assets/js/sticker.js')}}"></script>
   <!-- main js -->
   <script src="{{asset ('assets/js/main.js')}}"></script>
   
 <!--===============================================================================================-->  
   <script src="{{asset ('assets/login/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
-  <script src="{{asset ('assets/login/vendor/bootstrap/js/popper.js'')}}"></script>
+  <script src="{{asset ('assets/login/vendor/bootstrap/js/popper.js')}}"></script>
   <script src="{{asset ('assets/login/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <!--===============================================================================================-->
   <script src="{{asset ('assets/login/vendor/select2/select2.min.js')}}"></script>
@@ -229,7 +229,7 @@
     })
   </script>
 <!--===============================================================================================-->
-  <script src="{{asset ('assets/login/js/main.js')}}"></script>
+  <script src="{{asset ('assets/login/js/main.js'}}"></script>
 
 </body>
 </html>

@@ -18,6 +18,8 @@ Route::get('/contact','PagesController@contact');
 Route::get('/keranjang','PagesController@cart');
 Route::get('/login','PagesController@login');
 Route::get('/register','PagesController@register'); //register user
+Route::get('/affiliate','PagesController@affiliate'); //register affiliate
+Route::get('/mitra','PagesController@mitra'); //register mitra
 
 
 Route::resource('motors', 'MotorController');
