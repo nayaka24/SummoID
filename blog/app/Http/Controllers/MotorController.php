@@ -13,9 +13,9 @@ class MotorController extends Controller
      */
     public function index()
     {
-        return view('motor.home');
+        return view('dashboard.motor.home');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -23,7 +23,8 @@ class MotorController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.motor.create');
+        
     }
 
     /**

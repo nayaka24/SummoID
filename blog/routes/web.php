@@ -16,15 +16,35 @@ Route::get('/home','PagesController@home');
 Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 Route::get('/keranjang','PagesController@cart');
+Route::get('/dashboard','PagesController@dashboard');
+
+Route::get('/motor','PagesController@bike');
+Route::get('/berita','PagesController@berita');
+Route::get('/wisata','PagesController@wisata');
+Route::get('/hotel','PagesController@hotel');
+
+Route::resource('abouts', 'AboutController');
+
+//login
 Route::get('/login','PagesController@login');
 Route::get('/register','PagesController@register'); //register user
 Route::get('/affiliate','PagesController@affiliate'); //register affiliate
 Route::get('/mitra','PagesController@mitra'); //register mitra
-
-
+//admin
 Route::resource('motors', 'MotorController');
+
+Route::get('/wisatas/hapus','WisataController@tampil_hapus');
+Route::get('/wisatas/{id_wisata}/restore','WisataController@restore');
+Route::delete('/wisatas/{id_wisata}/kill','WisataController@kill');
 Route::resource('wisatas', 'WisataController');
-Route::resource('news', 'NewsController');
+
+Route::get('/beritas/hapus','NewsController@tampil_hapus');
+Route::get('/beritas/{id_berita}/restore','NewsController@restore');
+Route::delete('/beritas/{id_berita}/kill','NewsController@kill');
+Route::resource('beritas', 'NewsController');
+
+Route::get('/hotels/hapus','HotelController@tampil_hapus');
+Route::get('/hotels/{id_hotel}/restore','HotelController@restore');
+Route::delete('/hotels/{id_hotel}/kill','HotelController@kill');
 Route::resource('hotels', 'HotelController');
-Route::resource('abouts', 'AboutController');
 

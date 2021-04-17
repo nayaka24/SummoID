@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Hotel;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
@@ -13,9 +13,10 @@ class HotelController extends Controller
      */
     public function index()
     {
-        return view('hotel.home');
+        $Hotel= Hotel::paginate(10);
+        return view('dashboard.hotel.home',compact('Hotel'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -23,7 +24,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.hotel.create');
     }
 
     /**
@@ -34,7 +35,25 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama'=>'required',
+            'harga'=>'required',
+            'deskripsi'=>'required',
+            'gambar'=>'required'
+        ]);
+        
+        $gmbr= $request->gambar;
+        $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
+
+        $Hotel= Hotel::create([
+            'nama'=> $request->nama,
+            'deskripsi'=> $request->deskripsi,
+            'harga'=> $request->harga,
+            'gambar'=> $namaFile
+        ]);
+        
+        $gmbr->move(public_path().'/hotel',$namaFile);
+        return redirect('/hotels')->with('success','Hotel telah ditambahkan!');
     }
 
     /**
@@ -56,7 +75,8 @@ class HotelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Hotel= Hotel::findorfail($id);
+        return view('dashboard.hotel.edit',compact('Hotel'));
     }
 
     /**
@@ -68,7 +88,36 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nama'=>'required',
+            'harga'=>'required',
+            'deskripsi'=>'required'
+        ]);
+        
+        $Hotel= Hotel::findorfail($id);
+         
+        if($request->has('gambar')){
+             $gmbr= $request->gambar;
+             $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
+             $gmbr->move(public_path().'/hotel',$namaFile);
+
+             $hotel_data= [
+                'nama'=> $request->nama,
+                'harga'=> $request->harga,
+                'deskripsi'=> $request->deskripsi,
+                'gambar'=> $namaFile
+            ];
+            
+         }else{
+            $hotel_data= [
+                'nama'=> $request->nama,
+                'harga'=> $request->harga,
+                'deskripsi'=> $request->deskripsi
+            ];
+         }
+        $Hotel->update($hotel_data);
+        
+        return redirect('/hotels')->with('success','Hotel telah diedit!');
     }
 
     /**
@@ -79,6 +128,30 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Hotel= Hotel::findorfail($id);
+        $Hotel->delete();
+
+        return redirect('/hotels')->with('success','Hotel telah dihapus!(Silahkan Cek pada Daftar Hapus Hotel)');
+    }
+
+    public function tampil_hapus()
+    {
+        $Hotel= Hotel::onlyTrashed()->paginate();
+        return view('dashboard.hotel.hapus',compact('Hotel'));
+    }
+    
+    public function restore($id)
+    {
+        $Hotel= Hotel::withTrashed()->where('id_hotel',$id)->first();
+        $Hotel->restore();
+        return redirect('/hotels')->with('success','Hotel telah direstore!(Silahkan cek pada Daftar Hotel)');
+    }
+   
+    public function kill($id)
+    {
+        $Hotel= Hotel::withTrashed()->where('id_hotel',$id)->first();
+        $Hotel->forceDelete();
+        return redirect('/hotels')->with('success','Hotel telah diHapus!');
+
     }
 }
