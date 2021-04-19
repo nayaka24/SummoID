@@ -75,8 +75,6 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Keranjang" href="motor_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="motor_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -84,8 +82,6 @@
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
                                     <li><a title="Daftar Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Wisata</span></a></li>
-                                    <li><a title="Keranjang" href="travel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="travel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -93,15 +89,21 @@
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
                                     <li><a title="Daftar Hapus Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Hotel</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="removable">
+                                <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
+                                <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Keranjang" href="hotel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
                                     <li><a title="Pembayaran" href="hotel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
                                 </ul>
                             </li>
                             <li class="active">
-                                <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Halaman</span></a>
+                                <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Login" href="login.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Login</span></a></li>
-                                    <li><a title="Register" href="register.html"><i class="fa fa-user-plus"></i><span class="mini-sub-pro"> Register</span></a></li>
+                                    <li><a title="Admin" href="admin.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Mitra" href="mitra.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
+                                    <li><a title="Pengguna" href="user.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
                                 </ul>
                             </li>
                         </ul>
