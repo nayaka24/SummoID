@@ -67,7 +67,7 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Berita" href="{{url ('/news')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
+                                    <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
                                     <li><a title="Daftar Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>

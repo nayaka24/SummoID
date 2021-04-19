@@ -107,7 +107,7 @@
           </div>
 
           <div class="text-center p-t-80">
-            <a class="txt2" href="{{ url('/login') }}">
+            <a class="txt2" href="{{url('login')}}">
               Sudah Punya Akun?
               <i class="fas fa-arrow-right m-l-5" aria-hidden="true"></i>
             </a>

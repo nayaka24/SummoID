@@ -67,7 +67,7 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Berita" href="{{url ('/news')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
+                                    <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
                                     <li><a title="Daftar Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
@@ -83,7 +83,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
-                                    <li><a title="Daftar Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Wisata</span></a></li>
+                                    <li><a title="Daftar  Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Wisata</span></a></li>
                                     <li><a title="Keranjang" href="travel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
                                     <li><a title="Pembayaran" href="travel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
                                 </ul>

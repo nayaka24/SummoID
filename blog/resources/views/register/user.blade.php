@@ -50,7 +50,7 @@
     <div class="container-login100">
       <div class="wrap-login100">
 
-        <form class="register100-form validate-form">
+        <form action ="" method="" class="register100-form validate-form">
           <span class="register100-form-title">
             Daftar Pengguna
           </span><br>
@@ -61,50 +61,45 @@
             </ul>
           </nav>
 
+          <h5>Nama Lengkap :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Nama Harus Diisi!">
-            <input class="input100" type="text" name="nama" placeholder="Nama Lengkap">
+          <input class="input100" type="text" name="nama" placeholder="ex: Summo Indonesia">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-user-alt" aria-hidden="true"></i>
             </span>
           </div>
 
-          <div class="wrap-input100 validate-input" data-validate = "E-mail yang valid: ex@abc.xyz">
-            <input class="input100" type="text" name="email" placeholder="E-mail">
+          <h5>E-mail :</h5>
+          <div class="wrap-input100 validate-input" data-validate = "Masukkan E-mail yang valid!">
+            <input class="input100" type="text" name="email" placeholder="ex : ex@abc.xyz">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
           </div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Foto harus Valid!">
+          <h5>Foto KTP :</h5>
+          <div class="wrap-input100 validate-input" data-validate = "Foto KTP!">
             <input class="input100" type="file" name="fotoktp" placeholder="Foto KTP">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
-              <i class="fas fa-camera-retro" aria-hidden="true"></i>
+            <i class="fas fa-user-alt" aria-hidden="true"></i>
             </span>
           </div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Foto harus Valid!">
-            <input class="input100" type="file" name="fotojaminan" placeholder="Foto Jaminan">
-            <input class="input100" type="file" name="fotojaminan" placeholder="Foto Jaminan">
-            <input class="input100" type="file" name="fotojaminan" placeholder="Foto Jaminan">
-            <span class="focus-input100"></span>
-            <span class="symbol-input100">
-              <i class="fas fa-camera-retro" aria-hidden="true"></i>
-            </span>
-          </div>
-
+          <h5>No. Hp:</h5>
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
-            <input class="input100" type="text" name="nohp" placeholder="No.HP">
+          <input class="input100" type="text" name="nohp" placeholder="ex: +628xxxxxxxxxxxx">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-phone" aria-hidden="true"></i>
             </span>
           </div>
 
+          <h5>Password :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi!">
-            <input class="input100" type="password" name="pass" placeholder="Password (6+ Karakter)">
+          <input class="input100" type="password" name="pass" placeholder="6+ Karakter">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-lock" aria-hidden="true"></i>
@@ -112,7 +107,7 @@
           </div>
           
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn">
+            <button type="submit" class="login100-form-btn">
               Daftar
             </button>
           </div>
