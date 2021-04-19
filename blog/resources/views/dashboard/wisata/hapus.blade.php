@@ -91,6 +91,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Hotel</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
+                                    <li><a title="Daftar Hapus Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Hotel</span></a></li>
                                     <li><a title="Keranjang" href="hotel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
                                     <li><a title="Pembayaran" href="hotel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
                                 </ul>

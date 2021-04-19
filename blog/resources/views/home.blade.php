@@ -62,9 +62,9 @@
 							<ul>
 								<li class="current-list-item mx-1 active"><a href="{{ url('/home') }}">Beranda</a></li>
 								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-								<li><a href="{{ url('/hotels') }}">Booking Hotel</a></li>
-								<li><a href="{{ url('/wisatas') }}">Paket Wisata</a></li>
-								<li><a href="{{ url('/news') }}">Berita</a></li>
+								<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
+								<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
+								<li><a href="{{ url('/berita') }}">Berita</a></li>
 								<li><a href="{{ url('/contact') }}">Kontak</a></li>
 
 								<li>
@@ -116,9 +116,9 @@
 						<div class="hero-text-tablecell">
 							<h1>Make It Your Journey!</h1>
 							<div class="hero-btns">
-								<a href="{{url ('/motors')}}" class="boxed-btn">Sewa Motor</a>
-								<a href="{{ url('/hotels') }}" class="booking-btn">Booking Hotel</a>
-								<a href="{{ url('/wisatas') }}" class="bordered-btn">Paket Wisata</a>
+								<a href="{{url ('/motor')}}" class="boxed-btn">Sewa Motor</a>
+								<a href="{{ url('/hotel') }}" class="booking-btn">Booking Hotel</a>
+								<a href="{{ url('/wisata') }}" class="bordered-btn">Paket Wisata</a>
 							</div>
 						</div>
 					</div>
@@ -174,7 +174,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href="{{url ('/motors')}}" class="boxed-btn">Lihat Selengkapnya</a>
+					<a href="{{url ('/motor')}}" class="boxed-btn">Lihat Selengkapnya</a>
 				</div>
 			</div>
 		</div>
@@ -407,7 +407,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href="{{ url('/news') }}" class="boxed-btn">Lihat Selengkapnya</a>
+					<a href="{{ url('/berita') }}" class="boxed-btn">Lihat Selengkapnya</a>
 				</div>
 			</div>
 		</div>
@@ -471,9 +471,9 @@
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
 							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/hotels') }}">Booking Hotel</a></li>
-							<li><a href="{{ url('/wisatas') }}">Paket Wisata</a></li>
-							<li><a href="{{ url('/news') }}">Berita</a></li>
+							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/berita') }}">Berita</a></li>
 							<li><a href="{{ url('/contact') }}">Kontak</a></li>
 						</ul>
 					</div>

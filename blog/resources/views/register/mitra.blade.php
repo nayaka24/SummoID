@@ -61,36 +61,33 @@
             </ul>
           </nav>
 
-          <h5>Nama Lengkap :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Nama Harus Diisi!">
-            <input class="input100" type="text" name="nama" placeholder="ex: Summo Indonesia">
+            <input class="input100" type="text" name="nama" placeholder="Nama Lengkap">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-user-alt" aria-hidden="true"></i>
             </span>
           </div>
 
-          <h5>E-mail :</h5>
-          <div class="wrap-input100 validate-input" data-validate = "Masukkan E-mail yang valid!">
-            <input class="input100" type="text" name="email" placeholder="ex : ex@abc.xyz">
+          <div class="wrap-input100 validate-input" data-validate = "E-mail yang valid: ex@abc.xyz">
+            <input class="input100" type="text" name="email" placeholder="E-mail">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
           </div>
 
-          <h5>No. Hp:</h5>
+
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
-            <input class="input100" type="text" name="nohp" placeholder="ex: +628xxxxxxxxxxxx">
+            <input class="input100" type="text" name="nohp" placeholder="No.HP">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-phone" aria-hidden="true"></i>
             </span>
           </div>
 
-          <h5>Password :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi!">
-            <input class="input100" type="password" name="pass" placeholder="6+ Karakter">
+            <input class="input100" type="password" name="pass" placeholder="Password (6+ Karakter)">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-lock" aria-hidden="true"></i>
