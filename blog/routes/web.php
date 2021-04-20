@@ -16,7 +16,7 @@ Route::get('/home','PagesController@home');
 Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 Route::get('/keranjang','PagesController@cart');
-Route::get('/dashboard','PagesController@dashboard');
+
 
 Route::get('/motor','PagesController@bike');
 Route::get('/berita','PagesController@berita');
@@ -26,11 +26,15 @@ Route::get('/hotel','PagesController@hotel');
 Route::resource('abouts', 'AboutController');
 
 //login
-Route::get('/login','PagesController@login');
-Route::get('/register','PagesController@register'); //register user
-Route::get('/affiliate','PagesController@affiliate'); //register affiliate
-Route::get('/mitra','PagesController@mitra'); //register mitra
+Route::get('/login','LoginController@login');
+Route::get('/register','LoginController@register'); //register user
+//Route::get('/affiliate','PagesController@affiliate'); //register affiliate
+//Route::get('/mitra','PagesController@mitra'); //register mitra
+
+
+
 //admin
+Route::get('/dashboard','PagesController@dashboard');
 Route::resource('motors', 'MotorController');
 
 Route::get('/wisatas/hapus','WisataController@tampil_hapus');
@@ -47,4 +51,11 @@ Route::get('/hotels/hapus','HotelController@tampil_hapus');
 Route::get('/hotels/{id_hotel}/restore','HotelController@restore');
 Route::delete('/hotels/{id_hotel}/kill','HotelController@kill');
 Route::resource('hotels', 'HotelController');
+
+Route::get('/admin','UserController@admin');
+Route::post('/admin','UserController@store');
+Route::get('/admin/create','UserController@create');
+Route::get('/mitra','UserController@mitra');
+Route::get('/pengguna','UserController@pengguna');
+
 

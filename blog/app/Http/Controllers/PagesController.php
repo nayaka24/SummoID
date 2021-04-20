@@ -15,9 +15,6 @@ class PagesController extends Controller
     public function cart(){
         return view('cart');
     }
-    public function login(){
-        return view('login');
-    }
 
 
     //wisata
@@ -39,9 +36,6 @@ class PagesController extends Controller
 
 
     //login
-    public function register(){
-        return view('register.user');
-    }
     public function affiliate(){
         return view('register.affiliate');
     }

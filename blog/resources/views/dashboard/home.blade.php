@@ -107,9 +107,9 @@
                             <li class="active">
                                 <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="admin.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
-                                    <li><a title="Mitra" href="mitra.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
-                                    <li><a title="Pengguna" href="user.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Mitra" href="{{url ('/mitra')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
+                                    <li><a title="Pengguna" href="{{url ('/pengguna')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
                                 </ul>
                             </li>
                         </ul>
