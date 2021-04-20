@@ -61,9 +61,9 @@
 							<ul>
 								<li><a href="{{ url('/home') }}">Beranda</a></li>
 								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-								<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
-								<li><a href="{{ url('/berita') }}">Berita</a></li>
+								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+								<li><a href="{{ url('/news') }}">Berita</a></li>
 								<li><a href="{{ url('/contact') }}">Kontak</a></li>
 								
 								<li>
@@ -124,58 +124,20 @@
 	<div class="latest-news mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-				
+			@foreach($Wisata as $result =>$hasil)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
 						<a href="single_trip.html"><div class="latest-news-bg news-bg-5"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single_trip.html">Paket 2 Day 1 Night Tegal Mas Island</a></h3>
+							<h3><a href="{{url ('/wiastas/'.$hasil->id_wisata)}}">{{$hasil->nama}}</a></h3>
 								<p class="blog-meta">
-									<span class="user"><i class="fas fa-user-friends"> 5 – 10 Org</i></span>
-									<span class="price"><i class="fas fa-money-bill-wave"> Rp. 1.600.000,-</i></span>
+									<span class="price"><i class="fas fa-money-bill-wave">{{$hasil->harga}}</i></span>
 								</p>
-							<a href="single_trip.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
+							<a href="{{url ('/wisatas/'.$hasil->id_wisata)}}" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single_trip.html"><div class="latest-news-bg news-bg-5"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single_trip.html">Paket Full One Day Tegal Mas Island</a></h3>
-							<p class="blog-meta">
-									<span class="user"><i class="fas fa-user-friends"> Min. 10 Org</i></span>
-									<span class="price"><i class="fas fa-money-bill-wave"> Rp. 280.000,-</i></span>
-								</p>
-							<a href="single_trip.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single_trip.html"><div class="latest-news-bg news-bg-4"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single_trip.html">Paket Full One Day Private Pahawang</a></h3>
-							<p class="blog-meta">
-									<span class="user"><i class="fas fa-user-friends"> Min. 10 Org</i></span>
-									<span class="price"><i class="fas fa-money-bill-wave"> Rp. 200.000,-</i></span>
-								</p>
-							<a href="single_trip.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single_trip.html"><div class="latest-news-bg news-bg-4"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single_trip.html">Paket Open Trip Pahawang</a></h3>
-							<p class="blog-meta">
-									<span class="price"><i class="fas fa-money-bill-wave"> Rp. 150.000,-</i></span>
-								</p>
-							<a href="single_trip.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
+			@endforeach
 			</div>
 		</div>
 	</div>

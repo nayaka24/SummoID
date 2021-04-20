@@ -60,9 +60,9 @@
 							<ul>
 								<li><a href="{{url ('/home')}}">Beranda</a></li>
 								<li><a href="{{url ('/abouts')}}">Tentang Kami</a></li>
-								<li><a href="{{url ('/hotel')}}">Booking Hotel</a></li>
-								<li><a href="{{url ('/wisata')}}">Paket Wisata</a></li>
-								<li><a href="{{url ('/berita')}}">Berita</a></li>
+								<li><a href="{{url ('/booking_hotel')}}">Booking Hotel</a></li>
+								<li><a href="{{url ('/paket_wisata')}}">Paket Wisata</a></li>
+								<li><a href="{{url ('/news')}}">Berita</a></li>
 								<li><a href="{{url ('/contact')}}">Kontak</a></li>
 								
 								<li>
@@ -234,9 +234,9 @@
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
 							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
-							<li><a href="{{ url('/berita') }}">Berita</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/news') }}">Berita</a></li>
 							<li><a href="{{ url('/contact') }}">Kontak</a></li>
 						</ul>
 					</div>

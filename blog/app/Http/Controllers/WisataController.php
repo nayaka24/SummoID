@@ -16,6 +16,12 @@ class WisataController extends Controller
         $Wisata= Wisata::paginate(10);
         return view('dashboard.wisata.home', compact('Wisata'));
     }
+
+    //wisata
+    public function wisata(){
+        $Wisata= Wisata::paginate(10);
+        return view('wisata.home', compact('Wisata'));
+    }
     
     /**
      * Show the form for creating a new resource.
@@ -66,7 +72,8 @@ class WisataController extends Controller
      */
     public function show($id)
     {
-        //
+        $Wisata= Wisata::findorfail($id);
+        return view('wisata.detail',compact('Wisata'));
     }
 
     /**

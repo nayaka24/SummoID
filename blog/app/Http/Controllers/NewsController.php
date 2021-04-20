@@ -17,6 +17,12 @@ class NewsController extends Controller
         return view('dashboard.berita.home',compact('News'));
     }
 
+    //berita
+    public function news(){
+        $News= News::paginate(10);
+        return view('berita.news',compact('News'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -51,7 +57,7 @@ class NewsController extends Controller
             'gambar'=> $namaFile
         ]);
         
-        $gmbr->move(public_path().'/news',$namaFile);
+        $gmbr->move(public_path().'/berita',$namaFile);
         return redirect('/beritas')->with('success','Berita telah ditambahkan!');
     }
 
@@ -63,7 +69,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $News= News::findorfail($id);
+        return view('berita.detail',compact('News'));
     }
 
     /**
@@ -98,7 +105,7 @@ class NewsController extends Controller
         if($request->has('gambar')){
              $gmbr= $request->gambar;
              $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
-             $gmbr->move(public_path().'/news',$namaFile);
+             $gmbr->move(public_path().'/berita',$namaFile);
 
              $news_data= [
                 'judul'=> $request->judul,

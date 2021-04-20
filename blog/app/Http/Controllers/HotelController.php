@@ -16,6 +16,13 @@ class HotelController extends Controller
         $Hotel= Hotel::paginate(10);
         return view('dashboard.hotel.home',compact('Hotel'));
     }
+
+    public function hotel()
+    {
+        $Hotel= Hotel::paginate(10);
+        return view('hotel.home',compact('Hotel'));
+    }
+
     
     /**
      * Show the form for creating a new resource.
@@ -64,7 +71,8 @@ class HotelController extends Controller
      */
     public function show($id)
     {
-        //
+        $Hotel= Hotel::findorfail($id);
+        return view('hotel.detail',compact('Hotel'));
     }
 
     /**

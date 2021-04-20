@@ -68,9 +68,9 @@
 							<ul>
 								<li><a href="{{ url('/home') }}">Beranda</a></li>
 								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-								<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
-								<li><a href="{{ url('/berita') }}">Berita</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+								<li><a href="{{ url('/news') }}">Berita</a></li>
 								<li><a href="{{ url('/contact') }}">Kontak</a></li>
 								
 								<li>
@@ -200,34 +200,17 @@
 	<div class="latest-news mt-140 mb-150">
 		<div class="container">
 			<div class="row">
-				
+				@foreach($Hotel as $result =>$hasil)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single_hotel.html"><div class="latest-news-bg news-bg-7"></div></a>
+						<a href="{{asset ($hasil->gambar) }}"><div class="latest-news-bg news-bg-7"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single_hotel.html">Hotel A</a></h3>
-							<a href="single_hotel.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
+							<h3><a href="{{url ('/hotels/'.$hasil->id_hotel)}}">{{$hasil->nama}}</a></h3>
+							<a href="{{url ('/hotels/'.$hasil->id_hotel)}}" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single_hotel.html"><div class="latest-news-bg news-bg-7"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single_hotel.html">Hotel B</a></h3>
-							<a href="single_hotel.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single_hotel.html"><div class="latest-news-bg news-bg-7"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single_hotel.html">Hotel C</a></h3>
-							<a href="single_hotel.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
@@ -261,8 +244,8 @@
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
 							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/hotels') }}">Booking Hotel</a></li>
-							<li><a href="{{ url('/wisatas') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>
 							<li><a href="{{ url('/contact') }}">Kontak</a></li>
 						</ul>

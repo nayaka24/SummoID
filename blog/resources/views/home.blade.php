@@ -62,9 +62,9 @@
 							<ul>
 								<li class="current-list-item mx-1 active"><a href="{{ url('/home') }}">Beranda</a></li>
 								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-								<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-								<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
-								<li><a href="{{ url('/berita') }}">Berita</a></li>
+								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+								<li><a href="{{ url('/news') }}">Berita</a></li>
 								<li><a href="{{ url('/contact') }}">Kontak</a></li>
 
 								<li>
@@ -117,8 +117,8 @@
 							<h1>Make It Your Journey!</h1>
 							<div class="hero-btns">
 								<a href="{{url ('/motor')}}" class="boxed-btn">Sewa Motor</a>
-								<a href="{{ url('/hotel') }}" class="booking-btn">Booking Hotel</a>
-								<a href="{{ url('/wisata') }}" class="bordered-btn">Paket Wisata</a>
+								<a href="{{ url('/booking_hotel') }}" class="booking-btn">Booking Hotel</a>
+								<a href="{{ url('/paket_wisata') }}" class="bordered-btn">Paket Wisata</a>
 							</div>
 						</div>
 					</div>
@@ -148,7 +148,7 @@
 						</div>
 						<h3>Honda Beat</h3>
 						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
@@ -158,7 +158,7 @@
 						</div>
 						<h3>Honda Revo</h3>
 						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
@@ -168,7 +168,7 @@
 						</div>
 						<h3>Honda Vario 125</h3>
 						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 			</div>
@@ -407,7 +407,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href="{{ url('/berita') }}" class="boxed-btn">Lihat Selengkapnya</a>
+					<a href="{{ url('/news') }}" class="boxed-btn">Lihat Selengkapnya</a>
 				</div>
 			</div>
 		</div>
@@ -471,9 +471,9 @@
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
 							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
-							<li><a href="{{ url('/berita') }}">Berita</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/news') }}">Berita</a></li>
 							<li><a href="{{ url('/contact') }}">Kontak</a></li>
 						</ul>
 					</div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function home(){
+        
         return view('home');
     }
     public function contact(){
@@ -17,31 +18,12 @@ class PagesController extends Controller
     }
 
 
-    //wisata
-    public function wisata(){
-        return view('wisata.home');
-    }
+    
     //motor
     public function bike(){
         return view('motor.home');
     }
-    //hotel
-    public function hotel(){
-        return view('hotel.home');
-    }
-    //berita
-    public function berita(){
-        return view('berita.news');
-    }
 
-
-    //login
-    public function affiliate(){
-        return view('register.affiliate');
-    }
-    public function mitra(){
-        return view('register.mitra');
-    }
     public function dashboard(){
         return view('dashboard.home');
     }

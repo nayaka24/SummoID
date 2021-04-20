@@ -10,26 +10,26 @@
 
 	<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image" href="assets/img/summo2.png">
+	<link rel="shortcut icon" type="image" href="{{asset ('assets/img/summo2.png')}}">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/all.min.css')}}">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{asset ('assets/bootstrap/css/bootstrap.min.css')}}">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/owl.carousel.css')}}">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/magnific-popup.css')}}">
 	<!-- animate css -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/animate.css')}}">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/meanmenu.min.css')}}">
 	<!-- main style -->
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/main.css')}}">
 	<!-- responsive -->
-	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/responsive.css')}}">
 
 </head>
 <body>
@@ -51,27 +51,27 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="home.html">
-								<img src="assets/img/summo1.png" alt="" width="25%" height="25%">
+								<img src="{{asset('assets/img/summo1.png')}}" alt="" width="25%" height="25%">
 							</a>
 						</div>
 						<!-- logo -->
 
 						<!-- menu start -->
 						<nav class="main-menu">
-							<ul>
-								<li><a href="home.html">Beranda</a></li>
-								<li><a href="about.html">Tentang Kami</a></li>
-								<li><a href="booking_hotel.html">Booking Hotel</a></li>
-								<li class="current-list-item mx-1 active"><a href="package.html">Paket Wisata</a></li>
-								<li><a href="news.html">Berita</a></li>
-								<li><a href="contact.html">Kontak</a></li>
-
+						<ul>
+								<li><a href="{{ url('/home') }}">Beranda</a></li>
+								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+								<li ><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+								<li><a href="{{ url('/news') }}">Berita</a></li>
+								<li><a href="{{ url('/contact') }}">Kontak</a></li>
+								
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+									<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="login" href="login.html"><i class="fas fa-sign-in-alt">  Masuk</i></a>
-										<a class="register" href="register.html"><i class="fas fa-user-plus">  Daftar</i></a>
+										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
+										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
 									</div>
 								</li>
 							</ul>
@@ -128,71 +128,10 @@
 					<div class="single-article-section">
 						<div class="single-article-text">
 							<div class="single-artcile-bg2"></div><br><br><br>
-							<h2>Paket 2 Day 1 Night Tegal Mas Island</h2><br>
-
-							<table border="1" cellpadding="20">
-							  <tr>
-							    <th>Peserta</th>
-							    <th>Harga</th>
-							  </tr>
-							  <tr>
-							    <td>5 – 10 Org</td>
-							    <td>Rp. 1.600.000,-</td>
-							  </tr>
-							  <tr>
-							    <td>11 – 15 Org</td>
-							    <td>Rp. 1.550.000,-</td>
-							  </tr>
-							  <tr>
-							    <td>16 – 20 Org</td>
-							    <td>Rp. 1.400.000,-</td>
-							  </tr>
-							  <tr>
-							    <td>21 – 25 Org</td>
-							    <td>Rp. 1.300.000,-</td>
-							  </tr>
-							</table><br>
-
-							<h5>Include :</h5>
-							<ol>
-								<li>Sewa kapal Tegal Mas Island</li>			
-								<li>Perlengkapan snorkeling slama trip</li>			
-								<li>Dokumentasi underwater upwater</li>
-								<li>Paket makan 4x ( Siang, Malam, Sarapan, Siang)</li>
-								<li>Air Mineral</li>
-								<li>BBQ + Lampion Skylatern</li>
-								<li>Biaya retribusi masuk pulau dan fasilitas pondokan</li>
-								<li>Asuransi jasa raharja, guide lokal & medical box</li>	
-								<li>Flash disk / memory card</li>
-								<li>Free Banner</li>
-								<li>Free sewa 2 cano</li>
-								<li>Free Drone + Video editing (min. 25 orang)</li>
-							</ol>
-
-							<h5>Exclude :</h5>
-							<ol>
-								<li>Makan di luar jadwal</li>
-								<li>Transportasi menuju meeting point</li>
-								<li>Biaya Parkir kendaraan</li>
-								<li>Dugan</li>
-								<li>Dan yang tidak termasuk dalam Include</li>
-							</ol>
-
-							<h5>Destinasi :</h5>
-							<ol>
-								<li>Pulau Tegal Mas</li>
-								<li>Kampung Lombok</li>
-								<li>Kampung Kepiting</li>
-								<li>Spot Villa Lombok Laut</li>
-								<li>Snorkeling Tegal Mas Island</li>
-							</ol>
-							<br>
-
-
-							<p>Note : Untuk Pemesanan wajib DP 50%..</i></p><br>
-							<h6>Info Pemesanan</h6>
+							<h2>{{$Wisata->nama}}</h2><br>
+							<p>{{$Wisata->deskripsi}}</i></p><br>
 							<ul>
-								<li><a href="#"> <i class="fa fa-phone"></i> +6289564xxxxxxx</a> (Alex)</li>
+								<li><a href="#"> <i class="fa fa-phone"></i>{{$Wisata->handphone}}</a></li>
 							</ul>
 						</div>
 
@@ -290,12 +229,12 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
-							<li><a href="home.html">Beranda</a></li>
-							<li><a href="about.html">Tentang Kami</a></li>
-							<li><a href="booking_hotel.html">Booking Hotel</a></li>
-							<li><a href="package.html">Paket Wisata</a></li>
-							<li><a href="news.html">Berita</a></li>
-							<li><a href="contact.html">Kontak</a></li>
+							<li><a href="{{ url('/home') }}">Beranda</a></li>
+							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/berita') }}">Berita</a></li>
+							<li><a href="{{ url('/contact') }}">Kontak</a></li>
 						</ul>
 					</div>
 				</div>
@@ -337,25 +276,25 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<script src="{{asset ('assets/js/jquery-1.11.3.min.js')}}"></script>
 	<!-- bootstrap -->
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{asset ('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 	<!-- count down -->
-	<script src="assets/js/jquery.countdown.js"></script>
+	<script src="{{asset ('assets/js/jquery.countdown.js')}}"></script>
 	<!-- isotope -->
-	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="{{asset ('assets/js/jquery.isotope-3.0.6.min.js')}}"></script>
 	<!-- waypoints -->
-	<script src="assets/js/waypoints.js"></script>
+	<script src="{{asset ('assets/js/waypoints.js')}}"></script>
 	<!-- owl carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="{{asset ('assets/js/owl.carousel.min.js')}}"></script>
 	<!-- magnific popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="{{asset ('assets/js/jquery.magnific-popup.min.js')}}"></script>
 	<!-- mean menu -->
-	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<script src="{{asset ('assets/js/jquery.meanmenu.min.js')}}"></script>
 	<!-- sticker js -->
-	<script src="assets/js/sticker.js"></script>
+	<script src="{{asset ('assets/js/sticker.js')}}"></script>
 	<!-- main js -->
-	<script src="assets/js/main.js"></script>
+	<script src="{{asset ('assets/js/main.js')}}"></script>
 
 </body>
 </html>
