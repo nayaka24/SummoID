@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tambah Admin  | Summo</title>
+    <title>List Trash Motor | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -75,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -112,7 +112,7 @@
                 </div>
             </nav>
         </div>
-     <!-- Start Welcome area -->
+    <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -147,7 +147,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> TAMBAH Admin</h2>
+												<h2>MOTOR</h2>
 											</div>
 										</div>
                                     </div>
@@ -157,84 +157,51 @@
                     </div>
                 </div>
             </div>
+            @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{Session('success')}}
+            </div>
+            @endif
         </div>
-        <!-- Single pro tab start-->
-        <div class="single-product-tab-area mg-b-30">
-            <!-- Single pro tab review Start-->
-            <div class="single-pro-review-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="review-tab-pro-inner">
-                                <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description">Paket Wisata</a></li>
-                                    <li><a href="#reviews">Gambar</a></li>
-                                </ul>
-                                <form action="{{url ('/admin')}}" method="post" enctype="multipart/form-data">
-                                @csrf
-                                <div id="myTabContent" class="tab-content custom-product-edit">
-                                    <div class="product-tab-list tab-pane fade active in" id="description">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fas fa-user-alt"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nama" name="name" id="name">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                        <input type="text" class="form-control" placeholder="email" name="email" id="email">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-grup"></i></span>
-                                                        <input type="text" class="form-control" value="admin" name="level" id="level" readonly>
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                        <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                                                        <input type="password" class="form-control" placeholder="password" name="password" id="password">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-tab-list tab-pane fade" id="reviews">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar" id="gambar">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="text-center custom-pro-edt-ds">
-                                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-                                                                                    </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+        <div class="product-status mg-b-30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>List Trash Motor</h4>
+                            <table>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Gambar</th>
+                                    <th>Nama Motor</th>
+                                    <th>Harga</th>
+                                    <th>Deskripsi</th>
+                                    <th>Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($Motor as $result =>$hasil)
+                                <tr>
+                                    <td>{{$result + $Motor -> firstitem() }}</td>
+                                    <td><a href="{{asset ('bike/'.$hasil->gambar)}}" target="_blank" rel="noopener norefrrer">Lihat Gambar</a></td>
+                                    <td>{{$hasil->nama}}</td>
+                                    <td>{{$hasil->harga}}</td>
+                                    <td>{{$hasil->deskripsi}}</td>
+                                    <td>{{$hasil->kategori}}</td>
+                                    <td>
+                                    <form action="{{url ('/motors/'.$hasil->id_motor.'/kill')}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <a href="{{ url ('/motors/'. $hasil->id_motor .'/restore')}}" class ="btn btn-primary" data-toggle="tooltip">Restore</a>
+                                            <button type="submit" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                            </table>
+                            {{$Motor->links() }}
                         </div>
                     </div>
                 </div>

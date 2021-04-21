@@ -22,12 +22,15 @@ Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 Route::get('/keranjang','PagesController@cart');
 
-Route::get('/motor','PagesController@bike');
-
 Route::resource('abouts', 'AboutController');
 
 //admin
 Route::get('/dashboard','PagesController@dashboard');
+
+Route::get('/motors/hapus','MotorController@tampil_hapus');
+Route::get('/motors/{id_motor}/restore','MotorController@restore');
+Route::delete('/motors/{id_motor}/kill','MotorController@kill');
+Route::get('/motor','MotorController@bike');
 Route::resource('motors', 'MotorController');
 
 Route::get('/wisatas/hapus','WisataController@tampil_hapus');

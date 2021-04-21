@@ -141,36 +141,18 @@
 			</div>
 
 			<div class="row">
+			@foreach($Motor as $result =>$hasil)
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/beat.jpg" alt=""></a>
+							<a href="{{url ('/motors/'.$hasil->id_motor)}}"><img src="{{asset ('bike/'.$hasil->gambar)}}" alt=""></a>
 						</div>
-						<h3>Honda Beat</h3>
-						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
+						<h3>{{$hasil->nama}}</h3>
+						<p class="product-price"><span>Per Hari</span> {{$hasil->harga}} </p>
 						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/revo.png" alt=""></a>
-						</div>
-						<h3>Honda Revo</h3>
-						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/vario.png" alt=""></a>
-						</div>
-						<h3>Honda Vario 125</h3>
-						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
-					</div>
-				</div>
+				@endforeach
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -362,48 +344,22 @@
 			</div>
 
 			<div class="row">
+			@foreach($News as $result =>$hasil)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single_news.html"><div class="latest-news-bg news-bg-1"></div></a>
+						<a href="{{url('/beritas/'.$hasil->id_berita)}}"><div class="latest-news-bg news-bg-1"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single_news.html">PROMO TAHUN BARU!</a></h3>
+							<h3><a href="{{url('/beritas/'.$hasil->id_berita)}}">{{$hasil->judul}}</a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+								<span class="date"><i class="fas fa-calendar"></i> {{$hasil->upadated_at}}</span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single_news.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
+							<p class="excerpt">{{$hasil->isi}}</p>
+							<a href="{{url('/beritas/'.$hasil->id_berita)}}" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single_news.html"><div class="latest-news-bg news-bg-2"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single_news.html">Mitra baru Summo!</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single_news.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-					<div class="single-latest-news">
-						<a href="single_news.html"><div class="latest-news-bg news-bg-3"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single_news.html">DISKON TAHUN BARU!</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single_news.html" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
+			@endforeach
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">

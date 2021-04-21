@@ -9,26 +9,26 @@
 	<title>Lebih Detail</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image" href="assets/img/summo2.png">
+	<link rel="shortcut icon" type="image" href="{{asset ('assets/img/summo2.png')}}">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/all.min.css')}}">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{asset ('assets/bootstrap/css/bootstrap.min.css')}}">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/owl.carousel.css')}}">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/magnific-popup.css')}}">
 	<!-- animate css -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/animate.css')}}">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/meanmenu.min.css')}}">
 	<!-- main style -->
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/main.css')}}">
 	<!-- responsive -->
-	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="{{asset ('assets/css/responsive.css')}}">
 
 </head>
 <body>
@@ -50,27 +50,27 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="home.html">
-								<img src="assets/img/summo1.png" alt="" width="25%" height="25%">
+								<img src="{{asset ('assets/img/summo1.png')}}" alt="" width="25%" height="25%">
 							</a>
 						</div>
 						<!-- logo -->
 
 						<!-- menu start -->
 						<nav class="main-menu">
-							<ul>
-								<li><a href="home.html">Beranda</a></li>
-								<li><a href="about.html">Tentang Kami</a></li>
-								<li><a href="booking_hotel.html">Booking Hotel</a></li>
-								<li><a href="package.html">Paket Wisata</a></li>
-								<li><a href="news.html">Berita</a></li>
-								<li><a href="contact.html">Kontak</a></li>
-
+						<ul>
+								<li><a href="{{url ('/home')}}">Beranda</a></li>
+								<li><a href="{{url ('/abouts')}}">Tentang Kami</a></li>
+								<li><a href="{{url ('/booking_hotel')}}">Booking Hotel</a></li>
+								<li><a href="{{url ('/paket_wisata')}}">Paket Wisata</a></li>
+								<li><a href="{{url ('/news')}}">Berita</a></li>
+								<li><a href="{{url ('/contact')}}">Kontak</a></li>
+								
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="login" href="login.html"><i class="fas fa-sign-in-alt">  Masuk</i></a>
-										<a class="register" href="register.html"><i class="fas fa-user-plus">  Daftar</i></a>
+										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
+										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
 									</div>
 								</li>
 							</ul>
@@ -125,20 +125,20 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="single-product-img">
-						<img src="assets/img/motor/beat.jpg" alt="">
+						<img src="{{asset ('bike/'.$Motor->gambar)}}" alt="">
 					</div>
 				</div>
 				<div class="col-md-7">
 					<div class="single-product-content">
-						<h3>Honda Beat</h3>
-						<p class="single-product-pricing"><span>Per Hari</span> RP. 250.000</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
+						<h3>{{$Motor->nama}}</h3>
+						<p class="single-product-pricing"><span>Per Hari</span>{{$Motor->harga}}</p>
+						<p>{{$Motor->deskripsi}}</p>
 						<div class="single-product-form">
 							<form action="index.html">
 								<input type="number" placeholder="0">
 							</form>
 							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
-							<p><strong>Kategori: </strong>Matic</p>
+							<p><strong>Kategori: </strong>{{$Motor->kategori}}</p>
 						</div>
 						<h4>Share:</h4>
 						<ul class="product-share">
@@ -151,7 +151,7 @@
 			</div><br><br><br>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href="shop.html" class="boxed-btn">Lihat Kendaraan Lainnya</a>
+					<a href="{{url ('/motor')}}" class="boxed-btn">Lihat Kendaraan Lainnya</a>
 				</div>
 			</div>
 		</div>
@@ -185,12 +185,12 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
-							<li><a href="home.html">Beranda</a></li>
-							<li><a href="about.html">Tentang Kami</a></li>
-							<li><a href="booking_hotel.html">Booking Hotel</a></li>
-							<li><a href="package.html">Paket Wisata</a></li>
-							<li><a href="news.html">Berita</a></li>
-							<li><a href="contact.html">Kontak</a></li>
+							<li><a href="{{ url('/home') }}">Beranda</a></li>
+							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/news') }}">Berita</a></li>
+							<li><a href="{{ url('/contact') }}">Kontak</a></li>
 						</ul>
 					</div>
 				</div>
@@ -232,25 +232,25 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<script src="{{asset ('assets/js/jquery-1.11.3.min.js')}}"></script>
 	<!-- bootstrap -->
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{asset ('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 	<!-- count down -->
-	<script src="assets/js/jquery.countdown.js"></script>
+	<script src="{{asset ('assets/js/jquery.countdown.js')}}"></script>
 	<!-- isotope -->
-	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="{{asset ('assets/js/jquery.isotope-3.0.6.min.js')}}"></script>
 	<!-- waypoints -->
-	<script src="assets/js/waypoints.js"></script>
+	<script src="{{asset ('assets/js/waypoints.js')}}"></script>
 	<!-- owl carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="{{asset ('assets/js/owl.carousel.min.js')}}"></script>
 	<!-- magnific popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="{{asset ('assets/js/jquery.magnific-popup.min.js')}}"></script>
 	<!-- mean menu -->
-	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<script src="{{asset ('assets/js/jquery.meanmenu.min.js')}}"></script>
 	<!-- sticker js -->
-	<script src="assets/js/sticker.js"></script>
+	<script src="{{asset ('assets/js/sticker.js')}}"></script>
 	<!-- main js -->
-	<script src="assets/js/main.js"></script>
+	<script src="{{asset ('assets/js/main.js')}}"></script>
 
 </body>
 </html>

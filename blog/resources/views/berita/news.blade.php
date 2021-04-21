@@ -126,9 +126,9 @@
 			@foreach($News as $result =>$hasil)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single_news.html"><div class="latest-news-bg news-bg-1"></div></a>
+						<a href="{{url('/beritas/'.$hasil->id_berita)}}"><div class="latest-news-bg news-bg-1"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single_news.html">{{$hasil->judul}}</a></h3>
+							<h3><a href="{{url('/beritas/'.$hasil->id_berita)}}">{{$hasil->judul}}</a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i>{{$hasil->updated_at}}</span>

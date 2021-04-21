@@ -67,28 +67,29 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Berita" href="{{url ('/news')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
-                                    <li><a title="Daftar Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Kotak Sampah Berita</span></a></li>
+                                    <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
+                                    <li><a title="Daftar Trash Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
-                                    <li><a title="Daftar Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Kotak Sampah Wisata</span></a></li>
+                                    <li><a title="Daftar Trash Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Wisata</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Hotel</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
-                                    <li><a title="Daftar Hapus Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Kotak Sampah Hotel</span></a></li>
+                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Hotel</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -101,9 +102,9 @@
                             <li class="active">
                                 <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="admin.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
-                                    <li><a title="Mitra" href="mitra.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
-                                    <li><a title="Pengguna" href="user.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Mitra" href="{{url ('/mitra')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
+                                    <li><a title="Pengguna" href="{{url ('/pengguna')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -169,6 +170,8 @@
                                     <li class="active"><a href="#description">Motor</a></li>
                                     <li><a href="#reviews">Gambar</a></li>
                                 </ul>
+                                <form action="{{url ('/motors')}}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
@@ -176,15 +179,19 @@
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nama Motor">
+                                                        <input type="text" class="form-control" placeholder="Nama Motor" name="nama" id="nama">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Harga">
+                                                        <input type="text" class="form-control" placeholder="Harga" name="harga" id="harga">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Kategori (Matic/Manual)">
+                                                        <select class="form-control" name="kategori">
+                                                            <option value="" holder>Pilih Kategori Motor</option>
+                                                            <option value="matic">matic</option>
+                                                            <option value="manual">manual</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,21 +199,11 @@
                                                 <div class="review-content-section">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
-                                                        <textarea placeholder="Deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                                                        <textarea name= "deskripsi" placeholder="Deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
                                                       </div>
                                                 </div>
                                             </div>
                                         </div><br>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="text-center custom-pro-edt-ds">
-                                                    <button type="button" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-														</button>
-                                                    <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Batal
-														</button>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product-tab-list tab-pane fade" id="reviews">
                                         <div class="row">
@@ -224,15 +221,13 @@
                                                                     <div class="product-edt-pix-wrap">
                                                                         <div class="input-group">
                                                                             <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar">
+                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar">
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                             <div class="text-center custom-pro-edt-ds">
-                                                                                <button type="button" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-                                                                                    </button>
-                                                                                <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Batal
+                                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
                                                                                     </button>
                                                                             </div>
                                                                         </div>
@@ -245,6 +240,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                </form>    
                             </div>
                         </div>
                     </div>

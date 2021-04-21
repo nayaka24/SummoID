@@ -136,72 +136,20 @@
             </div>
 
 			<div class="row product-lists">
-				<div class="col-lg-4 col-md-6 text-center matic">
+			@foreach($Motor as $result =>$hasil)
+				<div class="col-lg-4 col-md-6 text-center {{$hasil->kategori}}">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/scoopy.png" alt=""></a>
+							<a href="{{url ('/motors/'.$hasil->id_motor)}}"><img src="{{asset ('bike/'.$hasil->gambar)}}" alt=""></a>
 						</div>
-						<h3>Honda Scoopy</h3>
-						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
+						<h3>{{$hasil->nama}}</h3>
+						<p class="product-price"><span>Per Hari</span> {{$hasil->harga}} </p>
 						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center manual">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/revo.png" alt=""></a>
-						</div>
-						<h3>Honda Revo</h3>
-						<p class="product-price"><span>Per Hari</span> Rp. 250.000 </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center manual">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/suprax.png" alt=""></a>
-						</div>
-						<h3>Honda Supra X</h3>
-						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center matic">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/beat.jpg" alt=""></a>
-						</div>
-						<h3>Honda Beat</h3>
-						<p class="product-price"><span>Per Hari</span> RP. 250.000 </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-md-6 text-center matic">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single_product.html"><img src="assets/img/motor/vario.png" alt=""></a>
-						</div>
-						<h3>Honda Vario 125</h3>
-						<p class="product-price"><span>Per Hari</span> Rp. 250.000 </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
-					</div>
-				</div>
+				@endforeach
 			</div>
-
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<div class="pagination-wrap">
-						<ul>
-							<li><a href="#">Prev</a></li>
-							<li><a href="#">1</a></li>
-							<li><a class="active" href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			{{$Motor->links() }}
 		</div>
 	</div>
 	<!-- end products -->

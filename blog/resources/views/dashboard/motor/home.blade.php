@@ -67,28 +67,29 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Berita" href="{{url ('/news')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
-                                    <li><a title="Daftar Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Kotak Sampah Berita</span></a></li>
+                                    <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
+                                    <li><a title="Daftar Trash Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
-                                    <li><a title="Daftar Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Kotak Sampah Wisata</span></a></li>
+                                    <li><a title="Daftar Trash Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Wisata</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Hotel</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
-                                    <li><a title="Daftar Hapus Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Kotak Sampah Hotel</span></a></li>
+                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Hotel</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -101,9 +102,9 @@
                             <li class="active">
                                 <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="admin.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
-                                    <li><a title="Mitra" href="mitra.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
-                                    <li><a title="Pengguna" href="user.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Mitra" href="{{url ('/mitra')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
+                                    <li><a title="Pengguna" href="{{url ('/pengguna')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -156,6 +157,11 @@
                     </div>
                 </div>
             </div>
+            @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{Session('success')}}
+            </div>
+            @endif
         </div>
         <div class="product-status mg-b-30">
             <div class="container-fluid">
@@ -167,89 +173,38 @@
                                 <a href="{{url ('motors/create')}}">Tambah Motor</a>
                             </div>
                             <table>
+                            <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Gambar</th>
                                     <th>Nama Motor</th>
                                     <th>Harga</th>
                                     <th>Deskripsi</th>
                                     <th>Kategori</th>
                                 </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($Motor as $result =>$hasil)
                                 <tr>
-                                    <td><img src="{{asset ('assets/dashboard/img/motor/beat2014.png')}}" alt="" /></td>
-                                    <td>Honda Beat</td>
-                                    <td>Rp 100.000</td>
-                                    <td>..........</td>
-                                    <td>Matic</td>
+                                    <td>{{$result + $Motor -> firstitem() }}</td>
+                                    <td><a href="{{asset ('bike/'.$hasil->gambar)}}" target="_blank" rel="noopener norefrrer">Lihat Gambar</a></td>
+                                    <td>{{$hasil->nama}}</td>
+                                    <td>{{$hasil->harga}}</td>
+                                    <td>{{$hasil->deskripsi}}</td>
+                                    <td>{{$hasil->kategori}}</td>
                                     <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <form action="{{url ('/motors/'.$hasil->id_motor)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <a href="{{ url ('/motors/'. $hasil->id_motor .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <button type="submit" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </form>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><img src="{{asset ('assets/dashboard/img/motor/beat2014.png')}}" alt="" /></td>
-                                    <td>Honda Beat</td>
-                                    <td>Rp 100.000</td>
-                                    <td>..........</td>
-                                    <td>Matic</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="{{asset ('assets/dashboard/img/motor/beat2014.png')}}" alt="" /></td>
-                                    <td>Honda Beat</td>
-                                    <td>Rp 100.000</td>
-                                    <td>..........</td>
-                                    <td>Matic</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="{{asset ('assets/dashboard/img/motor/beat2014.png')}}" alt="" /></td>
-                                    <td>Honda Beat</td>
-                                    <td>Rp 100.000</td>
-                                    <td>..........</td>
-                                    <td>Matic</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="{{asset ('assets/dashboard/img/motor/beat2014.png')}}" alt="" /></td>
-                                    <td>Honda Beat</td>
-                                    <td>Rp 100.000</td>
-                                    <td>..........</td>
-                                    <td>Matic</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="{{asset ('assets/dashboard/img/motor/beat2014.png')}}" alt="" /></td>
-                                    <td>Honda Beat</td>
-                                    <td>Rp 100.000</td>
-                                    <td>..........</td>
-                                    <td>Matic</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
+                            @endforeach
+                            </tbody>
                             </table>
-                            <div class="custom-pagination">
-								<ul class="pagination">
-									<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">Next</a></li>
-								</ul>
-                            </div>
+                            {{$Motor->links() }}
                         </div>
                     </div>
                 </div>

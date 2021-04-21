@@ -187,7 +187,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($User as $result =>$hasil)
-                                @if($User->level == mitra)
+                                @if($hasil->level == 'mitra')
                                     <tr>
                                         <td>{{$result + $Wisata -> firstitem() }}</td>
                                         <td><a href="{{asset ('mitra/'. $user -> gambar) }}" target="_blank" rel="noopener norefrrer">Lihat Gambar</a></td></td>

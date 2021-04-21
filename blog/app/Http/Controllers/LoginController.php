@@ -18,7 +18,7 @@ class LoginController extends Controller
         return view('register.user');
     }
 
-    public function postregister(){
+    public function postregister(Request $request){
         
     }
 }
