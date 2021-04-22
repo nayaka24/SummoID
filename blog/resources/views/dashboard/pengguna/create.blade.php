@@ -95,8 +95,16 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Keranjang" href="hotel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="hotel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Keranjang" href="keranjang.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
+                                    <li><a title="Pembayaran" href="pembayaran.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Affiliate" href="confAffiliate.html"><i class="fa fa-ticket"></i><span class="mini-sub-pro"> Affiliate</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="removable">
+                                <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
+                                <ul class="submenu-angle" aria-expanded="true">
+                                    <li><a title="Tentang" href="confAbout.html"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
+                                    <li><a title="Kontak" href="confContact.html"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> Kontak</span></a></li>
                                 </ul>
                             </li>
                             <li class="active">
@@ -113,7 +121,7 @@
             </nav>
         </div>
      <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
+     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -130,7 +138,20 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
                                 <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                    <div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+														<span>Summo Indonesia <i class="fa fa-angle-down"></i></span>
+													</a>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="#"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a href="#"><span class="fa fa-sign-out"></span> Keluar</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +168,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> TAMBAH Admin</h2>
+												<h2> TAMBAH ADMIN</h2>
 											</div>
 										</div>
                                     </div>
@@ -167,7 +188,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description">Paket Wisata</a></li>
+                                    <li class="active"><a href="#description">Informasi Admin</a></li>
                                     <li><a href="#reviews">Gambar</a></li>
                                 </ul>
                                 <form action="{{url ('/admin')}}" method="post" enctype="multipart/form-data">
@@ -178,15 +199,15 @@
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fas fa-user-alt"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nama" name="name" id="name">
+                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="name" id="name">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                        <input type="text" class="form-control" placeholder="email" name="email" id="email">
+                                                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-grup"></i></span>
+                                                        <span class="input-group-addon"><i class="fa fa-group"></i></span>
                                                         <input type="text" class="form-control" value="admin" name="level" id="level" readonly>
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
@@ -194,8 +215,8 @@
                                                         <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                                                        <input type="password" class="form-control" placeholder="password" name="password" id="password">
+                                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                        <input type="password" class="form-control" placeholder="Password" name="password" id="password">
                                                     </div>
                                                 </div>
                                             </div>

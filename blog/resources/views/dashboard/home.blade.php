@@ -82,14 +82,14 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
-                                    <li><a title="Daftar Trash Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Wisata</span></a></li>
+                                    <li><a title="Daftar Trash Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Hotel</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
-                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Trash Hotel</span></a></li>
+                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Hotel</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -135,10 +135,23 @@
             <div class="header-top-area">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">{{url ('/pengguna')}}
                             <div class="header-top-wraper">
                                 <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                    <div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+														<span>Summo Indonesia <i class="fa fa-angle-down"></i></span>
+													</a>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="#"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a href="#"><span class="fa fa-sign-out"></span> Keluar</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +159,7 @@
                     </div>
                 </div>
             </div>
-            <div class="breadcome-area">
+            <br><br><div class="breadcome-area">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

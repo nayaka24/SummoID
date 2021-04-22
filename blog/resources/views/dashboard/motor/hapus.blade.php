@@ -95,8 +95,16 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Keranjang" href="hotel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="hotel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Keranjang" href="keranjang.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
+                                    <li><a title="Pembayaran" href="pembayaran.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Affiliate" href="confAffiliate.html"><i class="fa fa-ticket"></i><span class="mini-sub-pro"> Affiliate</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="removable">
+                                <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
+                                <ul class="submenu-angle" aria-expanded="true">
+                                    <li><a title="Tentang" href="confAbout.html"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
+                                    <li><a title="Kontak" href="confContact.html"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> Kontak</span></a></li>
                                 </ul>
                             </li>
                             <li class="active">
@@ -130,7 +138,20 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
                                 <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                    <div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+														<span>Summo Indonesia <i class="fa fa-angle-down"></i></span>
+													</a>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="#"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a href="#"><span class="fa fa-sign-out"></span> Keluar</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +159,7 @@
                     </div>
                 </div>
             </div>
-            <div class="breadcome-area">
+            <br><br><div class="breadcome-area">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -147,7 +168,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2>MOTOR</h2>
+												<h2>TRASH MOTOR</h2>
 											</div>
 										</div>
                                     </div>
