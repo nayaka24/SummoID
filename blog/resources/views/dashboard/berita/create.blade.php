@@ -46,6 +46,8 @@
     <link rel="stylesheet" href="{{asset ('assets/dashboard/css/responsive.css')}}">
     <!-- modernizr JS============================================ -->
     <script src="{{asset ('assets/dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <!-- CKEditor============================================ -->
+    <script src="{{asset ('assets/ckeditor/ckeditor.js')}}"></script>
 </head>
 
 <body>
@@ -173,22 +175,16 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
                                                         <input type="text" class="form-control" placeholder="Judul Berita" name="judul" id ="judul">
-                                                    </div>   
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
+                                                    </div>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
-                                                        <textarea placeholder="isi" class="form-control"  id="isi" name="isi" rows="10"></textarea>
+                                                        <textarea placeholder="Deskripsi" class="form-control"  id="isi" name="isi" rows="10"></textarea>
                                                       </div>
                                                 </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="product-tab-list tab-pane fade" id="reviews">
@@ -300,6 +296,9 @@
         <!-- main JS
             ============================================ -->
         <script src="{{asset ('assets/dashboard/js/main.js')}}"></script>
+        <script>
+            CKEDITOR.replace( 'isi' );
+        </script>
 </body>
 
 </html>

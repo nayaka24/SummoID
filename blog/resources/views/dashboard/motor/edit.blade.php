@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>EDIT Motor  | Summo</title>
+    <title>Edit Motor  | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,6 +46,8 @@
     <link rel="stylesheet" href="{{asset ('assets/dashboard/css/responsive.css')}}">
     <!-- modernizr JS============================================ -->
     <script src="{{asset ('assets/dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <!-- CKEditor============================================ -->
+    <script src="{{asset ('assets/ckeditor/ckeditor.js')}}"></script>
 </head>
 
 <body>
@@ -153,7 +155,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> EDIT Motor</h2>
+												<h2> EDIT MOTOR</h2>
 											</div>
 										</div>
                                     </div>
@@ -182,36 +184,32 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nama Motor" value="{{$Motor->nama}}" name="nama" id="nama">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Harga" value="{{$Motor->harga}}" name="harga" id="harga">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
-                                                        <select class="form-control" name="kategori">
-                                                            @if($Motor->kategori == 'matic')
-                                                            <option value="matic" selected>matic</option>
-                                                            <option value="manual">manual</option>
-                                                            @elseif($Motor->kategori == 'manual')
-                                                            <option value="matic">matic</option>
-                                                            <option value="manual" selected>manual</option>
-                                                            @endif
-                                                        </select>
-                                                    </div>
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Nama Motor" value="{{$Motor->nama}}" name="nama" id="nama">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Harga" value="{{$Motor->harga}}" name="harga" id="harga">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
+                                                    <select class="form-control" name="kategori">
+                                                        @if($Motor->kategori == 'matic')
+                                                        <option value="matic" selected>Matic</option>
+                                                        <option value="manual">Manual</option>
+                                                        @elseif($Motor->kategori == 'manual')
+                                                        <option value="matic">Matic</option>
+                                                        <option value="manual" selected>Manual</option>
+                                                        @endif
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
-                                                        <textarea name= "deskripsi" placeholder="Deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$Motor->deskripsi}}</textarea>
-                                                      </div>
+                                            <div class="review-content-section">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
+                                                    <textarea name= "deskripsi" placeholder="Deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$Motor->deskripsi}}</textarea>
                                                 </div>
                                             </div>
                                         </div><br>
@@ -325,6 +323,9 @@
         <!-- main JS
             ============================================ -->
         <script src="{{asset ('assets/dashboard/js/main.js')}}"></script>
+        <script>
+            CKEDITOR.replace( 'exampleFormControlTextarea1' );
+        </script>
 </body>
 
 </html>

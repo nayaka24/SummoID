@@ -136,7 +136,7 @@
 								<span class="wifi"><i class="fas fa-wifi"></i> Free Wifi</span>
 							</p>
 							<h2>{{$Hotel->name}}</h2>
-							<p>{{$Hotel->deskripsi}}</p>
+							{!!$Hotel->deskripsi!!}
 						</div>
 					</div>
 				</div>

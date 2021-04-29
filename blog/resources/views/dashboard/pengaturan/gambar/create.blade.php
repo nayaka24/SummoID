@@ -46,6 +46,8 @@
     <link rel="stylesheet" href="{{asset ('assets/dashboard/css/responsive.css')}}">
     <!-- modernizr JS============================================ -->
     <script src="{{asset ('assets/dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <!-- CKEditor============================================ -->
+    <script src="{{asset ('assets/ckeditor/ckeditor.js')}}"></script>
 </head>
 
 <body>
@@ -186,7 +188,7 @@
                                                         <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
                                                         <select class="form-control" name="tipe">
-                                                            <option value="" holder>Pilih tipe gambar</option>
+                                                            <option value="" holder>-Pilih Tipe Gambar-</option>
                                                             <option value="Logo">Logo</option>
                                                             <option value="Foto">Foto</option>
                                                         </select>
@@ -299,6 +301,9 @@
         <!-- main JS
             ============================================ -->
         <script src="{{asset ('assets/dashboard/js/main.js')}}"></script>
+        <script>
+            CKEDITOR.replace( 'exampleFormControlTextarea1' );
+        </script>
 </body>
 
 </html>

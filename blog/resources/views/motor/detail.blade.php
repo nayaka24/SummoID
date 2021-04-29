@@ -132,7 +132,7 @@
 					<div class="single-product-content">
 						<h3>{{$Motor->nama}}</h3>
 						<p class="single-product-pricing"><span>Per Hari</span>{{$Motor->harga}}</p>
-						<p>{{$Motor->deskripsi}}</p>
+						<p>{!!$Motor->deskripsi!!}</p>
 						<div class="single-product-form">
 							<form action="index.html">
 								<input type="number" placeholder="0">

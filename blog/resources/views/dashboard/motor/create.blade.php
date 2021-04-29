@@ -46,6 +46,8 @@
     <link rel="stylesheet" href="{{asset ('assets/dashboard/css/responsive.css')}}">
     <!-- modernizr JS============================================ -->
     <script src="{{asset ('assets/dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <!-- CKEditor============================================ -->
+    <script src="{{asset ('assets/ckeditor/ckeditor.js')}}"></script>
 </head>
 
 <body>
@@ -181,32 +183,28 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nama Motor" name="nama" id="nama">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Harga" name="harga" id="harga">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
-                                                        <select class="form-control" name="kategori">
-                                                            <option value="" holder>Pilih Kategori Motor</option>
-                                                            <option value="matic">matic</option>
-                                                            <option value="manual">manual</option>
-                                                        </select>
-                                                    </div>
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Nama Motor" name="nama" id="nama">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Harga" name="harga" id="harga">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
+                                                    <select class="form-control" name="kategori">
+                                                        <option value="" holder>-Pilih Kategori Motor-</option>
+                                                        <option value="matic">Matic</option>
+                                                        <option value="manual">Manual</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
-                                                        <textarea name= "deskripsi" placeholder="Deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
-                                                      </div>
+                                            <div class="review-content-section">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
+                                                    <textarea name= "deskripsi" placeholder="Deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
                                                 </div>
                                             </div>
                                         </div><br>
@@ -320,6 +318,9 @@
         <!-- main JS
             ============================================ -->
         <script src="{{asset ('assets/dashboard/js/main.js')}}"></script>
+        <script>
+            CKEDITOR.replace( 'exampleFormControlTextarea1' );
+        </script>
 </body>
 
 </html>

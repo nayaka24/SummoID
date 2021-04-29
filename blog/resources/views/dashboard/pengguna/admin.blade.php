@@ -216,7 +216,7 @@
                                         <form action="{{url ('/admin/'.$hasil->id_user)}}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ url ('/admin/'. $hasil->id_user .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <a href="{{ url ('/admin/'. $hasil->id_user .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             <button type="submit" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </form>
                                         </td>

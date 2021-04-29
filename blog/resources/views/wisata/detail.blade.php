@@ -50,7 +50,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="home.html">
+							<a href="{{ url('/home') }}">
 								<img src="{{asset('assets/img/summo1.png')}}" alt="" width="25%" height="25%">
 							</a>
 						</div>
@@ -129,7 +129,7 @@
 						<div class="single-article-text">
 							<div class="single-artcile-bg2"></div><br><br><br>
 							<h2>{{$Wisata->nama}}</h2><br>
-							<p>{{$Wisata->deskripsi}}</i></p><br>
+							{!!$Wisata->deskripsi!!}<br>
 							<ul>
 								<li><a href="#"> <i class="fa fa-phone"></i>{{$Wisata->handphone}}</a></li>
 							</ul>

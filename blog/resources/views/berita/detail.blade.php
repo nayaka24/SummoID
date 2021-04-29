@@ -132,7 +132,7 @@
 								<span class="date"><i class="fas fa-calendar"></i> {{$News->updated_at}}</span>
 							</p>
 							<h2>{{$News->judul}}</h2>
-							<p>{{$News->isi}}</p>
+							{!!$News->isi!!}
 						</div>
 
 						<div class="comments-list-wrap">

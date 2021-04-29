@@ -166,7 +166,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> Edit Pengguna</h2>
+												<h2> EDIT PENGGUNA</h2>
 											</div>
 										</div>
                                     </div>
@@ -195,24 +195,22 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nama Lengkap" value="{{$User->name}}" name="name" id="name">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{$User->email}}">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                        <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone" value="{{$User->handphone}}">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                        <input type="password" class="form-control" placeholder="Password" name="password" id="password" >
-                                                    </div>
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Nama Lengkap" value="{{$User->name}}" name="name" id="name">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                    <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{$User->email}}">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                    <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone" value="{{$User->handphone}}">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password" >
                                                 </div>
                                             </div>
                                         </div>
