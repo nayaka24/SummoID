@@ -50,44 +50,57 @@
     <div class="container-login100">
       <div class="wrap-login100">
 
-        <form class="register100-form validate-form">
+      <form action ="{{url ('/mitra')}}" method="post" enctype="multipart/form-data" class="register100-form validate-form">
+        @csrf
           <span class="register100-form-title">
-            Ayo Gabung Menjadi Mitra Kami!
-          </span>
+            Daftar Mitra
+          </span><br>
           <nav class="menu-daftar">
             <ul>
-              <li><a href="{{ url('/register') }}"><u>Daftar Pengguna</u></a></li>
+              <li><a href="{{url ('/register')}}"><u>Daftar Pengguna</u></a></li>
               <li><a href="{{url ('/affiliate')}}"><u>Daftar Affiliate</u></a></li>
             </ul>
           </nav>
 
+          <h5>Nama Lengkap :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Nama Harus Diisi!">
-            <input class="input100" type="text" name="nama" placeholder="Nama Lengkap">
+          <input class="input100" type="text" name="name" placeholder="ex: Summo Indonesia">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-user-alt" aria-hidden="true"></i>
             </span>
           </div>
 
-          <div class="wrap-input100 validate-input" data-validate = "E-mail yang valid: ex@abc.xyz">
-            <input class="input100" type="text" name="email" placeholder="E-mail">
+          <h5>E-mail :</h5>
+          <div class="wrap-input100 validate-input" data-validate = "Masukkan E-mail yang valid!">
+            <input class="input100" type="text" name="email" placeholder="ex : ex@abc.xyz" >
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
           </div>
 
+          <h5>Foto KTP :</h5>
+          <div class="wrap-input100 validate-input" data-validate = "Foto KTP!">
+            <input class="input100" type="file" name="gambar" placeholder="Foto KTP">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+            <i class="fas fa-user-alt" aria-hidden="true"></i>
+            </span>
+          </div>
 
+          <h5>No. Hp:</h5>
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
-            <input class="input100" type="text" name="nohp" placeholder="No.HP">
+          <input class="input100" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" ">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-phone" aria-hidden="true"></i>
             </span>
           </div>
 
+          <h5>Password :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi!">
-            <input class="input100" type="password" name="pass" placeholder="Password (6+ Karakter)">
+          <input class="input100" type="password" name="password" placeholder="6+ Karakter" >
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-lock" aria-hidden="true"></i>
@@ -95,7 +108,7 @@
           </div>
           
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn">
+            <button type="submit" class="login100-form-btn">
               Daftar
             </button>
           </div>
@@ -128,23 +141,26 @@
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
-          <div class="footer-box contact">
-            <h2 class="widget-title">Kontak</h2>
-            <ul>
-              <li><a href="#"> <i class="fas fa-map-marker-alt"></i> Jl.Pangeran Antasari, Gg.Mangga Besar No.24 Lk.III Tanjung Baru, Kedamaian</a></li>
-              <li><a href="#"> <i class="fa fa-envelope"></i> Summo.lpg@gmail.com</a></li>
-              <li><a href="#"> <i class="fa fa-phone"></i> +62895640472784</a></li>
-              <li><a href="#"> <i class="fa fa-phone"></i> +6287899585498</a></li>
-              <li><a href="https://www.instagram.com/summoid/"> <i class="fab fa-instagram"> @summoid</i></a></li>
-            </ul>
-          </div>
-        </div>
+					<div class="footer-box contact">
+						<h2 class="widget-title">Kontak</h2>
+						<ul>
+						@foreach($About as $About)
+						@if($About->judul == 'Alamat')
+							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
+						@elseif($About->judul == 'Kontak')
+							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
+						@endif
+						@endforeach
+							<li><a href="https://www.instagram.com/summoid/"> <i class="fab fa-instagram"> @summoid</i></a></li>
+						</ul>
+					</div>
+				</div>
         <div class="col-lg-3 col-md-6">
           <div class="footer-box pages">
             <h2 class="widget-title">Halaman</h2>
             <ul>
               <li><a href="{{ url('/home') }}">Beranda</a></li>
-							<li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
 							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>

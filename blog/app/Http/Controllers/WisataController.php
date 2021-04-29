@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Wisata;
+use App\About;
 use Illuminate\Http\Request;
 
 class WisataController extends Controller
@@ -20,7 +21,8 @@ class WisataController extends Controller
     //wisata
     public function wisata(){
         $Wisata= Wisata::paginate(10);
-        return view('wisata.home', compact('Wisata'));
+        $About= About::all();
+        return view('wisata.home', compact('Wisata','About'));
     }
     
     /**
@@ -32,7 +34,7 @@ class WisataController extends Controller
     {
         return view('dashboard.wisata.create');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -44,36 +46,37 @@ class WisataController extends Controller
         $this->validate($request,[
             'nama'=>'required',
             'harga'=>'required',
-            'handphone'=>'required | max:15',
+            'handphone'=>'required | max:16',
             'deskripsi'=>'required',
             'gambar'=>'required'
-        ]);
-        
-        $gmbr= $request->gambar;
-        $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
-
-        $Wisata= Wisata::create([
-            'nama'=> $request->nama,
-            'harga'=> $request->harga,
-            'handphone'=> $request->handphone,
-            'deskripsi'=> $request->deskripsi,
-            'gambar'=> $namaFile
-        ]);
-        
-        $gmbr->move(public_path().'/wisata',$namaFile);
-        return redirect('/wisatas')->with('success','Paket wisata telah ditambahkan!');
-    }
-
-    /**
+            ]);
+            
+            $gmbr= $request->gambar;
+            $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
+            
+            $Wisata= Wisata::create([
+                'nama'=> $request->nama,
+                'harga'=> $request->harga,
+                'handphone'=> $request->handphone,
+                'deskripsi'=> $request->deskripsi,
+                'gambar'=> $namaFile
+                ]);
+                
+                $gmbr->move(public_path().'/wisata',$namaFile);
+                return redirect('/wisatas')->with('success','Paket wisata telah ditambahkan!');
+            }
+            
+     /**
      * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+       *
+             * @param  int  $id
+             * @return \Illuminate\Http\Response
+             */
     public function show($id)
     {
         $Wisata= Wisata::findorfail($id);
-        return view('wisata.detail',compact('Wisata'));
+        $About= About::all();
+        return view('wisata.detail',compact('Wisata','About'));
     }
 
     /**

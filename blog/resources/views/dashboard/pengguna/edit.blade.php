@@ -4,48 +4,48 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Edit Tentang  | Summo</title>
+    <title>Edit Pengguna | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- favicon============================================ -->
-    <link rel="shortcut icon" type="image" href="assets/img/logo/summo.png">
+    <link rel="shortcut icon" type="image" href="{{asset ('assets/dashboard/img/logo/summo.png')}}">
     <!-- Google Fonts============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/bootstrap.min.css')}}">
     <!-- Bootstrap CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/font-awesome.min.css')}}">
 	<!-- nalika Icon CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/nalika-icon.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/nalika-icon.css')}}">
     <!-- owl.carousel CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.css">
-    <link rel="stylesheet" href="assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/owl.transitions.css')}}">
     <!-- animate CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/animate.css')}}">
     <!-- normalize CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/normalize.css')}}">
     <!-- meanmenu icon CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/meanmenu.min.css')}}">
     <!-- main CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/main.css')}}">
     <!-- morrisjs CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/morrisjs/morris.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/morrisjs/morris.css')}}">
     <!-- mCustomScrollbar CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
     <!-- metisMenu CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="assets/css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/metisMenu/metisMenu-vertical.css')}}">
     <!-- calendar CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="assets/css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/calendar/fullcalendar.print.min.css')}}">
     <!-- style CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/style.css')}}">
     <!-- responsive CSS============================================ -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{{asset ('assets/dashboard/css/responsive.css')}}">
     <!-- modernizr JS============================================ -->
-    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{asset ('assets/dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 
 <body>
@@ -57,48 +57,60 @@
             <nav id="sidebar" class="">
                 <div class="nalika-profile">
                     <div class="profile-dtl">
-                        <a href="index.html"><img src="assets/img/logo/summo1.png" alt="" /></a>
+                        <a href="{{url ('/dashboard')}}"><img src="{{asset ('assets/dashboard/img/logo/summo1.png')}}" alt="" /></a>
                     </div>
                 </div>
                 <div class="left-custom-menu-adp-wrap comment-scrollbar">
-                    <nav class="sidebar-nav left-sidebar-menu-pro">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
                         <ul class="metismenu" id="menu1">
-                            <li><a href="index.html"><i class="fa fa-home"></i><span class="mini-click-non"> Dashboard</span></a></li>
+                            <li><a href="{{url ('/dashboard')}}"><i class="fa fa-home"></i><span class="mini-click-non"> Dashboard</span></a></li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Berita" href="news_list.html"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
+                                    <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
+                                    <li><a title="Daftar Trash Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Motor" href="motor_list.html"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Keranjang" href="motor_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="motor_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Wisata" href="travel_list.html"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
-                                    <li><a title="Keranjang" href="travel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="travel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                    <li><a title="Daftar Trash Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Hotel</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Hotel" href="hotel_list.html"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
-                                    <li><a title="Keranjang" href="hotel_cart.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="hotel_payment.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
+                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Hotel</span></a></li>
                                 </ul>
                             </li>
-                            <li class="active">
-                                <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Halaman</span></a>
+                            <li id="removable">
+                                <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
+                                <ul class="submenu-angle" aria-expanded="true">
+                                    <li><a title="Keranjang" href="{{url ('/keranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
+                                    <li><a title="Pembayaran" href="{{url ('/pembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Affiliate" href="{{url ('/confAffiliate')}}"><i class="fa fa-ticket"></i><span class="mini-sub-pro"> Affiliate</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="removable">
+                                <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Login" href="login.html"><i class="fa fa-user"></i><span class="mini-sub-pro"> Login</span></a></li>
-                                    <li><a title="Register" href="register.html"><i class="fa fa-user-plus"></i><span class="mini-sub-pro"> Register</span></a></li>
+                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="removable">
+                                <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
+                                <ul class="submenu-angle" aria-expanded="true">
+                                    <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
+                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -107,7 +119,7 @@
             </nav>
         </div>
      <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
+     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -124,7 +136,20 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
                                 <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                    <div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+														<span>Summo Indonesia <i class="fa fa-angle-down"></i></span>
+													</a>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <li><a href="#"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a href="#"><span class="fa fa-sign-out"></span> Keluar</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +166,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> TENTANG</h2>
+												<h2> Edit Pengguna</h2>
 											</div>
 										</div>
                                     </div>
@@ -161,9 +186,12 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description">Tentang</a></li>
+                                    <li class="active"><a href="#description">Informasi Pengguna</a></li>
                                     <li><a href="#reviews">Gambar</a></li>
                                 </ul>
+                                <form action="{{url ('/admin')}}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('PATCH')
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
@@ -171,35 +199,23 @@
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Kendaraan siap pakai tanpa ada kendala">
+                                                        <input type="text" class="form-control" placeholder="Nama Lengkap" value="{{$User->name}}" name="name" id="name">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Kendaraan sewa resmi dan legal secara hukum">
+                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{$User->email}}">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Proses pengajuan sewa yang mudah">
+                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                        <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone" value="{{$User->handphone}}">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Kendaraan selalu di-tuneup sebelum disewakan">
+                                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                        <input type="password" class="form-control" placeholder="Password" name="password" id="password" >
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Jimmy Doe">
-                                                      </div>
-                                                      <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Simon Joe">
-                                                      </div>
-                                                </div>
-                                            </div>
-                                        </div><br>
+                                        </div>
                                     </div>
                                     <div class="product-tab-list tab-pane fade" id="reviews">
                                         <div class="row">
@@ -207,9 +223,9 @@
                                                 <div class="review-content-section">
                                                     <div class="row">
                                                         <div class="col-lg-4">
-                                                            <div class="pro-edt-img">
-                                                                <img src="assets/img/logo/summo.png" alt="" />
-                                                            </div>
+                                                        <div class="pro-edt-img">
+                                                                <img src="{{asset ('user/'.$User->ktp)}}" alt="" />
+                                                        </div>
                                                         </div>
                                                         <div class="col-lg-8">
                                                             <div class="row">
@@ -217,53 +233,13 @@
                                                                     <div class="product-edt-pix-wrap">
                                                                         <div class="input-group">
                                                                             <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="pro-edt-img">
-                                                                <img src="assets/img/tim/team-1.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="pro-edt-img">
-                                                                <img src="assets/img/tim/team-3.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar">
+                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar" id="gambar">
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                             <div class="text-center custom-pro-edt-ds">
-                                                                                <button type="button" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-                                                                                    </button>
-                                                                                <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Batal
+                                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
                                                                                     </button>
                                                                             </div>
                                                                         </div>
@@ -276,6 +252,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -297,57 +275,57 @@
 
     <!-- jquery
 		============================================ -->
-        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="{{asset ('assets/dashboard/js/vendor/jquery-1.12.4.min.js')}}"></script>
         <!-- bootstrap JS
             ============================================ -->
-        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="{{asset ('assets/dashboard/js/bootstrap.min.js')}}"></script>
         <!-- wow JS
             ============================================ -->
-        <script src="assets/js/wow.min.js"></script>
+        <script src="{{asset ('assets/dashboard/js/wow.min.js')}}"></script>
         <!-- price-slider JS
             ============================================ -->
-        <script src="assets/js/jquery-price-slider.js"></script>
+        <script src="{{asset ('assets/dashboard/js/jquery-price-slider.js')}}"></script>
         <!-- meanmenu JS
             ============================================ -->
-        <script src="assets/js/jquery.meanmenu.js"></script>
+        <script src="{{asset ('assets/dashboard/js/jquery.meanmenu.js')}}"></script>
         <!-- owl.carousel JS
             ============================================ -->
-        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="{{asset ('assets/dashboard/js/owl.carousel.min.js')}}"></script>
         <!-- sticky JS
             ============================================ -->
-        <script src="assets/js/jquery.sticky.js"></script>
+        <script src="{{asset ('assets/dashboard/js/jquery.sticky.js')}}"></script>
         <!-- scrollUp JS
             ============================================ -->
-        <script src="assets/js/jquery.scrollUp.min.js"></script>
+        <script src="{{asset ('assets/dashboard/js/jquery.scrollUp.min.js')}}"></script>
         <!-- mCustomScrollbar JS
             ============================================ -->
-        <script src="assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="assets/js/scrollbar/mCustomScrollbar-active.js"></script>
+        <script src="{{asset ('assets/dashboard/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
         <!-- metisMenu JS
             ============================================ -->
-        <script src="assets/js/metisMenu/metisMenu.min.js"></script>
-        <script src="assets/js/metisMenu/metisMenu-active.js"></script>
+        <script src="{{asset ('assets/dashboard/js/metisMenu/metisMenu.min.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/metisMenu/metisMenu-active.js')}}"></script>
         <!-- sparkline JS
             ============================================ -->
-        <script src="assets/js/sparkline/jquery.sparkline.min.js"></script>
-        <script src="assets/js/sparkline/jquery.charts-sparkline.js"></script>
+        <script src="{{asset ('assets/dashboard/js/sparkline/jquery.sparkline.min.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/sparkline/jquery.charts-sparkline.js')}}"></script>
         <!-- calendar JS
             ============================================ -->
-        <script src="assets/js/calendar/moment.min.js"></script>
-        <script src="assets/js/calendar/fullcalendar.min.js"></script>
-        <script src="assets/js/calendar/fullcalendar-active.js"></script>
+        <script src="{{asset ('assets/dashboard/js/calendar/moment.min.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/calendar/fullcalendar.min.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/calendar/fullcalendar-active.js')}}"></script>
         <!-- float JS
             ============================================ -->
-        <script src="assets/js/flot/jquery.flot.js"></script>
-        <script src="assets/js/flot/jquery.flot.resize.js"></script>
-        <script src="assets/js/flot/curvedLines.js"></script>
-        <script src="assets/js/flot/flot-active.js"></script>
+        <script src="{{asset ('assets/dashboard/js/flot/jquery.flot.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/flot/jquery.flot.resize.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/flot/curvedLines.js')}}"></script>
+        <script src="{{asset ('assets/dashboard/js/flot/flot-active.js')}}"></script>
         <!-- plugins JS
             ============================================ -->
-        <script src="assets/js/plugins.js"></script>
+        <script src="{{asset ('assets/dashboard/js/plugins.js')}}"></script>
         <!-- main JS
             ============================================ -->
-        <script src="assets/js/main.js"></script>
+        <script src="{{asset ('assets/dashboard/js/main.js')}}"></script>
 </body>
 
 </html>

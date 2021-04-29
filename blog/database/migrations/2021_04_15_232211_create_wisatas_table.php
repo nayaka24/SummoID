@@ -17,7 +17,7 @@ class CreateWisatasTable extends Migration
             $table->Increments('id_wisata');
             $table->string('nama');
             $table->text('harga');
-            $table->string('handphone','15');
+            $table->string('handphone','16');
             $table->text('deskripsi');
             $table->string('gambar');
             $table->timestamps();

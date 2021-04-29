@@ -60,7 +60,7 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="{{ url('/home') }}">Beranda</a></li>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 								<li><a href="{{ url('/news') }}">Berita</a></li>
@@ -127,52 +127,25 @@
 				<div class="col-lg-7">
 					<div class="featured-text">
 						<h2 class="pb-3">Kenapa Harus<span class="orange-text"> Sewa di Summo</span>?</h2>
+						
 						<div class="row">
+						@foreach($About as $result)
+						@if($result->judul == 'Tentang')
 							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
 								<div class="list-box d-flex">
 									<div class="list-icon">
 										<i class="fas fa-motorcycle"></i>
 									</div>
 									<div class="content">
-										<h3>Kendaraan siap pakai tanpa ada kendala</h3>
+										<h3>{{$result->isi}}</h3>
 										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-thumbs-up"></i>
-									</div>
-									<div class="content">
-										<h3>Proses pengajuan sewa yang mudah</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-balance-scale"></i>
-									</div>
-									<div class="content">
-										<h3>Kendaraan sewa resmi dan legal secara hukum</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-sync-alt"></i>
-									</div>
-									<div class="content">
-										<h3>Kendaraan selalu di-tuneup sebelum disewakan</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
-							</div>
+						@endif
+						@endforeach
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -192,10 +165,12 @@
 				</div>
 			</div>
 			<div class="row">
+			@foreach($Image as $result)
+			@if($result->tipe == 'Foto')
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-1"></div>
-						<h4>Jimmy Doe <span>CEO</span></h4>
+							<img src="{{asset ('image/'.$result->gambar)}}" alt="" />
+						{{$result->isi}}
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -203,28 +178,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-2"></div>
-						<h4>Sarah Scott <span>Front-End Developer Intern</span></h4>
-						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-3"></div>
-						<h4>Simon Joe <span>CTO</span></h4>
-						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
+			@endif
+			@endforeach
 			</div>
 		</div>
 	</div><br><br><br>
@@ -244,10 +199,13 @@
 					<div class="footer-box contact">
 						<h2 class="widget-title">Kontak</h2>
 						<ul>
-							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> Jl.Pangeran Antasari, Gg.Mangga Besar No.24 Lk.III Tanjung Baru, Kedamaian</a></li>
-							<li><a href="#"> <i class="fa fa-envelope"></i> Summo.lpg@gmail.com</a></li>
-							<li><a href="#"> <i class="fa fa-phone"></i> +62895640472784</a></li>
-							<li><a href="#"> <i class="fa fa-phone"></i> +6287899585498</a></li>
+						@foreach($About as $About)
+						@if($About->judul == 'Alamat')
+							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
+						@elseif($About->judul == 'Kontak')
+							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
+						@endif
+						@endforeach
 							<li><a href="https://www.instagram.com/summoid/"> <i class="fab fa-instagram"> @summoid</i></a></li>
 						</ul>
 					</div>
@@ -257,7 +215,7 @@
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
-							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>

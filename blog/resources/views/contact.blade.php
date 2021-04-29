@@ -58,7 +58,7 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="{{ url('/home') }}">Beranda</a></li>
-								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 								<li><a href="{{ url('/news') }}">Berita</a></li>
@@ -146,18 +146,28 @@
 				</div>
 				<div class="col-lg-4">
 					<div class="contact-form-wrap">
+					
+					@foreach($About as $About)
+						@if($About->judul == 'Alamat')
 						<div class="contact-form-box">
 							<h4><i class="fas fa-map"></i> Alamat</h4>
-							<p>Jl.Pangeran Antasari, <br> Gg.Mangga Besar No.24 Lk.III Tanjung Baru, Kedamaian<br></p>
+							{{$About->isi}}
 						</div>
+						
+						@elseif($About->judul == 'Jam Kantor')
 						<div class="contact-form-box">
 							<h4><i class="far fa-clock"></i> Jam Kantor</h4>
-							<p>Senin - Kamis: 09.00 WIB - 15.00 WIB <br> Jum'at: 13.00 - 17.30 </p>
+							{{$About->isi}}
 						</div>
+						
+						@elseif($About->judul == 'Kontak')
 						<div class="contact-form-box">
 							<h4><i class="fas fa-address-book"></i> Kontak</h4>
-							<p>Phone: +62895640472784 & +6287899585498 <br> Email: Summo.lpg@gmail.com</p>
+							{{$About->isi}}
 						</div>
+						@endif
+					@endforeach
+					
 					</div>
 				</div>
 			</div>
@@ -195,12 +205,15 @@
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box contact">
-						<h2 class="widget-title">Kontak</h2>
+					<h2 class="widget-title">Kontak</h2>
 						<ul>
-							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> Jl.Pangeran Antasari, Gg.Mangga Besar No.24 Lk.III Tanjung Baru, Kedamaian</a></li>
-							<li><a href="#"> <i class="fa fa-envelope"></i> Summo.lpg@gmail.com</a></li>
-							<li><a href="#"> <i class="fa fa-phone"></i> +62895640472784</a></li>
-							<li><a href="#"> <i class="fa fa-phone"></i> +6287899585498</a></li>
+						@foreach($About as $About)
+						@if($About->judul == 'Alamat')
+							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
+						@elseif($About->judul == 'Kontak')
+							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
+						@endif
+						@endforeach
 							<li><a href="https://www.instagram.com/summoid/"> <i class="fab fa-instagram"> @summoid</i></a></li>
 						</ul>
 					</div>
@@ -210,7 +223,7 @@
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
-							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>

@@ -95,24 +95,22 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Keranjang" href="keranjang.html"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="pembayaran.html"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
-                                    <li><a title="Affiliate" href="confAffiliate.html"><i class="fa fa-ticket"></i><span class="mini-sub-pro"> Affiliate</span></a></li>
+                                    <li><a title="Keranjang" href="{{url ('/keranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
+                                    <li><a title="Pembayaran" href="{{url ('/pembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Affiliate" href="{{url ('/confAffiliate')}}"><i class="fa fa-ticket"></i><span class="mini-sub-pro"> Affiliate</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="removable">
+                                <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Tentang" href="confAbout.html"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Kontak" href="confContact.html"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> Kontak</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="active">
-                                <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
-                                <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
-                                    <li><a title="Mitra" href="{{url ('/mitra')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Mitra</span></a></li>
-                                    <li><a title="Pengguna" href="{{url ('/pengguna')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
+                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>

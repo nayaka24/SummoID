@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Hotel;
+use App\About;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
@@ -20,7 +21,8 @@ class HotelController extends Controller
     public function hotel()
     {
         $Hotel= Hotel::paginate(10);
-        return view('hotel.home',compact('Hotel'));
+        $About = About::all();
+        return view('hotel.home',compact('Hotel','About'));
     }
 
     
@@ -72,7 +74,8 @@ class HotelController extends Controller
     public function show($id)
     {
         $Hotel= Hotel::findorfail($id);
-        return view('hotel.detail',compact('Hotel'));
+        $About = About::all();
+        return view('hotel.detail',compact('Hotel','About'));
     }
 
     /**

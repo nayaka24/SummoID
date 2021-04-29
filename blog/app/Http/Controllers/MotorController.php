@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 Use App\Motor;
+Use App\About;
 use Illuminate\Http\Request;
 
 class MotorController extends Controller
@@ -19,7 +20,8 @@ class MotorController extends Controller
 
     public function bike(){
         $Motor = Motor::paginate(10);
-        return view('motor.home',compact('Motor'));
+        $About = About::all();
+        return view('motor.home',compact('Motor','About'));
     }
     
     /**
@@ -32,7 +34,7 @@ class MotorController extends Controller
         return view('dashboard.motor.create');
         
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -73,7 +75,8 @@ class MotorController extends Controller
     public function show($id)
     {
         $Motor= Motor::findorfail($id);
-        return view('motor.detail',compact('Motor'));
+        $About = About::all();
+        return view('motor.detail',compact('Motor','About'));
     }
 
     /**

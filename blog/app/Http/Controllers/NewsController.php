@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\News;
+use App\About;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -20,7 +21,8 @@ class NewsController extends Controller
     //berita
     public function news(){
         $News= News::paginate(10);
-        return view('berita.news',compact('News'));
+        $About = About::all();
+        return view('berita.news',compact('News','About'));
     }
 
     /**
@@ -70,7 +72,8 @@ class NewsController extends Controller
     public function show($id)
     {
         $News= News::findorfail($id);
-        return view('berita.detail',compact('News'));
+        $About = About::all();
+        return view('berita.detail',compact('News','About'));
     }
 
     /**

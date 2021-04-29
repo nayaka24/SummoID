@@ -61,7 +61,7 @@
 						<nav class="main-menu">
 							<ul>
 								<li class="current-list-item mx-1 active"><a href="{{ url('/home') }}">Beranda</a></li>
-								<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 								<li><a href="{{ url('/news') }}">Berita</a></li>
@@ -290,11 +290,13 @@
 								</div>
 								<div class="col-lg-6 col-md-12">
 									<div class="abt-text">
-										<p class="top-sub">Berdiri Tahun 2019</p>
 										<h2>Apa itu<span class="orange-text"> Summo?</span></h2>
-										<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-										<a href="{{ url('/about') }}" class="boxed-btn mt-4"> Lihat Selengkapnya </a>
+										@foreach($About as $result)
+										@if($result->judul == 'Profil')
+										<p class="top-sub">{{$result->isi}}</p>
+										@endif
+										@endforeach
+										<a href="{{ url('/tentang') }}" class="boxed-btn mt-4"> Lihat Selengkapnya </a>
 									</div>
 								</div>
 							</div>
@@ -413,10 +415,13 @@
 					<div class="footer-box contact">
 						<h2 class="widget-title">Kontak</h2>
 						<ul>
-							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> Jl.Pangeran Antasari, Gg.Mangga Besar No.24 Lk.III Tanjung Baru, Kedamaian</a></li>
-							<li><a href="#"> <i class="fa fa-envelope"></i> Summo.lpg@gmail.com</a></li>
-							<li><a href="#"> <i class="fa fa-phone"></i> +62895640472784</a></li>
-							<li><a href="#"> <i class="fa fa-phone"></i> +6287899585498</a></li>
+						@foreach($About as $About)
+						@if($About->judul == 'Alamat')
+							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
+						@elseif($About->judul == 'Kontak')
+							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
+						@endif
+						@endforeach
 							<li><a href="https://www.instagram.com/summoid/"> <i class="fab fa-instagram"> @summoid</i></a></li>
 						</ul>
 					</div>
@@ -426,7 +431,7 @@
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
 							<li><a href="{{ url('/home') }}">Beranda</a></li>
-							<li><a href="{{ url('/abouts') }}">Tentang Kami</a></li>
+							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>

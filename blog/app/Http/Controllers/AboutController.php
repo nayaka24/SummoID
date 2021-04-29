@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\About;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -13,7 +13,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('about.home');
+        $About= About::paginate(10);
+        return view('dashboard.pengaturan.about.index',compact('About'));
     }
 
     /**
@@ -23,7 +24,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.pengaturan.about.create');
     }
 
     /**
@@ -34,7 +35,18 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'judul'=>'required',
+            'isi'=>'required'
+
+        ]);
+        
+        $About= About::create([
+            'judul'=> $request->judul,
+            'isi'=> $request->isi,
+        ]);
+        
+        return redirect('/about')->with('success','Tentang telah ditambahkan!');
     }
 
     /**
@@ -45,7 +57,7 @@ class AboutController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -56,7 +68,8 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $About= About::findorfail($id);
+        return view('dashboard.pengaturan.about.edit',compact('About'));
     }
 
     /**
@@ -68,7 +81,22 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'judul'=>'required',
+            'isi'=>'required'
+
+        ]);
+        
+        $About= About::findorfail($id);
+        
+        $about_data=[
+            'judul'=> $request->judul,
+            'isi'=> $request->isi,
+        ];
+
+        $About->update($about_data);
+        
+        return redirect('/about')->with('success','Tentang telah diedit!');
     }
 
     /**
@@ -79,6 +107,9 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $About= About::findorfail($id);
+        $About->forceDelete();
+        return redirect('/about')->with('success','Tentang telah dihapus!');
+
     }
 }
