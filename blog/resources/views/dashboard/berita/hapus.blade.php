@@ -204,8 +204,8 @@
                                         <form action="{{url ('/beritas/'.$hasil->id_berita.'/kill')}}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{url ('/beritas/'.$hasil->id_berita.'/restore')}}" class ="btn btn-primary" data-toggle="tooltip" title ="edit">restore</a>
-                                            <button type="submit" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            <a href="{{url ('/beritas/'.$hasil->id_berita.'/restore')}}" class ="btn btn-primary" data-toggle="tooltip" title ="Restore">Restore</a>
+                                            <button type="submit" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </form>
                                     </td>
                                 </tr>

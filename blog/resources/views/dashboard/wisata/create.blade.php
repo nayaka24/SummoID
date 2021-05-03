@@ -190,7 +190,7 @@
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Rp.2.000.000" name="harga" id="harga">
+                                                    <input type="text" class="form-control" placeholder="Rp." name="harga" id="harga">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
@@ -212,7 +212,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-4">
                                                             <div class="pro-edt-img">
-                                                                <img src="{{asset('assets/dashboard/img/wisata/tegalmas.jpg')}}" alt="" />
+                                                                <img src="{{asset('assets/img/arrowright.jpg')}}" alt="" />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-8">

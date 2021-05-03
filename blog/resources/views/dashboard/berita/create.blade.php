@@ -194,7 +194,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-4">
                                                             <div class="pro-edt-img">
-                                                                <img src="{{asset('assets/dashboard/img/berita/dis.jpg')}}" alt="" />
+                                                                <img src="{{asset('assets/img/arrowright.jpg')}}" alt="" />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-8">

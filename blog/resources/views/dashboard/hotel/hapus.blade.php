@@ -211,7 +211,7 @@
                                             @csrf
                                             @method('delete')
                                             <a href="{{ url ('/hotels/'. $hasil->id_hotel .'/restore')}}" class ="btn btn-primary" data-toggle="tooltip">Restore</a>
-                                            <button type="submit" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            <button type="submit" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </form>
                                     </td>
                                 </tr>

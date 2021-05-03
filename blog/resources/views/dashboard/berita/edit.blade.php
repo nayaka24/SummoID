@@ -197,7 +197,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-4">
                                                             <div class="pro-edt-img">
-                                                                <img src="assets/img/berita/dis.jpg" alt="" />
+                                                                <img src="{{asset ('berita/'.$News->gambar)}}" alt="" />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-8">
