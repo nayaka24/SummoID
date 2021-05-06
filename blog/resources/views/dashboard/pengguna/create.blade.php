@@ -75,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -194,22 +194,24 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="review-content-section">
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Nama Lengkap" name="name" id="name">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                    <input type="text" class="form-control" placeholder="E-mail" name="email" id="email">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                    <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="name" id="name">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                        <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                        <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

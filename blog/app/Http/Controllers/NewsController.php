@@ -72,8 +72,9 @@ class NewsController extends Controller
     public function show($id)
     {
         $News= News::findorfail($id);
+        $news= News::paginate(10);
         $About = About::all();
-        return view('berita.detail',compact('News','About'));
+        return view('berita.detail',compact('News','About','news'));
     }
 
     /**

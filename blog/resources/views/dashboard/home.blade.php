@@ -110,7 +110,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
+                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -141,11 +141,19 @@
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-														<span>Summo Indonesia <i class="fa fa-angle-down"></i></span>
+														<span>{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
 													</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="fa fa-user-o"></span> Profil Saya</a></li>
-                                                        <li><a href="#"><span class="fa fa-sign-out"></span> Keluar</a></li>
+                                                        <li><a href="{{url ('/profilAdmin')}}"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a onclick="event.preventDefault();
+												            document.getElementById('logout-form').submit();"><span class="fa fa-sign-out"
+                                                            >
+                                                        </span> Keluar
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+													    @csrf
+												        </form>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>

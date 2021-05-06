@@ -50,7 +50,7 @@
     <div class="container-login100">
       <div class="wrap-login100">
 
-        <form action ="{{url ('/login')}}" method="post" enctype="multipart/form-data" class="register100-form validate-form">
+        <form action ="{{ route('register') }}" method="post" enctype="multipart/form-data" class="register100-form validate-form">
         @csrf
           <span class="register100-form-title">
             Daftar Pengguna
@@ -64,20 +64,30 @@
 
           <h5>Nama Lengkap :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Nama Harus Diisi!">
-          <input class="input100" type="text" name="name" placeholder="ex: Summo Indonesia">
+          <input class="input100 @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" placeholder="ex: Summo Indonesia" required autocomplete="name" autofocus>
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-user-alt" aria-hidden="true"></i>
             </span>
+            @error('name')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
 
           <h5>E-mail :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Masukkan E-mail yang valid!">
-            <input class="input100" type="text" name="email" placeholder="ex : ex@abc.xyz" >
+            <input class="input100 @error('email') is-invalid @enderror" type="text" name="email" placeholder="ex : ex@abc.xyz" value="{{ old('email') }}" required autocomplete="email">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
+            @error('email')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
 
           <h5>Foto KTP :</h5>
@@ -91,20 +101,30 @@
 
           <h5>No. Hp:</h5>
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
-          <input class="input100" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" ">
+          <input class="input100 @error('handphone') is-invalid @enderror" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" value="{{ old('handphone') }}" required autocomplete="handphone">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-phone" aria-hidden="true"></i>
             </span>
+            @error('handphone')
+              span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
 
           <h5>Password :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi!">
-          <input class="input100" type="password" name="password" placeholder="6+ Karakter" >
+          <input class="input100" type="password" name="password" placeholder="6+ Karakter" required autocomplete="new-password">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-lock" aria-hidden="true"></i>
             </span>
+            @error('password')
+              span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
           
           <div class="container-login100-form-btn">
@@ -132,20 +152,21 @@
 
   <!-- footer -->
   <div class="footer-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-box about-widget">
-            <h2 class="widget-title">Tentang Kami</h2>
-            <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						@foreach($About as $About)
+						@if($About->judul == 'Profil')
+						<h2 class="widget-title">Tentang Kami</h2>
+						<p>{{$About->isi}}</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
 					<div class="footer-box contact">
 						<h2 class="widget-title">Kontak</h2>
 						<ul>
-						@foreach($About as $About)
-						@if($About->judul == 'Alamat')
+						@elseif($About->judul == 'Alamat')
 							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
 						@elseif($About->judul == 'Kontak')
 							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
@@ -155,32 +176,32 @@
 						</ul>
 					</div>
 				</div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-box pages">
-            <h2 class="widget-title">Halaman</h2>
-            <ul>
-              <li><a href="{{ url('/home') }}">Beranda</a></li>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Halaman</h2>
+						<ul>
+							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>
 							<li><a href="{{ url('/contact') }}">Kontak</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-box subscribe">
-            <h2 class="widget-title">Subscribe</h2>
-            <p>Kirimkan e-mail anda untuk mendapatkan pembaruan terkini.</p>
-            <form action="home.html">
-              <input type="email" placeholder="Email">
-              <button type="submit"><i class="fas fa-paper-plane"></i></button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>Kirimkan e-mail anda untuk mendapatkan pembaruan terkini.</p>
+						<form action="home.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
   <!-- end footer -->
   
   <!-- copyright -->

@@ -75,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -140,14 +140,22 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
-                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-														<span>Summo Indonesia <i class="fa fa-angle-down"></i></span>
+														<span>{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
 													</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="fa fa-user-o"></span> Profil Saya</a></li>
-                                                        <li><a href="#"><span class="fa fa-sign-out"></span> Keluar</a></li>
+                                                        <li><a href="{{url ('/profiladmin')}}"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a onclick="event.preventDefault();
+												            document.getElementById('logout-form').submit();"><span class="fa fa-sign-out"
+                                                            >
+                                                        </span> Keluar
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+													    @csrf
+												        </form>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -205,10 +213,6 @@
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                                         <input type="text" class="form-control" placeholder="E-mail" name="email" id="email">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-group"></i></span>
-                                                        <input type="text" class="form-control" value="admin" name="level" id="level" readonly>
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>

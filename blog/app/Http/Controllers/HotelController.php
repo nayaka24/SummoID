@@ -12,12 +12,6 @@ class HotelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $Hotel= Hotel::paginate(10);
-        return view('dashboard.hotel.home',compact('Hotel'));
-    }
-
     public function hotel()
     {
         $Hotel= Hotel::paginate(10);
@@ -25,7 +19,12 @@ class HotelController extends Controller
         return view('hotel.home',compact('Hotel','About'));
     }
 
-    
+    public function index()
+    {
+        $Hotel= Hotel::paginate(10);
+        return view('dashboard.hotel.home',compact('Hotel'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -42,6 +41,7 @@ class HotelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         $this->validate($request, [

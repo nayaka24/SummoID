@@ -14,15 +14,17 @@ class PagesController extends Controller
         $Motor=Motor::paginate(3);
         $News= News::paginate(3);
         $About= About::all();
-        return view('home', compact('Motor','News','About'));
+        return view('beranda', compact('Motor','News','About'));
     }
     public function contact()
     {
         $About= About::all();
-        return view('contact',compact('About'));
+        $about= About::all();
+        return view('contact',compact('About','about'));
     }
     public function cart(){
-        return view('cart');
+        $About= About::all();
+        return view('cart',compact('About'));
     }
     
     public function about()
@@ -40,7 +42,13 @@ class PagesController extends Controller
         return view('dashboard.transaksi.confAffiliate');
     }
 
+    public function admin(){
+        return view('dashboard.profil');
+    }
 
-    
+    public function user(){
+        return view('profiluser');
+    }
+
 }
     

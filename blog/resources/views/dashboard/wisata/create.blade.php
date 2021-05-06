@@ -46,8 +46,6 @@
     <link rel="stylesheet" href="{{asset ('assets/dashboard/css/responsive.css')}}">
     <!-- modernizr JS============================================ -->
     <script src="{{asset ('assets/dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
-    <!-- CKEditor============================================ -->
-    <script src="{{asset ('assets/ckeditor/ckeditor.js')}}"></script>
 </head>
 
 <body>
@@ -77,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -183,24 +181,28 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="review-content-section">
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Nama Objek Wisata" name="nama" id="nama">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Rp." name="harga" id="harga">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                    <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Nama Objek Wisata" name="nama" id="nama">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Rp.2.000.000" name="harga" id="harga">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                        <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="review-content-section">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
-                                                    <textarea placeholder="Deskripsi" class="form-control" id="deskripsi" name="deskripsi" rows="10"></textarea>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
+                                                        <textarea placeholder="Deskripsi" class="form-control" id="deskripsi" name="deskripsi" rows="10"></textarea>
+                                                      </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -212,7 +214,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-4">
                                                             <div class="pro-edt-img">
-                                                                <img src="{{asset('assets/img/arrowright.jpg')}}" alt="" />
+                                                                <img src="{{asset('assets/dashboard/img/wisata/tegalmas.jpg')}}" alt="" />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-8">
@@ -313,9 +315,6 @@
         <!-- main JS
             ============================================ -->
         <script src="{{asset ('assets/dashboard/js/main.js')}}"></script>
-        <script>
-            CKEDITOR.replace( 'deskripsi' );
-        </script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Daftar Mitra</title>
+  <title>Daftar Pengguna</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,34 +50,44 @@
     <div class="container-login100">
       <div class="wrap-login100">
 
-      <form action ="{{url ('/mitra')}}" method="post" enctype="multipart/form-data" class="register100-form validate-form">
+        <form action ="{{ route('register') }}" method="post" enctype="multipart/form-data" class="register100-form validate-form">
         @csrf
           <span class="register100-form-title">
-            Daftar Mitra
+            Daftar Pengguna
           </span><br>
           <nav class="menu-daftar">
             <ul>
-              <li><a href="{{url ('/register')}}"><u>Daftar Pengguna</u></a></li>
+              <li><a href="{{url ('/mitra')}}"><u>Daftar Mitra</u></a></li>
               <li><a href="{{url ('/affiliate')}}"><u>Daftar Affiliate</u></a></li>
             </ul>
           </nav>
 
           <h5>Nama Lengkap :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Nama Harus Diisi!">
-          <input class="input100" type="text" name="name" placeholder="ex: Summo Indonesia">
+          <input class="input100 @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" placeholder="ex: Summo Indonesia" required autocomplete="name" autofocus>
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-user-alt" aria-hidden="true"></i>
             </span>
+            @error('name')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
 
           <h5>E-mail :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Masukkan E-mail yang valid!">
-            <input class="input100" type="text" name="email" placeholder="ex : ex@abc.xyz" >
+            <input class="input100 @error('email') is-invalid @enderror" type="text" name="email" placeholder="ex : ex@abc.xyz" value="{{ old('email') }}" required autocomplete="email">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
+            @error('email')
+              <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
 
           <h5>Foto KTP :</h5>
@@ -91,20 +101,30 @@
 
           <h5>No. Hp:</h5>
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
-          <input class="input100" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" ">
+          <input class="input100 @error('handphone') is-invalid @enderror" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" value="{{ old('handphone') }}" required autocomplete="handphone">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-phone" aria-hidden="true"></i>
             </span>
+            @error('handphone')
+              span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
 
           <h5>Password :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Password Harus Diisi!">
-          <input class="input100" type="password" name="password" placeholder="6+ Karakter" >
+          <input class="input100" type="password" name="password" placeholder="6+ Karakter" required autocomplete="new-password">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-lock" aria-hidden="true"></i>
             </span>
+            @error('password')
+              span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
           
           <div class="container-login100-form-btn">
@@ -160,7 +180,7 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
-							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
+							<li><a href="{{ url('/home') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>

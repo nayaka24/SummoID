@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //admin
     public function index()
     {
         $User= User::paginate(10);

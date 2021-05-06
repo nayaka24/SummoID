@@ -66,7 +66,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="{{ url('/home') }}">Beranda</a></li>
+								<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 								<li class="current-list-item mx-1 active"><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
@@ -77,8 +77,26 @@
 									<div class="header-icons">
 										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										@guest
 										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
 										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
+										@else
+										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+										{{ Auth::user()->name }} <span class="caret"></span>
+										</a>
+										<ul>
+										<li>
+											<a href="{{url ('/profiluser')}}"><span class="fa fa-user-o"></span> Profil Saya</a>
+										</li>
+										
+											<a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="fa fa-sign-out"></span>
+													Keluar
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+													@csrf
+												    </form>
+                                            </a>
+										
+										@endguest
 									</div>
 								</li>
 							</ul>
@@ -203,7 +221,8 @@
 				@foreach($Hotel as $result =>$hasil)
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="{{asset ($hasil->gambar) }}"><div class="latest-news-bg news-bg-7"></div></a>
+						<a href="{{url ('/hotels/'.$hasil->id_hotel)}}"><img src="{{asset ('hotel/'.$hasil->gambar)}}" alt=""/>
+						</a>
 						<div class="news-text-box">
 							<h3><a href="{{url ('/hotels/'.$hasil->id_hotel)}}">{{$hasil->nama}}</a></h3>
 							<a href="{{url ('/hotels/'.$hasil->id_hotel)}}" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
@@ -222,16 +241,17 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
+						@foreach($About as $About)
+						@if($About->judul == 'Profil')
 						<h2 class="widget-title">Tentang Kami</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>{{$About->isi}}</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box contact">
 						<h2 class="widget-title">Kontak</h2>
 						<ul>
-						@foreach($About as $About)
-						@if($About->judul == 'Alamat')
+						@elseif($About->judul == 'Alamat')
 							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
 						@elseif($About->judul == 'Kontak')
 							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
@@ -245,7 +265,7 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
-							<li><a href="{{ url('/home') }}">Beranda</a></li>
+							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
@@ -257,8 +277,8 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="{{ url('/home') }}">
+						<p>Kirimkan e-mail anda untuk mendapatkan pembaruan terkini.</p>
+						<form action="home.html">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
 						</form>
@@ -266,8 +286,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- end footer -->
+	</div>->
 	
 	<!-- copyright -->
 	<div class="copyright">

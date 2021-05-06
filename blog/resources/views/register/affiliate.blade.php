@@ -58,7 +58,7 @@
           <nav class="menu-daftar">
             <ul>
               <li><a href="{{url ('/mitra')}}"><u>Daftar Mitra</u></a></li>
-              <li><a href="{{url ('/register')}}"><u>Daftar Pengguna</u></a></li>>
+              <li><a href="{{url ('/register')}}"><u>Daftar Pengguna</u></a></li>
             </ul>
           </nav>
 
@@ -132,20 +132,21 @@
 
   <!-- footer -->
   <div class="footer-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-box about-widget">
-            <h2 class="widget-title">Tentang Kami</h2>
-            <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						@foreach($About as $About)
+						@if($About->judul == 'Profil')
+						<h2 class="widget-title">Tentang Kami</h2>
+						<p>{{$About->isi}}</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
 					<div class="footer-box contact">
 						<h2 class="widget-title">Kontak</h2>
 						<ul>
-						@foreach($About as $About)
-						@if($About->judul == 'Alamat')
+						@elseif($About->judul == 'Alamat')
 							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
 						@elseif($About->judul == 'Kontak')
 							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
@@ -155,54 +156,32 @@
 						</ul>
 					</div>
 				</div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-box pages">
-            <h2 class="widget-title">Halaman</h2>
-            <ul>
-              <li><a href="{{ url('/home') }}">Beranda</a></li>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Halaman</h2>
+						<ul>
+							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/hotel') }}">Booking Hotel</a></li>
-							<li><a href="{{ url('/wisata') }}">Paket Wisata</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 							<li><a href="{{ url('/news') }}">Berita</a></li>
 							<li><a href="{{ url('/contact') }}">Kontak</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-box subscribe">
-            <h2 class="widget-title">Subscribe</h2>
-            <p>Kirimkan e-mail anda untuk mendapatkan pembaruan terkini.</p>
-            <form action="home.html">
-              <input type="email" placeholder="Email">
-              <button type="submit"><i class="fas fa-paper-plane"></i></button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end footer -->
-  
-  <!-- copyright -->
-  <div class="copyright">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <p>Copyrights &copy; 2019 - <a href="https://summoin.com/">Summo</a>,  All Rights Reserved.</p>
-        </div>
-        <div class="col-lg-6 text-right col-md-12">
-          <div class="social-icons">
-            <ul>
-              <li><a href="https://www.facebook.com/Sumolpg-Sewa-Motor-105318157607120/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="https://www.instagram.com/summoid/"  target="_blank"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>Kirimkan e-mail anda untuk mendapatkan pembaruan terkini.</p>
+						<form action="home.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
   <!-- end copyright -->
   
   

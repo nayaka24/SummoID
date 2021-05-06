@@ -52,7 +52,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'handphone' => ['required'],
+            'password' => ['required', 'min:8'],
+            'gambar' => ['required']
         ]);
     }
 
@@ -64,10 +66,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $level='pengguna';
+
+        $gmbr= $data['gambar'];
+        $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'handphone' => $data['handphone'],
+            'ktp' => $namaFile,
             'password' => Hash::make($data['password']),
+            'level' => $level
         ]);
     }
 }
+
