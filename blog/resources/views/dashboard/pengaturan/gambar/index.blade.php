@@ -75,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -110,7 +110,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> gambar</span></a></li>
+                                    <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -174,7 +174,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2>Gambar</h2>
+												<h2>GAMBAR</h2>
 											</div>
 										</div>
                                     </div>
@@ -203,9 +203,9 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>tipe</th>
-                                    <th>isi</th>
-                                    <th>gambar</th>
+                                    <th>Tipe</th>
+                                    <th>Isi</th>
+                                    <th>Gambar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -219,8 +219,8 @@
                                     <form action="{{url ('/gambar/'.$hasil->id_gmbr)}}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ url ('/gambar/'. $hasil->id_gmbr .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <button type="submit" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            <a href="{{ url ('/gambar/'. $hasil->id_gmbr .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <button type="submit" title="Delete" class="pd-setting-ed" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     </form>
                                     </td>
                                 </tr>

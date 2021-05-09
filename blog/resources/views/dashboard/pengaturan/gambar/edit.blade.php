@@ -46,6 +46,9 @@
     <link rel="stylesheet" href="{{asset ('assets/dashboard/css/responsive.css')}}">
     <!-- modernizr JS============================================ -->
     <script src="{{asset ('assets/dashboard/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <!-- CKEditor============================================ -->
+    <script src="{{asset ('assets/ckeditor/ckeditor.js')}}"></script>
+
 </head>
 
 <body>
@@ -75,7 +78,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -110,7 +113,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> gambar</span></a></li>
+                                    <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -153,7 +156,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> Gambar</h2>
+												<h2>EDIT GAMBAR</h2>
 											</div>
 										</div>
                                     </div>
@@ -199,7 +202,7 @@
                                                         </div>
                                                         <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
-                                                        <textarea name= "isi" placeholder="Keterangan Gambar" class="form-control" id="exampleFormControlTextarea1" rows="10">{{$Image->isi}}</textarea>
+                                                        <textarea name= "isi" placeholder="Keterangan Gambar" class="form-control" id="isi" rows="10">{{$Image->isi}}</textarea>
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="pro-edt-img">
@@ -305,6 +308,9 @@
         <!-- main JS
             ============================================ -->
         <script src="{{asset ('assets/dashboard/js/main.js')}}"></script>
+        <script>
+            CKEDITOR.replace( 'isi' );
+        </script>
 </body>
 
 </html>

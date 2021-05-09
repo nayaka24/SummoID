@@ -75,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -110,7 +110,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> gambar</span></a></li>
+                                    <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -138,7 +138,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
-                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 														<span>{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
@@ -203,8 +203,8 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>tipe</th>
-                                    <th>isi</th>
+                                    <th>Tipe</th>
+                                    <th>Isi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -217,8 +217,8 @@
                                     <form action="{{url ('/about/'.$hasil->id_about)}}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ url ('/about/'. $hasil->id_about .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <button type="submit" title="Hapus" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            <a href="{{ url ('/about/'. $hasil->id_about .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <button type="submit" title="Delete" class="pd-setting-ed" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     </form>
                                     </td>
                                 </tr>

@@ -81,10 +81,9 @@
                     <div class="col-md-4">
                         <div class="profile-work">
                             <p>Akun Saya</p>
+                            <a href="">Beranda</a><br/>
                             <a href="">Profil</a><br/>
-                            <a href="">Affiliate</a><br/>
                             <a href="">Edit Profil</a><br/>
-                            <a href="">Keluar</a>
                         </div>
                     </div>
                     <div class="col-md-8">

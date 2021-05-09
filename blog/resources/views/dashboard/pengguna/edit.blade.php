@@ -75,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -110,7 +110,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Kontak" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> gambar</span></a></li>
+                                    <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -141,11 +141,19 @@
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-														<span>Summo Indonesia <i class="fa fa-angle-down"></i></span>
+														<span>{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
 													</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="#"><span class="fa fa-user-o"></span> Profil Saya</a></li>
-                                                        <li><a href="#"><span class="fa fa-sign-out"></span> Keluar</a></li>
+                                                        <li><a href="{{url ('/profilAdmin')}}"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a onclick="event.preventDefault();
+												            document.getElementById('logout-form').submit();"><span class="fa fa-sign-out"
+                                                            >
+                                                        </span> Keluar
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+													    @csrf
+												        </form>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -166,7 +174,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> Edit Pengguna</h2>
+												<h2> EDIT PENGGUNA</h2>
 											</div>
 										</div>
                                     </div>
@@ -195,24 +203,22 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Nama Lengkap" value="{{$User->name}}" name="name" id="name">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{$User->email}}">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                        <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone" value="{{$User->handphone}}">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                        <input type="password" class="form-control" placeholder="Password" name="password" id="password" >
-                                                    </div>
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Nama Lengkap" value="{{$User->name}}" name="name" id="name">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                    <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{$User->email}}">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                    <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone" value="{{$User->handphone}}">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password" >
                                                 </div>
                                             </div>
                                         </div>

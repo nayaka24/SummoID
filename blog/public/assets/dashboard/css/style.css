@@ -384,7 +384,7 @@ ul.dtl-social li a{
 	width:200px;
 	background:#303030;
 	opacity:0;
-	transition: all 0.5s ease 0s;
+	transition: all 0.2s ease 0s;
 	z-index:999;
 	padding:10px 0px;
 }
@@ -431,7 +431,7 @@ ul.dtl-social li a{
    background:#343434;
    text-align:left;
    opacity:0;
-   transition: all 0.5s ease 0s;
+   transition: all 0.2s ease 0s;
    visibility:hidden;
    z-index:999;
 }
