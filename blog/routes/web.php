@@ -66,6 +66,9 @@ Route::group(['middleware'=> ['auth','isAdmin']], function (){
 
 
     //management user
+    Route::get('/admin/hapus','UserController@tampil_hapus');
+    Route::delete('/admin/{id_user}/kill','UserController@kill');
+    Route::get('/admin/{id_user}/restore','UserController@restore');
     Route::post('/admin','UserController@store');
     Route::get('/admin','UserController@index');
     Route::get('/admin/create','UserController@create');

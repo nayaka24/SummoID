@@ -103,7 +103,8 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Daftar pengguna" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Daftar Trash Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Trash Pengguna</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -197,7 +198,7 @@
                                     <li class="active"><a href="#description">Informasi Pengguna</a></li>
                                     <li><a href="#reviews">Gambar</a></li>
                                 </ul>
-                                <form action="{{url ('/admin')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{url ('/admin/'.$User->id_user)}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
                                 <div id="myTabContent" class="tab-content custom-product-edit">
@@ -215,6 +216,24 @@
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
                                                     <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone" value="{{$User->handphone}}">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
+                                                    <select class="form-control" name="level">
+                                                        @if($User->level == 'Admin')
+                                                        <option value="Admin" selected>Admin</option>
+                                                        <option value="mitra">mitra</option>
+                                                        <option value="pengguna">pengguna</option>
+                                                        @elseif($User->level == 'mitra')
+                                                        <option value="Admin">Admin</option>
+                                                        <option value="mitra" selected>mitra</option>
+                                                        <option value="pengguna">pengguna</option>
+                                                        @elseif($User->level == 'pengguna')
+                                                        <option value="Admin">Admin</option>
+                                                        <option value="mitra">mitra</option>
+                                                        <option value="pengguna" selected>pengguna</option>
+                                                        @endif
+                                                    </select>
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>

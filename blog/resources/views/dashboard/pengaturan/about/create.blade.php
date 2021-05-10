@@ -105,14 +105,15 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Daftar pengguna" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Daftar Trash Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Trash Pengguna</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-address-book"></i><span class="mini-sub-pro"> Gambar</span></a></li>
+                                    <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
                                 </ul>
                             </li>
                         </ul>

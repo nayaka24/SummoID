@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>List Trash Paket Wisata | Summo</title>
+    <title>List Trash Motor | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -118,7 +118,6 @@
                     </nav>
                 </div>
             </nav>
-            </nav>
         </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
@@ -176,7 +175,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2>TRASH PAKET WISATA</h2>
+												<h2>TRASH MOTOR</h2>
 											</div>
 										</div>
                                     </div>
@@ -197,41 +196,40 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>List Trash Paket Wisata</h4>
-                        
+                            <h4>List Trash Motor</h4>
                             <table>
-                                <thead>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Gambar</th>
-                                        <th>Nama Objek Wisata</th>
-                                        <th>Harga</th>
-                                        <th>Deskripsi</th>
-                                        <th>No.Telp</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($Wisata as $result =>$hasil)
-                                    <tr>
-                                        <td>{{$result + $Wisata -> firstitem() }}</td>
-                                        <td><a href="{{asset ('wisata/'. $hasil -> gambar) }}" target="_blank" rel="noopener norefrrer">Lihat Gambar</a></td>
-                                        <td>{{$hasil->nama}}</td>
-                                        <td>{{$hasil->harga}}</td>
-                                        <td>{{$hasil->deskripsi}}</td>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Gambar</th>
+                                    <th>Nama Motor</th>
+                                    <th>Harga</th>
+                                    <th>Deskripsi</th>
+                                    <th>Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($User as $result =>$hasil)
+                                <tr>
+                                    <td>{{$result + $User -> firstitem() }}</td>
+                                    <td><a href="{{asset ('bike/'.$hasil->gambar)}}" target="_blank" rel="noopener norefrrer">Lihat Gambar</a></td>
+                                        <td>{{$hasil->name}}</td>
+                                        <td>{{$hasil->email}}</td>
+                                        <td>{{$hasil->level}}</td>
                                         <td>{{$hasil->handphone}}</td>
-                                        <td>
-                                        <form action="{{url ('/wisatas/'.$hasil->id_wisata.'/kill')}}" method="POST">
+                                    <td>
+                                    <form action="{{url ('/admin/'.$hasil->id_user.'/kill')}}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ url ('/wisatas/'. $hasil->id_wisata .'/restore')}}" class ="btn btn-primary" data-toggle="tooltip" title="Restore">Restore</a>
+                                            <a href="{{ url ('/admin/'.$hasil->id_user .'/restore')}}" class ="btn btn-primary" data-toggle="tooltip" title="Restore">Restore</a>
                                             <button type="submit" title="Delete" class="pd-setting-ed" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </form>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                @endforeach
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
                             </table>
-                            {{$Wisata->links() }}
+                            {{$User->links() }}
                         </div>
                     </div>
                 </div>

@@ -103,7 +103,8 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Daftar pengguna" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Daftar Trash Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Trash Pengguna</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">

@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="left-custom-menu-adp-wrap comment-scrollbar">
-                    <nav class="sidebar-nav left-sidebar-menu-pro">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
                         <ul class="metismenu" id="menu1">
                             <li><a href="{{url ('/dashboard')}}"><i class="fa fa-home"></i><span class="mini-click-non"> Dashboard</span></a></li>
                             <li id="removable">
@@ -75,7 +75,7 @@
                                 <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
                                     <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -103,7 +103,8 @@
                             <li id="removable">
                                 <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Admin" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Admin</span></a></li>
+                                    <li><a title="Daftar pengguna" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
+                                    <li><a title="Daftar Trash Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Trash Pengguna</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
