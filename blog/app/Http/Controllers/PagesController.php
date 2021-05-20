@@ -5,6 +5,7 @@ Use App\Motor;
 Use App\News;
 Use App\About;
 Use App\Image;
+use App\User;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller

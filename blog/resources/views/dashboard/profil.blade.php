@@ -203,7 +203,6 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
@@ -222,7 +221,6 @@
                                                         <input type="password" class="form-control" placeholder="Password" name="password" id="password">
                                                     </div>
                                                 </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="product-tab-list tab-pane fade" id="reviews">
@@ -263,6 +261,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="footer-copyright-area">
             <div class="container-fluid">

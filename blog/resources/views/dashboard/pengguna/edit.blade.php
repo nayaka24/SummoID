@@ -205,18 +205,18 @@
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
                                             <div class="review-content-section">
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Nama Lengkap" value="{{$User->name}}" name="name" id="name">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                    <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{$User->email}}">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                    <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone" value="{{$User->handphone}}">
-                                                </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="name" id="name">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                        <input type="text" class="form-control" placeholder="E-mail" name="email" id="email">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                        <input type="text" class="form-control" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
+                                                    </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
                                                     <select class="form-control" name="level">

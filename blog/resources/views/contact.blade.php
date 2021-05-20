@@ -65,27 +65,15 @@
 								<li class="current-list-item mx-1 active"><a href="{{ url('/contact') }}">Kontak</a></li>
 								
 								<li>
-									<div class="header-icons">
+								<div class="header-icons">
 										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
 										@guest
 										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
 										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
 										@else
-										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+										<a href="{{url ('/profiluser')}}" aria-haspopup="true" aria-expanded="false" v-pre>
 										{{ Auth::user()->name }} <span class="caret"></span>
 										</a>
-										<ul>
-										<li>
-											<a href="#"><span class="fa fa-user-o"></span> Profil Saya</a>
-										</li>
-										
-											<a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="fa fa-sign-out"></span>
-													Keluar
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-													@csrf
-												    </form>
-                                            </a>
-										
 										@endguest
 									</div>
 								</li>
@@ -147,19 +135,19 @@
 						@if($About->judul == 'Alamat')
 						<div class="contact-form-box">
 							<h4><i class="fas fa-map"></i> Alamat</h4>
-							{{$About->isi}}
+							{!!$About->isi!!}
 						</div>
 						
 						@elseif($About->judul == 'Jam Kantor')
 						<div class="contact-form-box">
 							<h4><i class="far fa-clock"></i> Jam Kantor</h4>
-							{{$About->isi}}
+							{!!$About->isi!!}
 						</div>
 						
 						@elseif($About->judul == 'Kontak')
 						<div class="contact-form-box">
 							<h4><i class="fas fa-address-book"></i> Kontak</h4>
-							{{$About->isi}}
+							{!!$About->isi!!}
 						</div>
 						@endif
 					@endforeach
@@ -198,7 +186,7 @@
 						@foreach($about as $hasil)
 						@if($hasil->judul == 'Profil')
 						<h2 class="widget-title">Tentang Kami</h2>
-						<p>{{$hasil->isi}}</p>
+						<p>{<!DOCTYPE html>$hasil->isi!!}</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
@@ -206,9 +194,9 @@
 					<h2 class="widget-title">Kontak</h2>
 						<ul>
 						@elseif($hasil ->judul == 'Alamat')
-						<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$hasil->isi}}</a></li>
+						<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {!!$hasil->isi!!}</a></li>
 						@elseif($hasil->judul == 'Kontak')
-						<li><a href="#"> <i class="fa fa-phone"></i> {{$hasil->isi}}</a></li>
+						<li><a href="#"> <i class="fa fa-phone"></i> {!!$hasil->isi!!}</a></li>
 						@endif
 						@endforeach
 						<li><a href="https://www.instagram.com/summoid/"> <i class="fab fa-instagram"> @summoid</i></a></li>

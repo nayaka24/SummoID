@@ -17,7 +17,7 @@ Route::group(['middleware'=> ['auth','isAdmin']], function (){
     //admin
     Route::get('/dashboard','PagesController@dashboard');
     Route::get('/confAffiliate','PagesController@confaffiliate');
-    Route::get('/profiladmin','PagesController@admin');
+    Route::get('/profilAdmin','PagesController@admin');
 
     //data motor
     Route::get('/motors/hapus','MotorController@tampil_hapus');

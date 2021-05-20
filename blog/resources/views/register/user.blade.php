@@ -159,7 +159,7 @@
 						@foreach($About as $About)
 						@if($About->judul == 'Profil')
 						<h2 class="widget-title">Tentang Kami</h2>
-						<p>{{$About->isi}}</p>
+						<p>{!!$About->isi!!}</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
@@ -167,9 +167,9 @@
 						<h2 class="widget-title">Kontak</h2>
 						<ul>
 						@elseif($About->judul == 'Alamat')
-							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {{$About->isi}}</a></li>
+							<li><a href="#"> <i class="fas fa-map-marker-alt"></i> {!!$About->isi!!}</a></li>
 						@elseif($About->judul == 'Kontak')
-							<li><a href="#"> <i class="fa fa-phone"></i> {{$About->isi}}</a></li>
+							<li><a href="#"> <i class="fa fa-phone"></i> {!!$About->isi!!}</a></li>
 						@endif
 						@endforeach
 							<li><a href="https://www.instagram.com/summoid/"> <i class="fab fa-instagram"> @summoid</i></a></li>

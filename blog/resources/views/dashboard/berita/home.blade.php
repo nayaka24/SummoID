@@ -145,7 +145,7 @@
 														<span>{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
 													</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="{{url ('/profilAdmin')}}"><span class="fa fa-user-o"></span> Profil Saya</a></li>
+                                                        <li><a href="{{url ('/profilAdmin/.$User->id_users')}}"><span class="fa fa-user-o"></span> Profil Saya</a></li>
                                                         <li><a onclick="event.preventDefault();
 												            document.getElementById('logout-form').submit();"><span class="fa fa-sign-out"
                                                             >
