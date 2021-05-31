@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- title -->
-	<title>Kendaraan</title>
+	<title>Sewa Kendaraan</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image" href="{{asset ('assets/img/summo2.png')}}">
@@ -58,12 +58,16 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="{{url ('/beranda')}}">Beranda</a></li>
-								<li><a href="{{url ('/tentang')}}">Tentang Kami</a></li>
-								<li><a href="{{url ('/booking_hotel')}}">Booking Hotel</a></li>
-								<li><a href="{{url ('/paket_wisata')}}">Paket Wisata</a></li>
-								<li><a href="{{url ('/news')}}">Berita</a></li>
-								<li><a href="{{url ('/contact')}}">Kontak</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/beranda') }}">Beranda</a></li>
+								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
+								<li><a href="#">Kebutuhan Perjalananmu!</a>
+									<ul class="sub-menu">
+										<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+										<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
+										<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+									</ul>
+								</li>
+								<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 								
 								<li>
 								<div class="header-icons">
@@ -118,8 +122,9 @@
                     <div class="product-filters">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".matic">Matic</li>
-                            <li data-filter=".manual">Manual</li>
+                            <li data-filter=".matic">Motor Matic</li>
+                            <li data-filter=".manual">Motor Manual</li>
+                            <li data-filter=".mobil">Mobil</li>
                         </ul>
                     </div>
                 </div>
@@ -176,10 +181,10 @@
 						<ul>
 							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
-							<li><a href="{{ url('/news') }}">Berita</a></li>
-							<li><a href="{{ url('/contact') }}">Kontak</a></li>
+							<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 						</ul>
 					</div>
 				</div>

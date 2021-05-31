@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- title -->
-	<title>Berita</title>
+	<title>Peluang Menjadi Mitra</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" href="{{asset('assets/img/summo2.png')}}">
@@ -58,12 +58,16 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 						<ul>
-								<li><a href="{{ url('/beranda') }}">Beranda</a></li>
-								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
-								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/news') }}">Berita</a></li>
-								<li><a href="{{ url('/contact') }}">Kontak</a></li>
+							<li class="current-list-item mx-1 active"><a href="{{ url('/beranda') }}">Beranda</a></li>
+							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
+							<li><a href="#">Kebutuhan Perjalananmu!</a>
+								<ul class="sub-menu">
+									<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+									<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
+									<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+								</ul>
+							</li>
+							<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 
 								<li>
 								<div class="header-icons">
@@ -101,7 +105,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>Summo</p>
-						<h1>Berita</h1>
+						<h1>Peluang Menjadi Mitra</h1>
 					</div>
 				</div>
 			</div>
@@ -113,21 +117,7 @@
 	<div class="latest-news mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-			@foreach($News as $result =>$hasil)
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="{{url('/beritas/'.$hasil->id_berita)}}"><img src="{{asset ('berita/'.$hasil->gambar)}}" alt=""/></a>
-						<div class="news-text-box">
-							<h3><a href="{{url('/beritas/'.$hasil->id_berita)}}">{{$hasil->judul}}</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i>{{$hasil->updated_at}}</span>
-							</p>
-							<a href="{{url('/beritas/'.$hasil->id_berita)}}" class="read-more-btn">Baca Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			@endforeach
+			
 			</div>
 		</div>
 	</div>
@@ -165,10 +155,10 @@
 						<ul>
 							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
-							<li><a href="{{ url('/news') }}">Berita</a></li>
-							<li><a href="{{ url('/contact') }}">Kontak</a></li>
+							<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 						</ul>
 					</div>
 				</div>

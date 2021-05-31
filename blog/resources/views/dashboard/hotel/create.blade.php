@@ -65,59 +65,59 @@
                 </div>
                 <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
-                        <ul class="metismenu" id="menu1">
-                            <li><a href="{{url ('/dashboard')}}"><i class="fa fa-home"></i><span class="mini-click-non"> Dashboard</span></a></li>
-                            <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
-                                    <li><a title="Daftar Trash Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
-                                </ul>
-                            </li>
-                            <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
-                                </ul>
-                            </li>
-                            <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
-                                    <li><a title="Daftar Trash Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
-                                </ul>
-                            </li>
-                            <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Hotel</span></a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
-                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Hotel</span></a></li>
-                                </ul>
-                            </li>
-                            <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Keranjang" href="{{url ('/keranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="{{url ('/pembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
-                                    <li><a title="Affiliate" href="{{url ('/confAffiliate')}}"><i class="fa fa-ticket"></i><span class="mini-sub-pro"> Affiliate</span></a></li>
-                                </ul>
-                            </li>
-                            <li id="removable">
-                                <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Pengguna</span></a>
-                                <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Daftar Pengguna" href="{{url ('/admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Pengguna</span></a></li>
-                                    <li><a title="Daftar Hapus Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Pengguna</span></a></li>
-                                </ul>
-                            </li>
-                            <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
-                                    <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <ul class="metismenu" id="menu1">
+                        <li><a href="{{url ('/dashboard')}}"><i class="fa fa-home"></i><span class="mini-click-non"> Dashboard</span></a></li>
+                        <li id="removable">
+                            <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
+                                <li><a title="Daftar Trash Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Trash Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Keranjang" href="{{url ('/confKeranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
+                                <li><a title="Pembayaran" href="{{url ('/confPembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                <li><a title="Affiliate" href="{{url ('/confFinish')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Pengguna</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Daftar Pengguna" href="{{url ('/admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Pengguna</span></a></li>
+                                <li><a title="Daftar Hapus Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Pengguna</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="index.html"><i class="fa fa-cog"></i><span class="mini-click-non"> Pengaturan</span></a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Tentang" href="{{url ('/about')}}"><i class="fa fa-info-circle"></i><span class="mini-sub-pro"> Tentang</span></a></li>
+                                <li><a title="Gambar" href="{{url ('/gambar')}}"><i class="fa fa-image"></i><span class="mini-sub-pro"> Gambar</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
                     </nav>
                 </div>
             </nav>

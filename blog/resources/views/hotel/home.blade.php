@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- title -->
-	<title>Booking Hotel</title>
+	<title>Booking Penginapan</title>
 
 	<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 	<!-- favicon -->
@@ -66,12 +66,16 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="{{ url('/beranda') }}">Beranda</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/beranda') }}">Beranda</a></li>
 								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
-								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
-								<li><a href="{{ url('/news') }}">Berita</a></li>
-								<li><a href="{{ url('/contact') }}">Kontak</a></li>
+								<li><a href="#">Kebutuhan Perjalananmu!</a>
+									<ul class="sub-menu">
+										<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+										<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
+										<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+									</ul>
+								</li>
+								<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 								
 								<li>
 								<div class="header-icons">
@@ -94,8 +98,6 @@
 								</li>
 							</ul>
 						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-						<div class="mobile-menu"></div>
 						<!-- menu end -->
 					</div>
 				</div>
@@ -103,25 +105,6 @@
 		</div>
 	</div>
 	<!-- end header -->
-
-	<!-- search area -->
-	<div class="search-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="close-btn"><i class="fas fa-window-close"></i></span>
-					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Pencarian:</h3>
-							<input type="text" placeholder="">
-							<button type="submit">Cari <i class="fas fa-search"></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end search arewa -->
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg1">
@@ -130,7 +113,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>Summo</p>
-						<h1>Booking Hotel</h1>
+						<h1>Booking Penginapan</h1>
 					</div>
 				</div>
 			</div>
@@ -263,10 +246,10 @@
 						<ul>
 							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
-							<li><a href="{{ url('/news') }}">Berita</a></li>
-							<li><a href="{{ url('/contact') }}">Kontak</a></li>
+							<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 						</ul>
 					</div>
 				</div>

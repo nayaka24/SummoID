@@ -74,10 +74,10 @@
                                 </ul>
                             </li>
                             <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Motor</span></a>
+                                <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Motor</span></a></li>
-                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Motor</span></a></li>
+                                    <li><a title="Daftar Motor" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                    <li><a title="Daftar Trash Motor" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
@@ -88,18 +88,18 @@
                                 </ul>
                             </li>
                             <li id="removable">
-                                <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Hotel</span></a>
+                                <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hotel</span></a></li>
-                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Hotel</span></a></li>
+                                    <li><a title="Daftar Hotel" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                    <li><a title="Daftar Trash Hotel" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
                                 <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
                                 <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Keranjang" href="{{url ('/keranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
-                                    <li><a title="Pembayaran" href="{{url ('/pembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
-                                    <li><a title="Affiliate" href="{{url ('/confAffiliate')}}"><i class="fa fa-ticket"></i><span class="mini-sub-pro"> Affiliate</span></a></li>
+                                    <li><a title="Keranjang" href="{{url ('/confKeranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
+                                    <li><a title="Pembayaran" href="{{url ('/confPembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
+                                    <li><a title="Affiliate" href="{{url ('/confFinish')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">

@@ -59,12 +59,16 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="{{ url('/beranda') }}">Beranda</a></li>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-								<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
-								<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
-								<li><a href="{{ url('/news') }}">Berita</a></li>
-								<li><a href="{{ url('/contact') }}">Kontak</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/beranda') }}">Beranda</a></li>
+								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
+								<li><a href="#">Kebutuhan Perjalananmu!</a>
+									<ul class="sub-menu">
+										<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+										<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
+										<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+									</ul>
+								</li>
+								<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 								
 								<li>
 								<div class="header-icons">
@@ -175,6 +179,81 @@
 	</div><br><br><br>
 	<!-- end team section -->
 
+	<!-- contact form -->
+	<div class="contact-from-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<div class="form-title">
+						<h2>Ada Pertanyaan?</h2>
+						<p>Jika Anda memiliki pertanyaan, jangan ragu untuk menanyakannya kepada kami.</p>
+					</div>
+				 	<div id="form_status"></div>
+					<div class="contact-form">
+						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+							<p>
+								<input type="text" placeholder="Nama" name="name" id="name">
+								<input type="email" placeholder="E-mail" name="email" id="email">
+							</p>
+							<p>
+								<input type="tel" placeholder="No HP" name="phone" id="phone">
+								<input type="text" placeholder="Subjek" name="subject" id="subject">
+							</p>
+							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Pesan"></textarea></p>
+							<input type="hidden" name="token" value="" />
+							<p><input type="submit" value="Kirim"></p>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="contact-form-wrap">
+					
+					@foreach($About as $About)
+						@if($About->judul == 'Alamat')
+						<div class="contact-form-box">
+							<h4><i class="fas fa-map"></i> Alamat</h4>
+							{!!$About->isi!!}
+						</div>
+						
+						@elseif($About->judul == 'Jam Kantor')
+						<div class="contact-form-box">
+							<h4><i class="far fa-clock"></i> Jam Kantor</h4>
+							{!!$About->isi!!}
+						</div>
+						
+						@elseif($About->judul == 'Kontak')
+						<div class="contact-form-box">
+							<h4><i class="fas fa-address-book"></i> Kontak</h4>
+							{!!$About->isi!!}
+						</div>
+						@endif
+					@endforeach
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contact form -->
+
+	<!-- find our location -->
+	<div class="find-location blue-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<p> <i class="fas fa-map-marker-alt"></i> Lokasi Kami</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end find our location -->
+
+	<!-- google map section -->
+	<div class="embed-responsive embed-responsive-21by9">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3972.065940554278!2d105.27726609259844!3d-5.406927195371404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dba802c7b077%3A0x9e8f438b237e7a04!2sJl.%20Mangga%20Besar%20No.24%2C%20Tj.%20Baru%2C%20Kedamaian%2C%20Kota%20Bandar%20Lampung%2C%20Lampung%2035122!5e0!3m2!1sen!2sid!4v1613569266012!5m2!1sen!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	</div>
+	<!-- end google map section -->
+
 	<!-- footer -->
 	<div class="footer-area">
 		<div class="container">
@@ -207,10 +286,10 @@
 						<ul>
 							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
+							<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
+							<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
-							<li><a href="{{ url('/news') }}">Berita</a></li>
-							<li><a href="{{ url('/contact') }}">Kontak</a></li>
+							<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 						</ul>
 					</div>
 				</div>
