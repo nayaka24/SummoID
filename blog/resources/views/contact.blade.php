@@ -74,6 +74,12 @@
 										<a href="{{url ('/profiluser')}}" aria-haspopup="true" aria-expanded="false" v-pre>
 										{{ Auth::user()->name }} <span class="caret"></span>
 										</a>
+										<a onclick="event.preventDefault();
+											document.getElementById('logout-form').submit();">Keluar
+											<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+											@csrf
+											</form>
+										</a>
 										@endguest
 									</div>
 								</li>

@@ -81,9 +81,14 @@
                     <div class="col-md-4">
                         <div class="profile-work">
                             <p>Akun Saya</p>
-                            <a href="">Beranda</a><br/>
-                            <a href="">Profil</a><br/>
+                            <a href="{{ url('/beranda') }}">Beranda</a><br/>
                             <a href="">Edit Profil</a><br/>
+                            <a onclick="event.preventDefault();
+								document.getElementById('logout-form').submit();">Keluar
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+								@csrf
+								</form>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-8">
