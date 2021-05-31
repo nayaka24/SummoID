@@ -101,10 +101,10 @@
                                 </ul>
                             </li>
                             <li id="removable">
-                                <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Daftar Pengguna</span></a>
+                                <a class="has-arrow" href="index.html" aria-expanded="false"><i class="fa fa-group"></i><span class="mini-click-non"> Pengguna</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
-                                    <li><a title="Daftar pengguna" href="{{url ('/admin')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Pengguna</span></a></li>
-                                    <li><a title="Daftar Trash Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-user"></i><span class="mini-sub-pro"> Trash Pengguna</span></a></li>
+                                    <li><a title="Daftar Pengguna" href="{{url ('/admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Pengguna</span></a></li>
+                                    <li><a title="Daftar Hapus Pengguna" href="{{url ('/admin/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Pengguna</span></a></li>
                                 </ul>
                             </li>
                             <li id="removable">
