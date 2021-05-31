@@ -55,12 +55,6 @@
           <span class="register100-form-title">
             Daftar Mitra
           </span><br>
-          <nav class="menu-daftar">
-            <ul>
-              <li><a href="{{url ('/register')}}"><u>Daftar Pengguna</u></a></li>
-              <li><a href="{{url ('/affiliate')}}"><u>Daftar Affiliate</u></a></li>
-            </ul>
-          </nav>
 
           <h5>Nama Lengkap :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Nama Harus Diisi!">
@@ -106,7 +100,11 @@
               <i class="fas fa-lock" aria-hidden="true"></i>
             </span>
           </div>
-          
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked/>
+            <label class="form-check-label" for="flexCheckChecked">Terms and Conditions Apply</label>
+          </div>
+
           <div class="container-login100-form-btn">
             <button type="submit" class="login100-form-btn">
               Daftar
@@ -114,8 +112,8 @@
           </div>
 
           <div class="text-center p-t-12">
-            <a class="txt2" href="#">
-              <i class="fas fa-sync"> Atur Ulang</i>
+            <a class="txt2" href="{{url ('/register')}}">
+              Daftar Pengguna <i class="fas fa-arrow-right"></i>
             </a>
           </div>
 

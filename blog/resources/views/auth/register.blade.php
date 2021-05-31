@@ -55,12 +55,6 @@
           <span class="register100-form-title">
             Daftar Pengguna
           </span><br>
-          <nav class="menu-daftar">
-            <ul>
-              <li><a href="{{url ('/mitra')}}"><u>Daftar Mitra</u></a></li>
-              <li><a href="{{url ('/affiliate')}}"><u>Daftar Affiliate</u></a></li>
-            </ul>
-          </nav>
 
           <h5>Nama Lengkap :</h5>
           <div class="wrap-input100 validate-input" data-validate = "Nama Harus Diisi!">
@@ -134,8 +128,8 @@
           </div>
 
           <div class="text-center p-t-12">
-            <a class="txt2" href="#">
-              <i class="fas fa-sync"> Atur Ulang</i>
+            <a class="txt2" href="{{url ('/mitra')}}">
+              Daftar Menjadi Mitra <i class="fas fa-arrow-right"></i>
             </a>
           </div>
 
