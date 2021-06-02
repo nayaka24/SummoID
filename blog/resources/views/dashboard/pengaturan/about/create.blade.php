@@ -67,13 +67,6 @@
                     <ul class="metismenu" id="menu1">
                         <li><a href="{{url ('/dashboard')}}"><i class="fa fa-home"></i><span class="mini-click-non"> Dashboard</span></a></li>
                         <li id="removable">
-                            <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
-                            <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
-                                <li><a title="Daftar Trash Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
-                            </ul>
-                        </li>
-                        <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
@@ -99,7 +92,7 @@
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Keranjang" href="{{url ('/confKeranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
                                 <li><a title="Pembayaran" href="{{url ('/confPembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
-                                <li><a title="Affiliate" href="{{url ('/confFinish')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
+                                <li><a title="Selesai" href="{{url ('/confTransaksi')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">

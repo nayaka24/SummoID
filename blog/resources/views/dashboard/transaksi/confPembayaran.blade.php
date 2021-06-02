@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Keranjang | Summo</title>
+    <title>Pembayaran | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -65,13 +65,6 @@
                     <ul class="metismenu" id="menu1">
                         <li><a href="{{url ('/dashboard')}}"><i class="fa fa-home"></i><span class="mini-click-non"> Dashboard</span></a></li>
                         <li id="removable">
-                            <a class="has-arrow" href="index.html"><i class="fa fa-newspaper-o"></i><span class="mini-click-non"> Berita</span></a>
-                            <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Berita" href="{{url ('/beritas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Berita</span></a></li>
-                                <li><a title="Daftar Trash Berita" href="{{url ('beritas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Berita</span></a></li>
-                            </ul>
-                        </li>
-                        <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
@@ -97,7 +90,7 @@
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Keranjang" href="{{url ('/confKeranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
                                 <li><a title="Pembayaran" href="{{url ('/confPembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
-                                <li><a title="Affiliate" href="{{url ('/confFinish')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
+                                <li><a title="Selesai" href="{{url ('/confTransaksi')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
@@ -154,7 +147,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2>KERANJANG</h2>
+												<h2>PEMBAYARAN</h2>
 											</div>
 										</div>
                                     </div>
@@ -170,7 +163,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>List Keranjang</h4>
+                            <h4>List Pembayaran</h4>
                             <table>
                                 <tr>
                                     <th>Nama Lengkap</th>
@@ -178,7 +171,7 @@
                                     <th>No. Hp</th>
                                     <th>Alamat</th>
                                     <th>Jenis Peminjaman</th>
-                                    <th>Status</th>
+                                    <th>Status Pembayaran</th>
                                 </tr>
                                 <tr>
                                     <td>Kshiti Ghelani</td>
@@ -222,15 +215,6 @@
                                             </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="custom-pagination">
-								<ul class="pagination">
-									<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">Next</a></li>
-								</ul>
                             </div>
                         </div>
                     </div>

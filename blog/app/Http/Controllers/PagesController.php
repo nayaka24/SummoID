@@ -59,7 +59,7 @@ class PagesController extends Controller
     }
 
     public function verifikasi(){
-        return view('dashboard.transaksi.confAffiliate');
+        return view('dashboard.transaksi.confKeranjang');
     }
 
 }

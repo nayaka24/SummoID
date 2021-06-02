@@ -2109,6 +2109,14 @@ ul.tab-custon-design li.active a, ul.tab-review-design li.active a{
 	background:#e12503;
 	border-color: #e12503;
 }
+.waves-black{
+    background: #152036;
+    color: #fff;
+}
+.waves-black:hover{
+    background: #152036;
+    color: #fff;
+}
 .payment-method-ht i {
     font-size: 50px;
     margin-right: 10px;
