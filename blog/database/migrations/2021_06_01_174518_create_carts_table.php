@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWisatasTable extends Migration
+class CreateCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateWisatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('wisatas', function (Blueprint $table) {
-            $table->Increments('id_wisata');
-            $table->string('nama');
-            $table->text('harga');
-            $table->string('handphone','16');
-            $table->text('deskripsi');
-            $table->string('gambar');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->bigIncrements('id_cart');
+            $table->integer('id_mtr');
             $table->integer('id_user');
+            $table->boolean('transaksi');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -33,6 +29,6 @@ class CreateWisatasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wisatas');
+        Schema::dropIfExists('carts');
     }
 }

@@ -84,15 +84,6 @@
             @enderror
           </div>
 
-          <h5>Foto KTP :</h5>
-          <div class="wrap-input100 validate-input" data-validate = "Foto KTP!">
-            <input class="input100" type="file" name="gambar" placeholder="Foto KTP">
-            <span class="focus-input100"></span>
-            <span class="symbol-input100">
-            <i class="fas fa-user-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-
           <h5>No. Hp:</h5>
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
           <input class="input100 @error('handphone') is-invalid @enderror" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" value="{{ old('handphone') }}" required autocomplete="handphone">

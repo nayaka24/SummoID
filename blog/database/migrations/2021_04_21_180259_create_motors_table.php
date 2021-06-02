@@ -20,6 +20,10 @@ class CreateMotorsTable extends Migration
             $table->text('deskripsi');
             $table->string('kategori');
             $table->string('gambar');
+            $table->string('stnk');
+            $table->boolean('verifikasi');
+            $table->boolean('transaksi');
+            $table->integer('id_user');
             $table->timestamps();
             $table->softDeletes();
         });

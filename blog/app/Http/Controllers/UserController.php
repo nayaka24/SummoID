@@ -24,12 +24,9 @@ class UserController extends Controller
             'email'=>'required | email | max:255 | unique:users',
             'handphone'=>'required | max: 16',
             'password'=>'required | min:8',
-            'gambar'=>'required'
         ]);
         
         $level='Admin';
-        $gmbr= $request->gambar;
-        $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
 
         $User= User::create([
             'name'=> $request->name,
@@ -37,10 +34,8 @@ class UserController extends Controller
             'handphone'=> $request->handphone,
             'password'=>bcrypt($request->password),
             'level'=>$level,
-            'ktp'=> $namaFile
         ]);
 
-        $gmbr->move(public_path().'/user',$namaFile);
         return redirect('/admin')->with('success','Admin telah ditambahkan!');
 
     }
@@ -62,21 +57,6 @@ class UserController extends Controller
         $User= User::findorfail($id);
          
         if ($request->input('password')){
-            if($request->has('gambar')){
-                $gmbr= $request->gambar;
-                $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
-                $gmbr->move(public_path().'/bike',$namaFile);
-
-                $user_data= [
-                    'name'=> $request->name,
-                    'email'=> $request->email,
-                    'handphone'=> $request->handphone,
-                    'password'=>bcrypt($request->password),
-                    'level'=>$request->level,
-                    'ktp'=> $namaFile
-                ];
-                
-            }else{
                 $user_data= [
                     'name'=> $request->name,
                     'email'=> $request->email,
@@ -84,29 +64,13 @@ class UserController extends Controller
                     'password'=>bcrypt($request->password),
                     'level'=>$request->level
                 ];
-            }
         }else{
-            if($request->has('gambar')){
-                $gmbr= $request->gambar;
-                $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
-                $gmbr->move(public_path().'/bike',$namaFile);
-
-                $user_data= [
-                    'name'=> $request->name,
-                    'email'=> $request->email,
-                    'handphone'=> $request->handphone,
-                    'level'=>$request->level,
-                    'ktp'=> $namaFile
-                ];
-                
-            }else{
                 $user_data= [
                     'name'=> $request->name,
                     'email'=> $request->email,
                     'handphone'=> $request->handphone,
                     'level'=>$request->level
                 ];
-            }
         }
         $User->update($user_data);
         

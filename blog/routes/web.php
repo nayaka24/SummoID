@@ -16,7 +16,7 @@ Auth::routes();
 Route::group(['middleware'=> ['auth','isAdmin']], function (){
     //admin
     Route::get('/dashboard','PagesController@dashboard');
-    Route::get('/confAffiliate','PagesController@confaffiliate');
+    Route::get('/confKeranjang','PagesController@verifikasi');
     Route::get('/profilAdmin','PagesController@admin');
 
     //data motor
@@ -40,17 +40,6 @@ Route::group(['middleware'=> ['auth','isAdmin']], function (){
     Route::patch('/wisatas/{wisata}','WisataController@update');
     Route::delete('/wisatas/{wisata}','WisataController@destroy');
     Route::get('/wisatas/{wisata}/edit','WisataController@edit');
-
-    //data news
-    Route::get('/beritas/hapus','NewsController@tampil_hapus');
-    Route::delete('/beritas/{id_berita}/kill','NewsController@kill');
-    Route::get('/beritas/{id_berita}/restore','NewsController@restore');
-    Route::post('/beritas','NewsController@store');
-    Route::get('/beritas','NewsController@index');
-    Route::get('/beritas/create','NewsController@create');
-    Route::patch('/beritas/{berita}','NewsController@update');
-    Route::delete('/beritas/{berita}','NewsController@destroy');
-    Route::get('/beritas/{berita}/edit','NewsController@edit');
 
 
     //data hotel
@@ -91,19 +80,21 @@ Route::group(['middleware'=> ['auth','isAdmin']], function (){
     Route::delete('/gambar/{gambar}','ImageController@destroy');
     Route::get('/gambar/{gambar}/edit','ImageController@edit');
 
+    //data transaksi
+    Route::get('/confFinish','PagesController@transaksi');
+    Route::get('/confPembayaran','PagesController@pembayaran');
+
 });
 
 //register
 Route::get('/mitra','MitraController@mitra');
 Route::post('/mitra','MitraController@postmitra');
-Route::get('/affiliate','AffiliateController@affiliate');
-Route::post('/affiliate','AffiliateController@postaffiliate');
 
 //tampilan user
-Route::get('/beranda','PagesController@home');
-Route::get('/contact','PagesController@contact');
+Route::get('/','PagesController@home');
 Route::get('/tentang','PagesController@about');
 Route::get('/keranjang','PagesController@cart');
+Route::get('/checkout','PagesController@checkout');
 Route::get('/profiluser','PagesController@user');
 Route::get('/motor','MotorController@bike');
 Route::get('/motors/{motor}','MotorController@show');
@@ -111,8 +102,6 @@ Route::get('/paket_wisata','WisataController@wisata');
 Route::get('/wisatas/{wisata}','WisataController@show');
 Route::get('/booking_hotel','HotelController@hotel');
 Route::get('/hotels/{hotel}','HotelController@show');
-Route::get('/news','NewsController@news');
-Route::get('/beritas/{berita}','NewsController@show');
-
+Route::get('/news','PagesController@news');
 
 

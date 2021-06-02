@@ -16,13 +16,13 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::User()->level == "Admin")
+        if(Auth::User()->level == "mitra")
         {
             return $next($request);
         }
         else
         {
-            return redirect('/beranda');
+            return redirect('/');
         }
     }
 }

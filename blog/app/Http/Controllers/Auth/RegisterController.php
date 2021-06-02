@@ -54,7 +54,6 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'handphone' => ['required'],
             'password' => ['required', 'min:8'],
-            'gambar' => ['required']
         ]);
     }
 
@@ -68,14 +67,10 @@ class RegisterController extends Controller
     {
         $level='pengguna';
 
-        $gmbr= $data['gambar'];
-        $namaFile = time().rand(100,999).".".$gmbr->getClientOriginalExtension();
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'handphone' => $data['handphone'],
-            'ktp' => $namaFile,
             'password' => Hash::make($data['password']),
             'level' => $level
         ]);

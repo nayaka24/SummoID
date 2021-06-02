@@ -59,7 +59,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/beranda') }}">Beranda</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/') }}">Beranda</a></li>
 								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 								<li><a href="#">Kebutuhan Perjalananmu!</a>
 									<ul class="sub-menu">
@@ -69,10 +69,10 @@
 									</ul>
 								</li>
 								<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
-								
+
 								<li>
-								<div class="header-icons">
-										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
+									<div class="header-icons">
+										
 										@guest
 										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
 										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
@@ -86,6 +86,9 @@
 											@csrf
 											</form>
 										</a>
+										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
+										
+
 										@endguest
 									</div>
 								</li>
@@ -208,23 +211,23 @@
 				<div class="col-lg-4">
 					<div class="contact-form-wrap">
 					
-					@foreach($About as $About)
-						@if($About->judul == 'Alamat')
+					@foreach($about as $about)
+						@if($about->judul == 'Alamat')
 						<div class="contact-form-box">
 							<h4><i class="fas fa-map"></i> Alamat</h4>
-							{!!$About->isi!!}
+							{!!$about->isi!!}
 						</div>
 						
-						@elseif($About->judul == 'Jam Kantor')
+						@elseif($about->judul == 'Jam Kantor')
 						<div class="contact-form-box">
 							<h4><i class="far fa-clock"></i> Jam Kantor</h4>
-							{!!$About->isi!!}
+							{!!$about->isi!!}
 						</div>
 						
-						@elseif($About->judul == 'Kontak')
+						@elseif($about->judul == 'Kontak')
 						<div class="contact-form-box">
 							<h4><i class="fas fa-address-book"></i> Kontak</h4>
-							{!!$About->isi!!}
+							{!!$about->isi!!}
 						</div>
 						@endif
 					@endforeach

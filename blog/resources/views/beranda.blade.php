@@ -59,7 +59,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/beranda') }}">Beranda</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/') }}">Beranda</a></li>
 								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 								<li><a href="#">Kebutuhan Perjalananmu!</a>
 									<ul class="sub-menu">
@@ -326,46 +326,6 @@
 		</div>
 	</div>	
 	<!-- end features list section counter -->
-
-	<!-- latest news -->
-	<div class="latest-news pt-150 pb-150">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Berita</span> Kami</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-			@foreach($News as $result =>$hasil)
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="{{url('/beritas/'.$hasil->id_berita)}}"><div class="latest-news-bg news-bg-1"></div></a>
-						<div class="news-text-box">
-							<h3><a href="{{url('/beritas/'.$hasil->id_berita)}}">{{$hasil->judul}}</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> {{$hasil->updated_at}}</span>
-							</p>
-							<a href="{{url('/beritas/'.$hasil->id_berita)}}" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			@endforeach
-			</div>
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<a href="{{ url('/news') }}" class="boxed-btn">Lihat Selengkapnya</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end latest news -->
-
 
 	<!-- logo carousel -->
 	<div class="logo-carousel-section">

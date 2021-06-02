@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Edit Pengguna | Summo</title>
+    <title>Keranjang | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,7 +57,7 @@
             <nav id="sidebar" class="">
                 <div class="nalika-profile">
                     <div class="profile-dtl">
-                        <a href="{{url ('/dashboard')}}"><img src="{{asset ('assets/dashboard/img/logo/summo1.png')}}" alt="" /></a>
+                        <a href="index.html"><img src="{{asset ('assets/dashboard/img/logo/summo1.png')}}" alt="" /></a>
                     </div>
                 </div>
                 <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -119,8 +119,8 @@
                 </div>
             </nav>
         </div>
-     <!-- Start Welcome area -->
-     <div class="all-content-wrapper">
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -137,28 +137,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
-                                        <div class="header-right-info">
-                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-														<span>{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
-													</a>
-                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="{{url ('/profilAdmin')}}"><span class="fa fa-user-o"></span> Profil Saya</a></li>
-                                                        <li><a onclick="event.preventDefault();
-												            document.getElementById('logout-form').submit();"><span class="fa fa-sign-out"
-                                                            >
-                                                        </span> Keluar
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-													    @csrf
-												        </form>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +154,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2> EDIT PENGGUNA</h2>
+												<h2>KERANJANG</h2>
 											</div>
 										</div>
                                     </div>
@@ -186,99 +165,72 @@
                 </div>
             </div>
         </div>
-        <!-- Single pro tab start-->
-        <div class="single-product-tab-area mg-b-30">
-            <!-- Single pro tab review Start-->
-            <div class="single-pro-review-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="review-tab-pro-inner">
-                                <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description">Informasi Pengguna</a></li>
-                                    <li><a href="#reviews">Gambar</a></li>
-                                </ul>
-                                <form action="{{url ('/admin/'.$User->id_user)}}" method="post" enctype="multipart/form-data">
-                                @csrf
-                                @method('PATCH')
-                                <div id="myTabContent" class="tab-content custom-product-edit">
-                                    <div class="product-tab-list tab-pane fade active in" id="description">
-                                        <div class="row">
-                                            <div class="review-content-section">
-                                            <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                        <input type="text" class="form-control" value="{{$User->name}}" placeholder="Nama Lengkap" name="name" id="name">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                        <input type="text" class="form-control" value="{{$User->email}}" placeholder="E-mail" name="email" id="email">
-                                                    </div>
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                                        <input type="text" class="form-control" value="{{$User->handphone}}" placeholder="+628xxxxxxxx" name="handphone" id="handphone">
-                                                    </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
-                                                    <select class="form-control" name="level">
-                                                        @if($User->level == 'Admin')
-                                                        <option value="Admin" selected>Admin</option>
-                                                        <option value="mitra">mitra</option>
-                                                        <option value="pengguna">pengguna</option>
-                                                        @elseif($User->level == 'mitra')
-                                                        <option value="Admin">Admin</option>
-                                                        <option value="mitra" selected>mitra</option>
-                                                        <option value="pengguna">pengguna</option>
-                                                        @elseif($User->level == 'pengguna')
-                                                        <option value="Admin">Admin</option>
-                                                        <option value="mitra">mitra</option>
-                                                        <option value="pengguna" selected>pengguna</option>
-                                                        @endif
-                                                    </select>
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password" >
-                                                </div>
-                                            </div>
+        <div class="product-status mg-b-30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>List Keranjang</h4>
+                            <table>
+                                <tr>
+                                    <th>Nama Lengkap</th>
+                                    <th>E-mail</th>
+                                    <th>No. Hp</th>
+                                    <th>Alamat</th>
+                                    <th>Jenis Peminjaman</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>Kshiti Ghelani</td>
+                                    <td>kshitighelani@gmail.com</td>
+                                    <td>123 456 789</td>
+                                    <td>Jl. Melati</td>
+                                    <td>Sewa Kendaraan</td>
+                                    <td>
+                                        <div class="input-group mg-b-pro-edt">
+                                            <select class="form-control" name="kategori">
+                                                <option value="" holder>-Pilih-</option>
+                                                <option value="matic">Diterima</option>
+                                                <option value="manual">Sedang diproses</option>
+                                            </select>
                                         </div>
-                                    </div>
-                                    <div class="product-tab-list tab-pane fade" id="reviews">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                        <div class="pro-edt-img">
-                                                                <img src="{{asset ('user/'.$User->ktp)}}" alt="" />
-                                                        </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar" id="gambar">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="text-center custom-pro-edt-ds">
-                                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-                                                                                    </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jacob Sikim</td>
+                                    <td>jacob@gmail.com</td>
+                                    <td>987 654 321</td>
+                                    <td>Jl. Mawar</td>
+                                    <td>Booking Penginapan</td>
+                                    <td>
+                                        <div class="input-group mg-b-pro-edt">
+                                            <select class="form-control" name="kategori">
+                                                <option value="" holder>-Pilih-</option>
+                                                <option value="matic">Diterima</option>
+                                                <option value="manual">Sedang diproses</option>
+                                            </select>
                                         </div>
+                                    </td>
+                                </tr>
+                            </table><br><br><br>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="text-center custom-pro-edt-ds">
+                                        <button type="button" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
+                                            </button>
+                                        <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Batal
+                                            </button>
                                     </div>
-                                </form>
                                 </div>
+                            </div>
+                            <div class="custom-pagination">
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								</ul>
                             </div>
                         </div>
                     </div>

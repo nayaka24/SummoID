@@ -58,7 +58,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/beranda') }}">Beranda</a></li>
+								<li class="current-list-item mx-1 active"><a href="{{ url('/') }}">Beranda</a></li>
 								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 								<li><a href="#">Kebutuhan Perjalananmu!</a>
 									<ul class="sub-menu">
@@ -70,8 +70,8 @@
 								<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>
 
 								<li>
-								<div class="header-icons">
-										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
+									<div class="header-icons">
+										
 										@guest
 										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
 										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
@@ -85,6 +85,7 @@
 											@csrf
 											</form>
 										</a>
+										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
 										@endguest
 									</div>
 								</li>
@@ -185,8 +186,8 @@
 							</tbody>
 						</table>
 						<div class="cart-buttons">
-							<a href="cart.html" class="boxed-btn">Perbarui Keranjang</a>
-							<a href="checkout.html" class="boxed-btn black">Periksa</a>
+							<a href="{{ url('/keranjang') }}" class="boxed-btn">Perbarui Keranjang</a>
+							<a href="{{ url('/checkout') }}" class="boxed-btn black">Periksa</a>
 						</div>
 					</div>
 
