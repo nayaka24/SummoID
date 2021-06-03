@@ -127,15 +127,17 @@
 				</div>
 				<div class="col-md-7">
 					<div class="single-product-content">
+							<form action="{{url ('/keranjang')}}" method="post">
+								@csrf
+								<input type="hidden" name="id_motor" value="{{$Motor->id_motor}}">
 						<h3>{{$Motor->nama}}</h3>
 						<p class="single-product-pricing"><span>Per Hari</span>{{$Motor->harga}}</p>
 						<p>{!!$Motor->deskripsi!!}</p>
 						<div class="single-product-form">
-							<form action="index.html">
-								<input type="number" placeholder="0">
-							</form>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 							<p><strong>Kategori: </strong>{{$Motor->kategori}}</p>
+								<button class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang
+								</button>
+							</form>
 						</div>
 						<h4>Share:</h4>
 						<ul class="product-share">

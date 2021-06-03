@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class WisataController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('wisata','show');
     }
     
     /**
@@ -126,7 +126,7 @@ class WisataController extends Controller
         $this->validate($request,[
             'nama'=>'required',
             'harga'=>'required',
-            'handphone'=>'required | max:15',
+            'handphone'=>'required | max:16',
             'deskripsi'=>'required'
         ]);
         
@@ -203,5 +203,30 @@ class WisataController extends Controller
         $Wisata->forceDelete();
         return redirect('/wisatas-admin')->with('success','Paket Wisata telah diHapus!');
 
+    }
+
+    public function verif(Request $request, $id)
+    {
+        $this->validate($request, [
+            'nama'=>'required',
+            'harga'=>'required',
+            'handphone'=>'required | max:16',
+            'deskripsi'=>'required',
+            'verif'=>'required'
+        ]);
+
+        $Wisata= Wisata::findorfail($id);
+         
+            $wisata_data= [
+                'nama'=> $request->nama,
+                'harga'=> $request->harga,
+                'handphone'=> $request->handphone,
+                'deskripsi'=> $request->deskripsi,
+                'verifikasi' =>$request->verif
+            ];
+
+        $Wisata->update($wisata_data);
+        
+        return redirect('/wisatas-admin')->with('success','Wisata telah terverifikasi!');
     }
 }

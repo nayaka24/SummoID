@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,9 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','PagesController@home');
 
-Auth::routes();
-    Route::group(['middleware'=> ['auth','isMitra']], function (){
+Auth::routes(['verify'=>true ]);
+
+    Route::group(['middleware'=> ['verified','auth','isMitra']], function (){
         //admin
         Route::get('/dashboard-mitra','PagesController@mitra');
         Route::get('/profilAdmin','PagesController@admin');
@@ -47,7 +50,7 @@ Auth::routes();
     
     });
     
-    Route::group(['middleware'=> ['auth','isAdmin']], function (){
+    Route::group(['middleware'=> ['verified','auth','isAdmin']], function (){
         //admin
         Route::get('/dashboard','PagesController@dashboard');
         Route::get('/confKeranjang','PagesController@verifikasi');
@@ -58,7 +61,7 @@ Auth::routes();
         Route::delete('/motors/{id_motor}/kill','MotorController@kill');
         Route::get('/motors/{id_motor}/restore','MotorController@restore');
         Route::get('/motors-admin','MotorController@admin');
-        //Route::patch('/motors-admin/{motor}','MotorController@update');
+        Route::patch('/motors-admin/{motor}','MotorController@verif');
         Route::delete('/motors-admin/{motor}','MotorController@destroyadmin');
         Route::get('/motors-admin/{motor}/edit','MotorController@editadmin');
         
@@ -67,7 +70,7 @@ Auth::routes();
         Route::delete('/wisatas/{id_wisata}/kill','WisataController@kill');
         Route::get('/wisatas/{id_wisata}/restore','WisataController@restore');
         Route::get('/wisatas-admin','WisataController@admin');
-        //Route::patch('/wisatas-admin/{wisata}','WisataController@update');
+        Route::patch('/wisatas-admin/{wisata}','WisataController@verif');
         Route::delete('/wisatas-admin/{wisata}','WisataController@destroyadmin');
         Route::get('/wisatas-admin/{wisata}/edit','WisataController@editadmin');
         
@@ -76,7 +79,7 @@ Auth::routes();
         Route::delete('/hotels/{id_hotel}/kill','HotelController@kill');
         Route::get('/hotels/{id_hotel}/restore','HotelController@restore');
         Route::get('/hotels-admin','HotelController@admin');
-        //Route::patch('/hotels-admin/{hotel}','HotelController@update');
+        Route::patch('/hotels-admin/{hotel}','HotelController@verif');
         Route::delete('/hotels-admin/{hotel}','HotelController@destroyadmin');
         Route::get('/hotels-admin/{hotel}/edit','HotelController@editadmin');
         
@@ -113,18 +116,21 @@ Auth::routes();
         
     });
 
-Route::group(['middleware'=> ['auth','isPengguna']], function (){
-        Route::get('/keranjang','PagesController@cart');
+    Route::group(['middleware'=> ['verified','auth','isPengguna']], function (){
+        //keranjang
+        Route::post('/keranjang','CartController@store');
+        Route::get('/keranjang','CartController@index');
+        Route::delete('/keranjang/{cart}','CartController@destroy');
+        
+        
         Route::get('/checkout','PagesController@checkout');
         Route::get('/profiluser','PagesController@user');
     });
     
     //register
-Route::get('/mitra','MitraController@mitra');
-Route::post('/mitra','MitraController@postmitra');
-    
-    //tampilan user
-Route::get('/','PagesController@home');
+    Route::get('/mitra','MitraController@mitra');
+    Route::post('/mitra','MitraController@postmitra');
+//tampilan user
 Route::get('/tentang','PagesController@about');
 Route::get('/motor','MotorController@bike');
 Route::get('/motors/{motor}','MotorController@show');
@@ -133,5 +139,3 @@ Route::get('/wisatas/{wisata}','WisataController@show');
 Route::get('/booking_hotel','HotelController@hotel');
 Route::get('/hotels/{hotel}','HotelController@show');
 Route::get('/news','PagesController@news');
-
-

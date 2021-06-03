@@ -125,13 +125,13 @@
 					<div class="single-article-section">
 						<div class="single-article-text">
 						<img src="{{asset ('hotel/'.$Hotel->gambar)}}" alt=""/>
-							<p class="blog-meta">
+							<!-- <p class="blog-meta">
 								<span class="bed"><i class="fas fa-bed"></i> 1 Double Besar</span>
 								<span class="bath"><i class="fas fa-bath"></i> 1</span>
 								<span class="tv"><i class="fas fa-tv"></i> 1</span>
 								<span class="ac"><i class="far fa-snowflake"></i> AC</span>
 								<span class="wifi"><i class="fas fa-wifi"></i> Free Wifi</span>
-							</p>
+							</p> -->
 							<h2>{{$Hotel->name}}</h2>
 							<p>{!!$Hotel->deskripsi!!}</p>
 						</div>

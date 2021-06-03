@@ -10,7 +10,7 @@ class MotorController extends Controller
 {
     
     public function __construct(){
-        $this->middleware('auth')->except('index','admin');
+        $this->middleware('auth')->except('bike','show');
     }
     /**
      * Display a listing of the resource.
@@ -247,5 +247,30 @@ class MotorController extends Controller
         $Motor->forceDelete();
         return redirect('/motors-admin')->with('success','Motor telah diHapus!');
 
+    }
+
+    public function verif(Request $request, $id)
+    {
+        $this->validate($request, [
+            'nama'=>'required',
+            'harga'=>'required',
+            'kategori'=>'required',
+            'deskripsi'=>'required',
+            'verif'=>'required'
+        ]);
+
+        $Motor= Motor::findorfail($id);
+         
+            $motor_data= [
+                'nama'=> $request->nama,
+                'harga'=> $request->harga,
+                'kategori'=> $request->kategori,
+                'deskripsi'=> $request->deskripsi,
+                'verifikasi' =>$request->verif
+            ];
+
+        $Motor->update($motor_data);
+        
+        return redirect('/motors-admin')->with('success','Motor telah terverifikasi!');
     }
 }

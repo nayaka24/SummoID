@@ -10,7 +10,7 @@ class HotelController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('hotel','show');
     }
     /**
      * Display a listing of the resource.
@@ -198,5 +198,27 @@ class HotelController extends Controller
         $Hotel->forceDelete();
         return redirect('/hotels-admin')->with('success','Hotel telah diHapus!');
 
+    }
+    public function verif(Request $request, $id)
+    {
+        $this->validate($request, [
+            'nama'=>'required',
+            'harga'=>'required',
+            'deskripsi'=>'required',
+            'verif'=>'required'
+        ]);
+
+        $Hotel= Hotel::findorfail($id);
+         
+            $hotel_data= [
+                'nama'=> $request->nama,
+                'harga'=> $request->harga,
+                'deskripsi'=> $request->deskripsi,
+                'verifikasi' =>$request->verif
+            ];
+
+        $Hotel->update($hotel_data);
+        
+        return redirect('/hotels-admin')->with('success','Hotel telah terverifikasi!');
     }
 }

@@ -157,7 +157,6 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Tim<span class="orange-text"> Kami</span></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
 					</div>
 				</div>
 			</div>
@@ -167,7 +166,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item">
 							<img src="{{asset ('image/'.$result->gambar)}}" alt="" />
-						{{$result->isi}}
+						{!!$result->isi!!}
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>

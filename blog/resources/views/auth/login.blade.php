@@ -49,17 +49,18 @@
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
-    @if(Session::has('success'))
-            <div class="alert alert-success" role="alert">
-                {{Session('success')}}
-            </div>
-            @endif
+   			
         <div class="login100-pic js-tilt" data-tilt>
           <img src="assets/login/images/summo.png" alt="IMG">
         </div>
 		
         <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
 		@csrf
+		@if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{Session('success')}}
+            </div><br>
+            @endif
           <span class="login100-form-title">
             Selamat Datang di Summo
           </span><br>
@@ -94,15 +95,6 @@
             <button type="submit" class="login100-form-btn">
 			  Masuk
             </button>
-          </div>
-
-          <div class="text-center p-t-12">
-            <span class="txt1">
-              Lupa
-            </span>
-            <a class="txt2" href="#">
-              Username / Password?
-            </a>
           </div>
 
           <div class="text-center p-t-136">

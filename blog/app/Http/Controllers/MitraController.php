@@ -18,7 +18,7 @@ class MitraController extends Controller
         $request->validate([
             'name'=>'required | max:255' ,
             'email'=>'required | email | max:255 | unique:users',
-            'handphone'=>'required | unique:users',
+            'handphone'=>'required',
             'password'=>'required | min:8'
         ]);
         
@@ -32,7 +32,7 @@ class MitraController extends Controller
             'level'=>$level,
         ]);
 
-        return redirect('/login')->with('success','Data Mitra telah ditambahkan! Silahkan Login');
+        return redirect('/login')->with('success','Mitra telah diregister! Silahkan verifikasi email anda.');
         
     }
 }

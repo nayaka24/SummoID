@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function home(){
         
-        $Motor=Motor::paginate(3);
+        $Motor=Motor::latest()->limit(3)->get();
         $About= About::all();
         return view('beranda', compact('Motor','About'));
     }

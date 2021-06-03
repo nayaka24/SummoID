@@ -135,6 +135,7 @@
 
 			<div class="row product-lists">
 			@foreach($Motor as $result =>$hasil)
+				@if($hasil->verifikasi == '1')
 				<div class="col-lg-4 col-md-6 text-center {{$hasil->kategori}}">
 					<div class="single-product-item">
 						<div class="product-image">
@@ -142,9 +143,10 @@
 						</div>
 						<h3>{{$hasil->nama}}</h3>
 						<p class="product-price"><span>Per Hari</span> {{$hasil->harga}} </p>
-						<a href="{{ url('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						
 					</div>
 				</div>
+				@endif
 				@endforeach
 			</div>
 			{{$Motor->links() }}

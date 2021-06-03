@@ -170,9 +170,8 @@
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
                                     <li class="active"><a href="#description">Informasi Kendaraan</a></li>
-                                    <li><a href="#reviews">Gambar</a></li>
                                 </ul>
-                                <form action="{{url ('/motors/'.$Motor->id_motor)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{url ('/motors-admin/'.$Motor->id_motor)}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
                                 <div id="myTabContent" class="tab-content custom-product-edit">
@@ -181,7 +180,7 @@
                                             <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Nama Kendaraan" value="{{$Motor->nama}}" name="nama" id="nama">
+                                                    <input type="text" class="form-control" placeholder="Nama Kendaraan " value="{{$Motor->nama}}" name="nama" id="nama">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-money"></i></span>
@@ -210,63 +209,29 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
                                                     <textarea name= "deskripsi" placeholder="Deskripsi" class="form-control" id="isi" rows="10">{{$Motor->deskripsi}}</textarea>
+                                                </div><br>
+                                                
+                                                <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
+                                                        <select class="form-control" name="verif">
+                                                            @if($Motor->verifikasi == '0')
+                                                            <option value="0" selected>belum verifikasi</option>
+                                                            <option value="1">sudah verifikasi</option>
+                                                            @elseif($Motor->verifikasi == '1')
+                                                            <option value="0">belum verifikasi</option>
+                                                            <option value="1" selected>sudah verifikasi</option>
+                                                            @endif
+                                                        </select>
+                                                </div><br>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="text-center custom-pro-edt-ds">
+                                                    <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div><br>
-                                    </div>
-                                    <div class="product-tab-list tab-pane fade" id="reviews">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="review-content-section">
-                                                <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="pro-edt-img">
-                                                                <img src="{{asset ('bike/'.$Motor->gambar)}}" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="pro-edt-img">
-                                                                <img src="{{asset ('bike/stnk/'.$Motor->stnk)}}" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="stnk">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                <div class="text-center custom-pro-edt-ds">
-                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-                                                                </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </form>    
                                 </div>

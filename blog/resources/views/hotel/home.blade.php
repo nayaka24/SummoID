@@ -198,6 +198,7 @@
 		<div class="container">
 			<div class="row">
 				@foreach($Hotel as $result =>$hasil)
+				@if($hasil->verifikasi == '1')
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
 						<a href="{{url ('/hotels/'.$hasil->id_hotel)}}"><img src="{{asset ('hotel/'.$hasil->gambar)}}" alt=""/>
@@ -211,6 +212,7 @@
 						</div>
 					</div>
 				</div>
+				@endif
 				@endforeach
 			</div>
 		</div>

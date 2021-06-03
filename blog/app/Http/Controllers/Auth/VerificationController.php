@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
@@ -26,7 +27,22 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    public function redirectTo()
+    {
+        if(Auth::user()->level == 'Admin')
+        {
+            return ('/dashboard');
+        }
+        if(Auth::user()->level == 'pengguna')
+        {
+            return ('/');
+        }
+        
+        if(Auth::User()->level == 'mitra')
+        {
+            return ('/dashboard-mitra');
+        }
+    }
 
     /**
      * Create a new controller instance.

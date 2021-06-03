@@ -46,6 +46,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 text-center">
+				@if(Session::has('success'))
+					<div class="alert alert-success" role="alert">
+						{{Session('success')}}
+					</div>
+				@endif
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
@@ -127,35 +132,25 @@
 									<th class="product-image">Gambar Kendaraan</th>
 									<th class="product-name">Nama Kendaraan</th>
 									<th class="product-price">Harga</th>
-									<th class="product-quantity">Kuantitas</th>
-									<th class="product-total">Total</th>
 								</tr>
 							</thead>
 							<tbody>
+							@foreach($Cart as $result =>$hasil)
+								@if($hasil->users_id == Auth::user()->id_user)
 								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="assets/img/motor/beat.jpg" alt=""></td>
-									<td class="product-name">Honda Beat</td>
-									<td class="product-price">RP. 250.000</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
+									<td>
+										<form action="{{url ('/keranjang/'.$hasil->id_cart)}}" method="POST">
+										@csrf
+										@method('delete')
+										<button type="submit" title="Delete" class="product-remove" data-toggle="tooltip"><i class="far fa-window-close" aria-hidden="true"></i></button>
+										</form>
+									</td>
+									<td class="product-image"><img src="{{asset ('bike/'.$hasil->motors->gambar)}}" alt=""></td>
+									<td class="product-name">{{$hasil->motors->nama}}</td>
+									<td class="product-price">{{$hasil->motors->harga}}</td>
 								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="assets/img/motor/mioz.png" alt=""></td>
-									<td class="product-name">Yamaha Mio Z</td>
-									<td class="product-price">RP. 250.000</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="assets/img/motor/vario.png" alt=""></td>
-									<td class="product-name">Honda Vario 125</td>
-									<td class="product-price">RP. 250.000</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
+								@endif
+							@endforeach
 							</tbody>
 						</table>
 					</div>
@@ -186,12 +181,12 @@
 							</tbody>
 						</table>
 						<div class="cart-buttons">
-							<a href="{{ url('/keranjang') }}" class="boxed-btn">Perbarui Keranjang</a>
+							<!-- <a href="{{ url('/keranjang') }}" class="boxed-btn">Perbarui Keranjang</a> -->
 							<a href="{{ url('/checkout') }}" class="boxed-btn black">Periksa</a>
 						</div>
 					</div>
 
-					<div class="coupon-section">
+					<!-- <div class="coupon-section">
 						<h3>Gunakan Kupon</h3>
 						<div class="coupon-form-wrap">
 							<form action="cart.html">
@@ -199,7 +194,7 @@
 								<p><input type="submit" value="gunakan"></p>
 							</form>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

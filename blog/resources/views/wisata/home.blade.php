@@ -122,6 +122,7 @@
 		<div class="container">
 			<div class="row">
 			@foreach($Wisata as $result =>$hasil)
+			@if($hasil->verifikasi == '1')
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
 						<a href="{{url ('/wisatas/'.$hasil->id_wisata)}}"><img src="{{asset ('wisata/'.$hasil->gambar)}}" alt=""></a>
@@ -134,6 +135,7 @@
 						</div>
 					</div>
 				</div>
+				@endif
 			@endforeach
 			</div>
 		</div>

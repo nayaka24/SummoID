@@ -67,21 +67,21 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                <li><a title="Daftar Kendaraan" href="{{url ('/motors-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
                                 <li><a title="Daftar Hapus Kendaraan" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
                                 <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Penginapan" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                <li><a title="Daftar Penginapan" href="{{url ('/hotels-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
                                 <li><a title="Daftar Hapus Penginapan" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
                             </ul>
                         </li>
@@ -197,11 +197,11 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Foto</th>
                                         <th>Nama Lengkap</th>
                                         <th>E-mail</th>
                                         <th>Tipe User</th>
                                         <th>No. Hp</th>
+                                        <th>Verifikasi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -209,11 +209,15 @@
                                 
                                     <tr>
                                         <td>{{$result + $User -> firstitem() }}</td>
-                                        <td><a href="{{asset ('user/'. $hasil -> ktp) }}" target="_blank" rel="noopener norefrrer">Lihat Gambar</a></td></td>
                                         <td>{{$hasil->name}}</td>
                                         <td>{{$hasil->email}}</td>
                                         <td>{{$hasil->level}}</td>
                                         <td>{{$hasil->handphone}}</td>
+                                        @if($hasil->email_verified_at != true)
+                                            <td>Belum terverifikasi</td>
+                                        @else
+                                            <td>Sudah terverifikasi</td>
+                                        @endif
                                         <td>
                                         <form action="{{url ('/admin/'.$hasil->id_user)}}" method="POST">
                                             @csrf

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
     use softDeletes;
@@ -41,13 +41,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function motors(){
-        return $this->hasMany('App\Motor','users_id','id_user');
-    }  
-    public function wisatas(){
-        return $this->hasMany('App\Wisata','users_id','id_user');
-    }  
-    public function hotels(){
-        return $this->hasMany('App\Hotel','users_id','id_user');
-    }  
+    // public function motors(){
+    //     return $this->hasMany('App\Motor','users_id','id_user');
+    // }  
+    // public function wisatas(){
+    //     return $this->hasMany('App\Wisata','users_id','id_user');
+    // }  
+    // public function hotels(){
+    //     return $this->hasMany('App\Hotel','users_id','id_user');
+    // }  
 }

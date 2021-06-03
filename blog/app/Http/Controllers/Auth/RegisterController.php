@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -75,5 +75,13 @@ class RegisterController extends Controller
             'level' => $level
         ]);
     }
+
+    protected function registered()
+    {
+        $this->guard()->logout();
+        return redirect('/login')->with('success','Pengguna telah diregister! Silahkan verifikasi email anda.');
+    }
+
+
 }
 

@@ -69,21 +69,21 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                <li><a title="Daftar Kendaraan" href="{{url ('/motors-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
                                 <li><a title="Daftar Hapus Kendaraan" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
                                 <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Penginapan" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                <li><a title="Daftar Penginapan" href="{{url ('/hotels-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
                                 <li><a title="Daftar Hapus Penginapan" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
                             </ul>
                         </li>
@@ -170,9 +170,8 @@
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
                                     <li class="active"><a href="#description">Paket Wisata</a></li>
-                                    <li><a href="#reviews">Gambar</a></li>
                                 </ul>
-                                <form action="{{url ('/wisatas/'.$Wisata->id_wisata)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{url ('/wisatas-admin/'.$Wisata->id_wisata)}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
                                 <div id="myTabContent" class="tab-content custom-product-edit">
@@ -196,41 +195,24 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-keyboard-o"></i></span>
                                                     <textarea placeholder="Deskripsi" class="form-control" id="isi" name="deskripsi" rows="10">{{$Wisata->deskripsi}}</textarea>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-tab-list tab-pane fade" id="reviews">
+                                                    </div><br><div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
+                                                    <select class="form-control" name="verif">
+                                                    @if($Wisata->verifikasi == '0')
+                                                    <option value="0" selected>belum verifikasi</option>
+                                                    <option value="1">sudah verifikasi</option>
+                                                    @elseif($Wisata->verifikasi == '1')
+                                                    <option value="0">belum verifikasi</option>
+                                                    <option value="1" selected>sudah verifikasi</option>
+                                                    @endif
+                                                    </select>
+                                                </div>
+                                        </div><br>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="pro-edt-img">
-                                                                <img src="{{asset ('wisata/'.$Wisata->gambar)}}" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar" id="gambar">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="text-center custom-pro-edt-ds">
-                                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Edit
-                                                                                    </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <div class="text-center custom-pro-edt-ds">
+                                                    <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>

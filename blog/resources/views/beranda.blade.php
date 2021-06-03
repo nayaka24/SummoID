@@ -137,6 +137,7 @@
 
 			<div class="row">
 			@foreach($Motor as $result =>$hasil)
+				@if($hasil->verifikasi == '1')
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
@@ -147,6 +148,7 @@
 						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
+				@endif
 				@endforeach
 			</div>
 			<div class="row">
