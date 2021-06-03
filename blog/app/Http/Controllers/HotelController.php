@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Hotel;
+Use Auth;
 use App\About;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +24,15 @@ class HotelController extends Controller
         return view('hotel.home',compact('Hotel','About'));
     }
 
+    //mitra
     public function index()
+    {
+        $Hotel= Hotel::paginate(10);
+        return view('mitra.hotel.home',compact('Hotel'));
+    }
+
+    //admin
+    public function admin()
     {
         $Hotel= Hotel::paginate(10);
         return view('dashboard.hotel.home',compact('Hotel'));
@@ -32,7 +45,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        return view('dashboard.hotel.create');
+        return view('mitra.hotel.create');
     }
 
     /**
@@ -58,7 +71,8 @@ class HotelController extends Controller
             'nama'=> $request->nama,
             'deskripsi'=> $request->deskripsi,
             'harga'=> $request->harga,
-            'gambar'=> $namaFile
+            'gambar'=> $namaFile,
+            'users_id'=> Auth::id()
         ]);
         
         $gmbr->move(public_path().'/hotel',$namaFile);
@@ -84,7 +98,15 @@ class HotelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //mitra
     public function edit($id)
+    {
+        $Hotel= Hotel::findorfail($id);
+        return view('mitra.hotel.edit',compact('Hotel'));
+    }
+
+    //admin
+    public function editadmin($id)
     {
         $Hotel= Hotel::findorfail($id);
         return view('dashboard.hotel.edit',compact('Hotel'));
@@ -116,14 +138,16 @@ class HotelController extends Controller
                 'nama'=> $request->nama,
                 'harga'=> $request->harga,
                 'deskripsi'=> $request->deskripsi,
-                'gambar'=> $namaFile
+                'gambar'=> $namaFile,
+                'verifikasi' =>'0'
             ];
             
          }else{
             $hotel_data= [
                 'nama'=> $request->nama,
                 'harga'=> $request->harga,
-                'deskripsi'=> $request->deskripsi
+                'deskripsi'=> $request->deskripsi,
+                'verifikasi' =>'0'
             ];
          }
         $Hotel->update($hotel_data);
@@ -137,12 +161,22 @@ class HotelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //mitra
     public function destroy($id)
     {
         $Hotel= Hotel::findorfail($id);
         $Hotel->delete();
 
         return redirect('/hotels')->with('success','Hotel telah dihapus!(Silahkan Cek pada Daftar Hapus Hotel)');
+    }
+
+    //admin
+    public function destroyadmin($id)
+    {
+        $Hotel= Hotel::findorfail($id);
+        $Hotel->delete();
+
+        return redirect('/hotels-admin')->with('success','Hotel telah dihapus!(Silahkan Cek pada Daftar Hapus Hotel)');
     }
 
     public function tampil_hapus()
@@ -155,14 +189,14 @@ class HotelController extends Controller
     {
         $Hotel= Hotel::withTrashed()->where('id_hotel',$id)->first();
         $Hotel->restore();
-        return redirect('/hotels')->with('success','Hotel telah direstore!(Silahkan cek pada Daftar Hotel)');
+        return redirect('/hotels-admin')->with('success','Hotel telah direstore!(Silahkan cek pada Daftar Hotel)');
     }
    
     public function kill($id)
     {
         $Hotel= Hotel::withTrashed()->where('id_hotel',$id)->first();
         $Hotel->forceDelete();
-        return redirect('/hotels')->with('success','Hotel telah diHapus!');
+        return redirect('/hotels-admin')->with('success','Hotel telah diHapus!');
 
     }
 }

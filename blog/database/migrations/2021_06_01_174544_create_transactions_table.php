@@ -20,9 +20,9 @@ class CreateTransactionsTable extends Migration
             $table->text('alamat');
             $table->string('foto1');
             $table->string('foto2');
-            $table->boolean('pembayaran');
-            $table->boolean('selesai');
-            $table->integer('id_user');
+            $table->tinyinteger('pembayaran')->default('0');
+            $table->tinyinteger('selesai')->default('0');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

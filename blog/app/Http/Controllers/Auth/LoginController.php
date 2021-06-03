@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use  Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -34,9 +34,10 @@ class LoginController extends Controller
         {
             return ('/dashboard');
         }
-        elseif(Auth::User()->level == 'pengguna')
+        
+        if(Auth::User()->level == 'mitra')
         {
-            return ('/beranda');
+            return ('/dashboard-mitra');
         }
     }
 

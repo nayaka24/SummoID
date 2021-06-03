@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard | Summo</title>
+    <title>Dashboard Admin | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -67,21 +67,21 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                <li><a title="Daftar Kendaraan" href="{{url ('/motors-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
                                 <li><a title="Daftar Hapus Kendaraan" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
                                 <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Penginapan" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                <li><a title="Daftar Penginapan" href="{{url ('/hotels-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
                                 <li><a title="Daftar Hapus Penginapan" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
                             </ul>
                         </li>

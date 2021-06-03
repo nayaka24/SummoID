@@ -48,7 +48,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="{{ url('/home') }}">
+							<a href="{{ url('/') }}">
 								<img src="assets/img/summo1.png" alt="" width="25%" height="25%">
 							</a>
 						</div>
@@ -217,7 +217,7 @@
 				<div class="footer-box pages">
 					<h2 class="widget-title">Halaman</h2>
 					<ul>
-						<li><a href="{{ url('/beranda') }}">Beranda</a></li>
+						<li><a href="{{ url('/') }}">Beranda</a></li>
 						<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 						<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
 						<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>

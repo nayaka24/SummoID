@@ -2,17 +2,30 @@
 
 namespace App\Http\Controllers;
 use App\Wisata;
+Use Auth;
 use App\About;
 use Illuminate\Http\Request;
 
 class WisataController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->except('index');
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    //mitra
     public function index()
+    {
+        $Wisata= Wisata::paginate(10);
+        return view('mitra.wisata.home', compact('Wisata'));
+    }
+
+    //admin
+    public function admin()
     {
         $Wisata= Wisata::paginate(10);
         return view('dashboard.wisata.home', compact('Wisata'));
@@ -32,7 +45,7 @@ class WisataController extends Controller
      */
     public function create()
     {
-        return view('dashboard.wisata.create');
+        return view('mitra.wisata.create');
     }
     
     /**
@@ -59,7 +72,8 @@ class WisataController extends Controller
                 'harga'=> $request->harga,
                 'handphone'=> $request->handphone,
                 'deskripsi'=> $request->deskripsi,
-                'gambar'=> $namaFile
+                'gambar'=> $namaFile,
+                'users_id'=> Auth::id()
                 ]);
                 
                 $gmbr->move(public_path().'/wisata',$namaFile);
@@ -85,7 +99,15 @@ class WisataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //mitra
     public function edit($id)
+    {
+        $Wisata= Wisata::findorfail($id);
+        return view('mitra.wisata.edit',compact('Wisata'));
+    }
+
+    //admin
+    public function editadmin($id)
     {
         $Wisata= Wisata::findorfail($id);
         return view('dashboard.wisata.edit',compact('Wisata'));
@@ -100,6 +122,7 @@ class WisataController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $this->validate($request,[
             'nama'=>'required',
             'harga'=>'required',
@@ -119,7 +142,8 @@ class WisataController extends Controller
                 'harga'=> $request->harga,
                 'handphone'=> $request->handphone,
                 'deskripsi'=> $request->deskripsi,
-                'gambar'=> $namaFile
+                'gambar'=> $namaFile,
+                'verifikasi' =>'0'
             ];
             
          }else{
@@ -127,12 +151,13 @@ class WisataController extends Controller
                 'nama'=> $request->nama,
                 'harga'=> $request->harga,
                 'handphone'=> $request->handphone,
-                'deskripsi'=> $request->deskripsi
+                'deskripsi'=> $request->deskripsi,
+                'verifikasi' =>'0'
             ];
          }
-        $Wisata->update($wisata_data);
-        
-        return redirect('/wisatas')->with('success','Paket Wisata telah diedit!');
+             
+             $Wisata->update($wisata_data);
+             return redirect('/wisatas')->with('success','Paket Wisata telah diedit!');
     }
 
     /**
@@ -141,12 +166,22 @@ class WisataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //mitra
     public function destroy($id)
     {
         $Wisata= Wisata::findorfail($id);
         $Wisata->delete();
 
         return redirect('/wisatas')->with('success','Paket Wisata telah dihapus!(Silahkan Cek pada Daftar Hapus Paket Wisata)');
+    }
+
+    //admin
+    public function destroyadmin($id)
+    {
+        $Wisata= Wisata::findorfail($id);
+        $Wisata->delete();
+
+        return redirect('/wisatas-admin')->with('success','Paket Wisata telah dihapus!(Silahkan Cek pada Daftar Hapus Paket Wisata)');
     }
 
     public function tampil_hapus()
@@ -159,14 +194,14 @@ class WisataController extends Controller
     {
         $Wisata= Wisata::withTrashed()->where('id_wisata',$id)->first();
         $Wisata->restore();
-        return redirect('/wisatas')->with('success','Paket Wisata telah direstore!(Silahkan cek pada Daftar Paket Wisata)');
+        return redirect('/wisatas-admin')->with('success','Paket Wisata telah direstore!(Silahkan cek pada Daftar Paket Wisata)');
     }
    
     public function kill($id)
     {
         $Wisata= Wisata::withTrashed()->where('id_wisata',$id)->first();
         $Wisata->forceDelete();
-        return redirect('/wisatas')->with('success','Paket Wisata telah diHapus!');
+        return redirect('/wisatas-admin')->with('success','Paket Wisata telah diHapus!');
 
     }
 }

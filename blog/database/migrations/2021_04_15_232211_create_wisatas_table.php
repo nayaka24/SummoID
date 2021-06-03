@@ -20,7 +20,8 @@ class CreateWisatasTable extends Migration
             $table->string('handphone','16');
             $table->text('deskripsi');
             $table->string('gambar');
-            $table->integer('id_user');
+            $table->boolean('verifikasi')->default('0');
+            $table->integer('users_id');
             $table->timestamps();
             $table->softDeletes();
         });

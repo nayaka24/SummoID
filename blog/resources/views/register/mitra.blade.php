@@ -149,7 +149,7 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Halaman</h2>
 						<ul>
-							<li><a href="{{ url('/beranda') }}">Beranda</a></li>
+							<li><a href="{{ url('/') }}">Beranda</a></li>
 							<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
 							<li><a href="{{ url('/booking_hotel') }}">Booking Hotel</a></li>
 							<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>

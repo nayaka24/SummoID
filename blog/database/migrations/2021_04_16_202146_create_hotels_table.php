@@ -19,9 +19,9 @@ class CreateHotelsTable extends Migration
             $table->text('harga');
             $table->text('deskripsi');
             $table->string('gambar');
-            $table->boolean('verifikasi');
-            $table->boolean('transaksi');
-            $table->integer('id_user');
+            $table->boolean('verifikasi')->default('0');
+            $table->boolean('transaksi')->default('0');
+            $table->integer('users_id');
             $table->timestamps();
             $table->softDeletes();
         });

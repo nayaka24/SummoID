@@ -69,21 +69,21 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                <li><a title="Daftar Kendaraan" href="{{url ('/motors-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
                                 <li><a title="Daftar Hapus Kendaraan" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
                                 <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Penginapan" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                <li><a title="Daftar Penginapan" href="{{url ('/hotels-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
                                 <li><a title="Daftar Hapus Penginapan" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
                             </ul>
                         </li>
@@ -181,7 +181,7 @@
                                             <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Nama Motor" value="{{$Motor->nama}}" name="nama" id="nama">
+                                                    <input type="text" class="form-control" placeholder="Nama Kendaraan" value="{{$Motor->nama}}" name="nama" id="nama">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon"><i class="fa fa-money"></i></span>
@@ -193,9 +193,15 @@
                                                         @if($Motor->kategori == 'matic')
                                                         <option value="matic" selected>matic</option>
                                                         <option value="manual">manual</option>
+                                                        <option value="mobil">mobil</option>
                                                         @elseif($Motor->kategori == 'manual')
                                                         <option value="matic">matic</option>
                                                         <option value="manual" selected>manual</option>
+                                                        <option value="mobil">mobil</option>
+                                                        @elseif($Motor->kategori == 'mobil')
+                                                        <option value="matic">matic</option>
+                                                        <option value="manual">manual</option>
+                                                        <option value="mobil" selected>mobil</option>
                                                         @endif
                                                     </select>
                                                 </div>
@@ -212,7 +218,7 @@
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="review-content-section">
-                                                    <div class="row">
+                                                <div class="row">
                                                         <div class="col-lg-4">
                                                             <div class="pro-edt-img">
                                                                 <img src="{{asset ('bike/'.$Motor->gambar)}}" alt="" />
@@ -224,17 +230,36 @@
                                                                     <div class="product-edt-pix-wrap">
                                                                         <div class="input-group">
                                                                             <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar" id="gambar">
+                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="text-center custom-pro-edt-ds">
-                                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-                                                                                    </button>
-                                                                            </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="pro-edt-img">
+                                                                <img src="{{asset ('bike/stnk/'.$Motor->stnk)}}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="product-edt-pix-wrap">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
+                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="stnk">
                                                                         </div>
                                                                     </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div class="text-center custom-pro-edt-ds">
+                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
+                                                                </button>
                                                                 </div>
                                                             </div>
                                                         </div>

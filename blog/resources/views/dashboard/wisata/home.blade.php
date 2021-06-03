@@ -67,21 +67,21 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                <li><a title="Daftar Kendaraan" href="{{url ('/motors-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
                                 <li><a title="Daftar Hapus Kendaraan" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
                                 <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Penginapan" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                <li><a title="Daftar Penginapan" href="{{url ('/hotels-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
                                 <li><a title="Daftar Hapus Penginapan" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
                             </ul>
                         </li>
@@ -190,34 +190,39 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
                             <h4>List Paket Wisata</h4>
-                            <div class="add-product">
-                                <a href="{{url ('/wisatas/create')}}">Tambah Paket Wisata</a>
-                            </div>
                             <table>
                                 <thead>
-                                    <tr>
+                                <tr>
                                         <th>No.</th>
                                         <th>Gambar</th>
                                         <th>Nama Objek Wisata</th>
                                         <th>Harga</th>
                                         <th>Deskripsi</th>
                                         <th>No.Telp</th>
+                                        <th>Nama Mitra</th>
+                                        <th>Verifikasi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($Wisata as $result =>$hasil)
-                                    <tr>
+                                <tr>
                                         <td>{{$result + $Wisata -> firstitem() }}</td>
                                         <td><a href="{{asset ('wisata/'. $hasil -> gambar) }}" target="_blank" rel="noopener norefrrer">Lihat Gambar</a></td>
                                         <td>{{$hasil->nama}}</td>
                                         <td>{{$hasil->harga}}</td>
                                         <td>{{$hasil->deskripsi}}</td>
                                         <td>{{$hasil->handphone}}</td>
+                                        <td>{{$hasil->users->name}}</td>
+                                            @if($hasil->verifikasi == '0') 
+                                                <td>Belum terverifikasi</td>
+                                            @else
+                                                <td>sudah terverifikasi</td>
+                                            @endif
                                         <td>
-                                        <form action="{{url ('/wisatas/'.$hasil->id_wisata)}}" method="POST">
+                                        <form action="{{url ('/wisatas-admin/'.$hasil->id_wisata)}}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ url ('/wisatas/'. $hasil->id_wisata .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <a href="{{ url ('/wisatas-admin/'. $hasil->id_wisata .'/edit')}}" class ="pd-setting-ed" data-toggle="tooltip" title ="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             <button type="submit" title="Delete" class="pd-setting-ed" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </form>
                                         </td>

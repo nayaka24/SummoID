@@ -15,9 +15,9 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->bigIncrements('id_cart');
-            $table->integer('id_mtr');
-            $table->integer('id_user');
-            $table->boolean('transaksi');
+            $table->integer('motors_id');
+            $table->integer('users_id');
+            $table->boolean('transaksi')->default('0');
             $table->timestamps();
         });
     }

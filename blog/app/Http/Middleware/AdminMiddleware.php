@@ -16,7 +16,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::User()->level == "mitra")
+        if(Auth::User()->level == "Admin")
         {
             return $next($request);
         }

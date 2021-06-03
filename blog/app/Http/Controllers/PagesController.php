@@ -38,8 +38,14 @@ class PagesController extends Controller
         return view('checkout',compact('About'));
     }
 
+    //dashboard admin
     public function dashboard(){
         return view('dashboard.home');
+    }
+
+    //dashboard mitra
+    public function mitra(){
+        return view('mitra.home');
     }
 
     public function admin(){

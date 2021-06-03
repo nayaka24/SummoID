@@ -235,38 +235,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-tab-list tab-pane fade" id="reviews">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                        <div class="pro-edt-img">
-                                                                <img src="{{asset ('user/'.$User->ktp)}}" alt="" />
-                                                        </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-photo"></i></span>
-                                                                            <input type="file" class="form-control" placeholder="Pilih Gambar" name="gambar" id="gambar">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="text-center custom-pro-edt-ds">
-                                                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
-                                                                                    </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center custom-pro-edt-ds">
+                                                <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Simpan
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
