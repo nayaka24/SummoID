@@ -129,7 +129,7 @@
 						<div class="news-text-box">
 							<h3><a href="{{url ('/wiastas/'.$hasil->id_wisata)}}">{{$hasil->nama}}</a></h3>
 								<p class="blog-meta">
-									<span class="price"><i class="fas fa-money-bill-wave"> {{$hasil->harga}}</i></span>
+									<span class="price"><i class="fas fa-money-bill-wave">Rp.{{$hasil->harga}}</i></span>
 								</p>
 							<a href="{{url ('/wisatas/'.$hasil->id_wisata)}}" class="read-more-btn">Lihat Selengkapnya <i class="fas fa-angle-right"></i></a>
 						</div>

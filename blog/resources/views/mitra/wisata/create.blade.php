@@ -88,7 +88,7 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Selesai" href="{{url ('/confTransaksi')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
+                                <li><a title="Selesai" href="{{url ('/pesanan')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
                             </ul>
                         </li>
                     </ul>

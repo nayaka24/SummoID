@@ -16,12 +16,12 @@ class CreateHotelsTable extends Migration
         Schema::create('hotels', function (Blueprint $table) {
             $table->Increments('id_hotel');
             $table->string('nama');
-            $table->text('harga');
+            $table->decimal('harga','10','2');
             $table->text('deskripsi');
             $table->string('gambar');
             $table->boolean('verifikasi')->default('0');
-            $table->boolean('transaksi')->default('0');
             $table->integer('users_id');
+            $table->unsignedInteger('Kuantitas');
             $table->timestamps();
             $table->softDeletes();
         });

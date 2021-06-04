@@ -91,6 +91,7 @@
 											</form>
 										</a>
 										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
+										<a class="" href="{{ url('/checkout') }}"><i class="fas fa-cash-register"></i></a>
 										@endguest
 									</div>
 								</li>
@@ -131,10 +132,12 @@
 									<th class="product-remove"></th>
 									<th class="product-image">Gambar Kendaraan</th>
 									<th class="product-name">Nama Kendaraan</th>
+									<th class="product-name">Nama Pemilik Kendaraan</th>
 									<th class="product-price">Harga</th>
 								</tr>
 							</thead>
 							<tbody>
+							<?php $total_amount =0; ?>
 							@foreach($Cart as $result =>$hasil)
 								@if($hasil->users_id == Auth::user()->id_user)
 								<tr class="table-body-row">
@@ -147,15 +150,16 @@
 									</td>
 									<td class="product-image"><img src="{{asset ('bike/'.$hasil->motors->gambar)}}" alt=""></td>
 									<td class="product-name">{{$hasil->motors->nama}}</td>
-									<td class="product-price">{{$hasil->motors->harga}}</td>
+									<td class="product-name">{{$hasil->motors->users->name}}</td>
+									<td class="product-price">RP.{{$hasil->motors->harga}}</td>
 								</tr>
 								@endif
+							<?php $total_amount = $total_amount + ($hasil->motors->harga); ?>
 							@endforeach
 							</tbody>
 						</table>
 					</div>
 				</div>
-
 				<div class="col-lg-4">
 					<div class="total-section">
 						<table class="total-table">
@@ -168,21 +172,13 @@
 							<tbody>
 								<tr class="total-data">
 									<td><strong>Subtotal: </strong></td>
-									<td>RP. 250.000</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Promo/Diskon: </strong></td>
-									<td>-</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Total: </strong></td>
-									<td>RP. 250.000</td>
+									<td>RP.{{$total_amount}}</td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="cart-buttons">
 							<!-- <a href="{{ url('/keranjang') }}" class="boxed-btn">Perbarui Keranjang</a> -->
-							<a href="{{ url('/checkout') }}" class="boxed-btn black">Periksa</a>
+							<a href="{{ url('/checkout/create') }}" class="boxed-btn black">Periksa</a>
 						</div>
 					</div>
 

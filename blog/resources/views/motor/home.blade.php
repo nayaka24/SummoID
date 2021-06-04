@@ -142,7 +142,7 @@
 							<a href="{{url ('/motors/'.$hasil->id_motor)}}"><img src="{{asset ('bike/'.$hasil->gambar)}}" alt=""></a>
 						</div>
 						<h3>{{$hasil->nama}}</h3>
-						<p class="product-price"><span>Per Hari</span> {{$hasil->harga}} </p>
+						<p class="product-price"><span>Per Hari</span>Rp.{{$hasil->harga}} </p>
 						
 					</div>
 				</div>

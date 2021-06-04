@@ -24,7 +24,7 @@ class MotorController extends Controller
     }
 
     public function bike(){
-        $Motor = Motor::paginate(10);
+        $Motor = Motor::paginate(3);
         $About = About::all();
         return view('motor.home',compact('Motor','About'));
     }

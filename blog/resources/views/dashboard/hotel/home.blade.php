@@ -198,6 +198,7 @@
                                     <th>Nama Penginapan</th>
                                     <th>Deskripsi</th>
                                     <th>Harga</th>
+                                    <th>Jumlah Kamar</th>
                                     <th>Nama Mitra</th>
                                     <th>Verifikasi</th>
                                 </tr>
@@ -210,6 +211,7 @@
                                     <td>{{$hasil->nama}}</td>
                                     <td>{{$hasil->deskripsi}}</td>
                                     <td>{{$hasil->harga}}</td>
+                                    <td>{{$hasil->Kuantitas}}</td>
                                     <td>{{$hasil->users->name}}</td>
                                     @if($hasil->verifikasi == '0') 
                                         <td>Belum terverifikasi</td>

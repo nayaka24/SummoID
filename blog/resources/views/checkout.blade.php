@@ -29,6 +29,9 @@
 	<link rel="stylesheet" href="{{asset ('assets/css/main.css')}}">
 	<!-- responsive -->
 	<link rel="stylesheet" href="{{asset ('assets/css/responsive.css')}}">
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
 
 </head>
 <body>
@@ -50,7 +53,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="{{ url('/') }}">
-								<img src="assets/img/summo1.png" alt="" width="25%" height="25%">
+								<img src="{{asset ('assets/img/summo1.png')}}" alt="" width="25%" height="25%">
 							</a>
 						</div>
 						<!-- logo -->
@@ -86,8 +89,6 @@
 											</form>
 										</a>
 										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
-										
-
 										@endguest
 									</div>
 								</li>
@@ -102,25 +103,6 @@
 		</div>
 	</div>
 	<!-- end header -->
-
-	<!-- search area -->
-	<div class="search-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="close-btn"><i class="fas fa-window-close"></i></span>
-					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Pencarian:</h3>
-							<input type="text" placeholder="">
-							<button type="submit">Cari <i class="fas fa-search"></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end search arewa -->
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
@@ -156,46 +138,18 @@
 						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 						      <div class="card-body">
 						        <div class="billing-address-form">
-						        	<form action="index.html">
-						        		<p>Nama Lengkap :<input type="text"></p>
-						        		<p>E-Mail :<input type="email"></p>
-						        		<p>Foto KK / BPJS / SIM / dll :<input type="file" name="foto" accept="image/jpeg, image/gif"/></p>
-						        		<p>Alamat :<input type="text"></p>
-						        		<p>No.HP :<input type="telp"></p>
-						        		<p>Catatan :<textarea name="bill" id="bill" cols="30" rows="10"></textarea></p>
-						        	</form>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingTwo">
-						      <h5 class="mb-0">
-						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-						          Alamat Pengiriman
-						        </button>
-						      </h5>
-						    </div>
-						    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-						      <div class="card-body">
-						        <div class="shipping-address-form">
-						        	<p>Formulir alamat pengiriman Anda ada di sini.</p>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingThree">
-						      <h5 class="mb-0">
-						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-						          Detail Kartu
-						        </button>
-						      </h5>
-						    </div>
-						    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-						      <div class="card-body">
-						        <div class="card-details">
-						        	<p>Detail kartu Anda ada di sini.</p>
+						        	<form action="{{url ('/checkout')}}" method="post" enctype="multipart/form-data">
+										@csrf
+						        		<p>Nama Lengkap :<input type="text" name="nama" value="{{Auth::user()->name}}"></p>
+						        		<p>E-Mail :<input type="email" name="email" value="{{Auth::user()->email}}"></p>
+						        		<p>Tanggal Pinjam :<input type="date" name="tanggal_ambil" ></p>
+						        		<p>Tanggal Kembali :<input type="date" name="tanggal_kembali" ></p>
+						        		<p>Foto KTP :<input type="file" name="foto1" placeholder="pilih gambar..."/></p>
+						        		<p>Foto diri dan KTP :<input type="file" name="foto2" placeholder="pilih gambar..."/></p>
+						        		<p>Foto KK / BPJS / SIM / dll :<input type="file" name="foto3" placeholder="pilih gambar..."/></p>
+						        		<p>Alamat :<textarea name="alamat" id="text" cols="30" rows="10"></textarea></p>
+						        		<p>No.HP :<input type="telp" name="telp" value="{{Auth::user()->handphone}}"></p>
+						        		<p>Catatan :<textarea name="catatan" id="text" cols="30" rows="10"></textarea></p>
 						        </div>
 						      </div>
 						    </div>
@@ -218,36 +172,29 @@
 									<td>Nama Kendaraan</td>
 									<td>Harga</td>
 								</tr>
+								<?php $total_amount =0; ?>
+								@foreach($Cart as $result =>$hasil)
+								@if($hasil->users_id == Auth::user()->id_user)
 								<tr>
-									<td>Honda Beat</td>
-									<td>RP. 250.000</td>
+									<input type="hidden" name="id_cart" value="{{$hasil->id_cart}}">
+									<td>{{$hasil->motors->nama}}</td>
+									<td>RP.{{$hasil->motors->harga}}</td>
 								</tr>
-								<tr>
-									<td>Yamaha Mio Z</td>
-									<td>RP. 250.000</td>
-								</tr>
-								<tr>
-									<td>Honda Vario 125</td>
-									<td>RP. 250.000</td>
-								</tr>
+								@endif
+								<?php $total_amount = $total_amount + ($hasil->motors->harga); ?>
+								@endforeach
 							</tbody>
 							<tbody class="checkout-details">
 								<tr>
 									<td>Subtotal</td>
-									<td>RP. 750.000</td>
-								</tr>
-								<tr>
-									<td>Promo/Diskon</td>
-									<td>-</td>
-								</tr>
-								<tr>
-									<td>Total</td>
-									<td>RP. 750.000</td>
+									<td><input type="hidden" name="total" value= "{{$total_amount}}" >Rp.{{$total_amount}}</td>
 								</tr>
 							</tbody>
 						</table>
-						<a href="#" class="boxed-btn">Sewa</a>
+						<button class="boxed-btn">Sewa
+						</button>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -350,6 +297,15 @@
 	<script src="{{asset ('assets/js/sticker.js')}}"></script>
 	<!-- main js -->
 	<script src="{{asset ('assets/js/main.js')}}"></script>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	$( function() {
+		$( "#date" ).datepicker();
+		$( "#date1" ).datepicker();
+	} );
+	</script>
 
 </body>
 </html>

@@ -46,7 +46,7 @@ Auth::routes(['verify'=>true ]);
         Route::get('/hotels/{hotel}/edit','HotelController@edit');
         
         //data transaksi
-        Route::get('/confTransaksi','PagesController@transaksi');
+        Route::get('/pesanan','TransactionController@TransaksiMitra');
     
     });
     
@@ -112,7 +112,7 @@ Auth::routes(['verify'=>true ]);
         
         //data transaksi
         Route::get('/confTransaksi','PagesController@transaksi');
-        Route::get('/confPembayaran','PagesController@pembayaran');
+        Route::get('/confPembayaran','TransactionController@pembayaran');
         
     });
 
@@ -122,9 +122,13 @@ Auth::routes(['verify'=>true ]);
         Route::get('/keranjang','CartController@index');
         Route::delete('/keranjang/{cart}','CartController@destroy');
         
-        
-        Route::get('/checkout','PagesController@checkout');
+        //order
+        Route::post('/checkout','TransactionController@store');
+        Route::get('/checkout','TransactionController@index');
+        Route::get('/checkout/create','TransactionController@create');
+
         Route::get('/profiluser','PagesController@user');
+
     });
     
     //register

@@ -186,6 +186,10 @@
                                                     <span class="input-group-addon"><i class="fa fa-money"></i></span>
                                                     <input type="text" class="form-control" value= "{{$Hotel->harga}}" name="harga" id="harga">
                                                 </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
+                                                    <input type="text" class="form-control" value= "{{$Hotel->Kuantitas}}" name="jumlah" id="jumlah">
+                                                </div>
                                             </div>
                                             <div class="review-content-section">
                                                 <div class="input-group">

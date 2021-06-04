@@ -76,7 +76,7 @@
 
           <h5>No. Hp:</h5>
           <div class="wrap-input100 validate-input" data-validate = "No.HP Harus Diisi!">
-          <input class="input100" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" ">
+          <input class="input100" type="text" name="handphone" placeholder="ex: +628xxxxxxxxxxxx" >
             <span class="focus-input100"></span>
             <span class="symbol-input100">
               <i class="fas fa-phone" aria-hidden="true"></i>
@@ -92,7 +92,7 @@
             </span>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked/>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
             <label class="form-check-label" for="flexCheckChecked">Terms and Conditions Apply</label>
           </div>
 

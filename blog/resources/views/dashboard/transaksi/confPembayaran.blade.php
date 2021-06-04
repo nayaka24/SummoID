@@ -67,21 +67,21 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-motorcycle"></i><span class="mini-click-non"> Kendaraan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Kendaraan" href="{{url ('/motors')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
+                                <li><a title="Daftar Kendaraan" href="{{url ('/motors-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Kendaraan</span></a></li>
                                 <li><a title="Daftar Hapus Kendaraan" href="{{url ('motors/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Kendaraan</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Wisata" href="{{url ('/wisatas')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
                                 <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
                             </ul>
                         </li>
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Penginapan" href="{{url ('/hotels')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
+                                <li><a title="Daftar Penginapan" href="{{url ('/hotels-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
                                 <li><a title="Daftar Hapus Penginapan" href="{{url ('/hotels/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Penginapan</span></a></li>
                             </ul>
                         </li>
@@ -171,14 +171,30 @@
                                     <th>No. Hp</th>
                                     <th>Alamat</th>
                                     <th>Jenis Peminjaman</th>
+                                    <th>Tanggal Peminjaman</th>
+                                    <th>Catatan</th>
+                                    <th>Harga</th>
                                     <th>Status Pembayaran</th>
                                 </tr>
                                 <tr>
-                                    <td>Kshiti Ghelani</td>
-                                    <td>kshitighelani@gmail.com</td>
-                                    <td>123 456 789</td>
-                                    <td>Jl. Melati</td>
-                                    <td>Sewa Kendaraan</td>
+                                @foreach($Transaksi as $result =>$hasil)
+                                    <td>{{$hasil -> name}}</td>
+                                    <td>{{$hasil -> email}}</td>
+                                    <td>{{$hasil -> handphone}}</td>
+                                    <td>{{$hasil -> alamat}}</td>
+                                    @if($hasil->jenis_transaksi == '1')
+                                        <td>Pesanan Kendaraan</td>
+                                    @else
+                                        <td>Pesanan Penginapan</td>
+                                    @endif
+                                    <td>{{$hasil -> tanggal_ambil}} / {{$hasil -> tanggal_kembali}}</td>
+                                    <td>{{$hasil -> catatan}}</td>
+                                    <td>Rp.{{$hasil -> total}}</td>
+                                    @if($hasil->pembayaran == '1')
+                                        <td>Pesanan belum dibayar</td>
+                                    @else
+                                        <td>Pesanan Sudah dibayar</td>
+                                    @endif
                                     <td>
                                         <div class="input-group mg-b-pro-edt">
                                             <select class="form-control" name="kategori">
@@ -189,22 +205,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Jacob Sikim</td>
-                                    <td>jacob@gmail.com</td>
-                                    <td>987 654 321</td>
-                                    <td>Jl. Mawar</td>
-                                    <td>Booking Penginapan</td>
-                                    <td>
-                                        <div class="input-group mg-b-pro-edt">
-                                            <select class="form-control" name="kategori">
-                                                <option value="" holder>-Pilih-</option>
-                                                <option value="matic">Diterima</option>
-                                                <option value="manual">Sedang diproses</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </table><br><br><br>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

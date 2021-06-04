@@ -20,9 +20,16 @@ class CreateTransactionsTable extends Migration
             $table->text('alamat');
             $table->string('foto1');
             $table->string('foto2');
-            $table->tinyinteger('pembayaran')->default('0');
-            $table->tinyinteger('selesai')->default('0');
-            $table->integer('user_id');
+            $table->string('foto3');
+            $table->text('catatan');
+            $table->tinyinteger('jenis_transaksi');
+            $table->decimal('total','10','2');
+            $table->tinyinteger('pembayaran');
+            $table->tinyinteger('selesai');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('handphone', '16');
+            $table->integer('carts_id');
             $table->timestamps();
         });
     }

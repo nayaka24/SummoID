@@ -131,7 +131,7 @@
 								@csrf
 								<input type="hidden" name="id_motor" value="{{$Motor->id_motor}}">
 						<h3>{{$Motor->nama}}</h3>
-						<p class="single-product-pricing"><span>Per Hari</span>{{$Motor->harga}}</p>
+						<p class="single-product-pricing"><span>Per Hari</span>Rp.{{$Motor->harga}}</p>
 						<p>{!!$Motor->deskripsi!!}</p>
 						<div class="single-product-form">
 							<p><strong>Kategori: </strong>{{$Motor->kategori}}</p>

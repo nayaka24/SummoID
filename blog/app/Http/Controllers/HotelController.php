@@ -61,7 +61,8 @@ class HotelController extends Controller
             'nama'=>'required',
             'harga'=>'required',
             'deskripsi'=>'required',
-            'gambar'=>'required'
+            'gambar'=>'required',
+            'jumlah'=>'required'
         ]);
         
         $gmbr= $request->gambar;
@@ -71,6 +72,7 @@ class HotelController extends Controller
             'nama'=> $request->nama,
             'deskripsi'=> $request->deskripsi,
             'harga'=> $request->harga,
+            'kuantitas'=> $request->jumlah,
             'gambar'=> $namaFile,
             'users_id'=> Auth::id()
         ]);
@@ -124,7 +126,9 @@ class HotelController extends Controller
         $this->validate($request,[
             'nama'=>'required',
             'harga'=>'required',
-            'deskripsi'=>'required'
+            'deskripsi'=>'required',
+            'jumlah'=>'required'
+
         ]);
         
         $Hotel= Hotel::findorfail($id);
@@ -138,6 +142,7 @@ class HotelController extends Controller
                 'nama'=> $request->nama,
                 'harga'=> $request->harga,
                 'deskripsi'=> $request->deskripsi,
+                'Kuantitas'=> $request->jumlah,
                 'gambar'=> $namaFile,
                 'verifikasi' =>'0'
             ];
@@ -147,6 +152,7 @@ class HotelController extends Controller
                 'nama'=> $request->nama,
                 'harga'=> $request->harga,
                 'deskripsi'=> $request->deskripsi,
+                'Kuantitas'=> $request->jumlah,
                 'verifikasi' =>'0'
             ];
          }
@@ -214,6 +220,7 @@ class HotelController extends Controller
                 'nama'=> $request->nama,
                 'harga'=> $request->harga,
                 'deskripsi'=> $request->deskripsi,
+                'Kuantitas'=> $request->jumlah,
                 'verifikasi' =>$request->verif
             ];
 

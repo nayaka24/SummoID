@@ -16,7 +16,7 @@ class CreateWisatasTable extends Migration
         Schema::create('wisatas', function (Blueprint $table) {
             $table->Increments('id_wisata');
             $table->string('nama');
-            $table->text('harga');
+            $table->decimal('harga','10','2');
             $table->string('handphone','16');
             $table->text('deskripsi');
             $table->string('gambar');

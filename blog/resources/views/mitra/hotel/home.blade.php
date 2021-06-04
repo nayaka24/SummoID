@@ -85,7 +85,7 @@
                         <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Selesai" href="{{url ('/confTransaksi')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
+                                <li><a title="Selesai" href="{{url ('/pesanan')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -182,6 +182,7 @@
                                     <th>Nama Penginapan</th>
                                     <th>Deskripsi</th>
                                     <th>Harga</th>
+                                    <th>Jumlah Kamar</th>
                                     <th>Nama Mitra</th>
                                     <th>Verifikasi</th>
                                 </tr>
@@ -195,6 +196,7 @@
                                     <td>{{$hasil->nama}}</td>
                                     <td>{{$hasil->deskripsi}}</td>
                                     <td>{{$hasil->harga}}</td>
+                                    <td>{{$hasil->Kuantitas}}</td>
                                     <td>{{$hasil->users->name}}</td>
                                     @if($hasil->verifikasi == '0') 
                                         <td>Belum terverifikasi</td>

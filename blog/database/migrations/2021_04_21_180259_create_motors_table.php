@@ -16,7 +16,7 @@ class CreateMotorsTable extends Migration
         Schema::create('motors', function (Blueprint $table) {
             $table->Increments('id_motor');
             $table->string('nama');
-            $table->text('harga');
+            $table->decimal('harga','10','2');
             $table->text('deskripsi');
             $table->string('kategori');
             $table->string('gambar');

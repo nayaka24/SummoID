@@ -17,7 +17,6 @@ class CreateCartsTable extends Migration
             $table->bigIncrements('id_cart');
             $table->integer('motors_id');
             $table->integer('users_id');
-            $table->boolean('transaksi')->default('0');
             $table->timestamps();
         });
     }

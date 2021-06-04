@@ -33,11 +33,6 @@ class PagesController extends Controller
         return view('about.home',compact('About','Image','about'));
     }
 
-    public function checkout(){
-        $About= About::all();
-        return view('checkout',compact('About'));
-    }
-
     //dashboard admin
     public function dashboard(){
         return view('dashboard.home');
@@ -58,10 +53,6 @@ class PagesController extends Controller
 
     public function transaksi(){
         return view('dashboard.transaksi.confTransaksi');
-    }
-
-    public function pembayaran(){
-        return view('dashboard.transaksi.confPembayaran');
     }
 
     public function verifikasi(){

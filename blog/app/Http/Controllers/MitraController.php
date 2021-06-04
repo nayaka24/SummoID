@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use App\User;
 use App\About;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 
 class MitraController extends Controller
 {
+    use RegistersUsers;
+
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+    
     public function mitra(){
         $About= About::all();
         return view('register.mitra',compact('About'));

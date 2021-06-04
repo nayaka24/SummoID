@@ -19,7 +19,6 @@ class CartController extends Controller
         $Cart= Cart::all();
         return view('cart',compact('About','Cart'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
