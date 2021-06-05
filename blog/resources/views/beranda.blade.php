@@ -130,7 +130,6 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3><span class="orange-text">Kendaraan</span> yang Disewakan</h3>
-						<h4><span class="orange-text">Matic</span> dan <span class="orange-text">Manual</span></h4>
 					</div>
 				</div>
 			</div>

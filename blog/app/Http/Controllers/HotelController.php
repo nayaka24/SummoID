@@ -78,7 +78,7 @@ class HotelController extends Controller
         ]);
         
         $gmbr->move(public_path().'/hotel',$namaFile);
-        return redirect('/hotels')->with('success','Hotel telah ditambahkan!');
+        return redirect('/hotels')->with('success','Penginapan telah ditambahkan!');
     }
 
     /**
@@ -158,7 +158,7 @@ class HotelController extends Controller
          }
         $Hotel->update($hotel_data);
         
-        return redirect('/hotels')->with('success','Hotel telah diedit!');
+        return redirect('/hotels')->with('success','Penginapan telah diedit!');
     }
 
     /**
@@ -173,7 +173,7 @@ class HotelController extends Controller
         $Hotel= Hotel::findorfail($id);
         $Hotel->delete();
 
-        return redirect('/hotels')->with('success','Hotel telah dihapus!(Silahkan Cek pada Daftar Hapus Hotel)');
+        return redirect('/hotels')->with('success','Penginapan telah dihapus! (Silahkan Cek pada Penginapan > Daftar Hapus Penginapan)');
     }
 
     //admin
@@ -182,7 +182,7 @@ class HotelController extends Controller
         $Hotel= Hotel::findorfail($id);
         $Hotel->delete();
 
-        return redirect('/hotels-admin')->with('success','Hotel telah dihapus!(Silahkan Cek pada Daftar Hapus Hotel)');
+        return redirect('/hotels-admin')->with('success','Penginapan telah dihapus! (Silahkan Cek pada Penginapan > Daftar Hapus Penginapan)');
     }
 
     public function tampil_hapus()
@@ -195,14 +195,14 @@ class HotelController extends Controller
     {
         $Hotel= Hotel::withTrashed()->where('id_hotel',$id)->first();
         $Hotel->restore();
-        return redirect('/hotels-admin')->with('success','Hotel telah direstore!(Silahkan cek pada Daftar Hotel)');
+        return redirect('/hotels-admin')->with('success','Penginapan telah direstore!');
     }
    
     public function kill($id)
     {
         $Hotel= Hotel::withTrashed()->where('id_hotel',$id)->first();
         $Hotel->forceDelete();
-        return redirect('/hotels-admin')->with('success','Hotel telah diHapus!');
+        return redirect('/hotels-admin')->with('success','Penginapan telah diHapus!');
 
     }
     public function verif(Request $request, $id)
@@ -226,6 +226,6 @@ class HotelController extends Controller
 
         $Hotel->update($hotel_data);
         
-        return redirect('/hotels-admin')->with('success','Hotel telah terverifikasi!');
+        return redirect('/hotels-admin')->with('success','Penginapan telah terverifikasi!');
     }
 }

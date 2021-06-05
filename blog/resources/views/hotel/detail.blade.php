@@ -59,12 +59,12 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/') }}">Beranda</a></li>
+								<li><a href="{{ url('/') }}">Beranda</a></li>
 								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-								<li><a href="#">Kebutuhan Perjalananmu!</a>
+								<li class="current-list-item mx-1 active"><a href="#">Kebutuhan Perjalananmu!</a>
 									<ul class="sub-menu">
 										<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
-										<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
+										<li class="current-list-item mx-1 active"><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
 										<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 									</ul>
 								</li>
@@ -182,26 +182,12 @@
 																	</thead>
 																	<tbody class="order-details-body">
 																		<tr>
-																			<td>Nama Hotel</td>
-																			<td>Harga</td>
+																			<td><strong>Nama Hotel</strong></td>
+																			<td><strong>Harga</strong></td>
 																		</tr>
 																		<tr>
 																			<td>{{$Hotel->nama}}</td>
 																			<td>{{$Hotel->harga}}</td>
-																		</tr>
-																	</tbody>
-																	<tbody class="checkout-details">
-																		<tr>
-																			<td>Subtotal</td>
-																			<td>RP. 250.000</td>
-																		</tr>
-																		<tr>
-																			<td>Promo/Diskon</td>
-																			<td>-</td>
-																		</tr>
-																		<tr>
-																			<td>Total</td>
-																			<td>RP. 250.000</td>
 																		</tr>
 																	</tbody>
 																</table>

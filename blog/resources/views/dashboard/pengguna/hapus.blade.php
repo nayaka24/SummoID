@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>List Trash Motor | Summo</title>
+    <title>List Trash Pengguna | Summo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -72,13 +72,6 @@
                             </ul>
                         </li>
                         <li id="removable">
-                            <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
-                            <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
-                                <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
-                            </ul>
-                        </li>
-                        <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-building-o"></i><span class="mini-click-non"> Penginapan</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Daftar Penginapan" href="{{url ('/hotels-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Penginapan</span></a></li>
@@ -86,9 +79,15 @@
                             </ul>
                         </li>
                         <li id="removable">
+                            <a class="has-arrow" href="index.html"><i class="fa fa-globe"></i><span class="mini-click-non"> Wisata</span></a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Daftar Wisata" href="{{url ('/wisatas-admin')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Wisata</span></a></li>
+                                <li><a title="Daftar Hapus Wisata" href="{{url ('/wisatas/hapus')}}"><i class="fa fa-list"></i><span class="mini-sub-pro"> Daftar Hapus Wisata</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
                             <a class="has-arrow" href="index.html"><i class="fa fa-handshake-o"></i><span class="mini-click-non"> Transaksi</span></a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Keranjang" href="{{url ('/confKeranjang')}}"><i class="fa fa-shopping-cart"></i><span class="mini-sub-pro"> Keranjang</span></a></li>
                                 <li><a title="Pembayaran" href="{{url ('/confPembayaran')}}"><i class="fa fa-money"></i><span class="mini-sub-pro"> Pembayaran</span></a></li>
                                 <li><a title="Selesai" href="{{url ('/confTransaksi')}}"><i class="fa fa-check-circle"></i><span class="mini-sub-pro"> Selesai Transaksi</span></a></li>
                             </ul>
@@ -168,7 +167,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
 											<div class="breadcomb-ctn">
-												<h2>TRASH MOTOR</h2>
+												<h2>TRASH PENGGUNA</h2>
 											</div>
 										</div>
                                     </div>
@@ -189,16 +188,15 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>List Trash Motor</h4>
+                            <h4>List Trash Pengguna</h4>
                             <table>
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Gambar</th>
-                                    <th>Nama Motor</th>
-                                    <th>Harga</th>
-                                    <th>Deskripsi</th>
-                                    <th>Kategori</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>E-Mail</th>
+                                    <th>Tipe User</th>
+                                    <th>No. Hp</th>
                                 </tr>
                             </thead>
                             <tbody>

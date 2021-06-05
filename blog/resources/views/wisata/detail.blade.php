@@ -59,13 +59,13 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item mx-1 active"><a href="{{ url('/') }}">Beranda</a></li>
+								<li><a href="{{ url('/') }}">Beranda</a></li>
 								<li><a href="{{ url('/tentang') }}">Tentang Kami</a></li>
-								<li><a href="#">Kebutuhan Perjalananmu!</a>
+								<li class="current-list-item mx-1 active"><a href="#">Kebutuhan Perjalananmu!</a>
 									<ul class="sub-menu">
 										<li><a href="{{url ('/motor')}}">Sewa Kendaraan</a></li>
 										<li><a href="{{ url('/booking_hotel') }}">Booking Penginapan</a></li>
-										<li><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
+										<li class="current-list-item mx-1 active"><a href="{{ url('/paket_wisata') }}">Paket Wisata</a></li>
 									</ul>
 								</li>
 								<li><a href="{{ url('/news') }}">Peluang Menjadi Mitra</a></li>

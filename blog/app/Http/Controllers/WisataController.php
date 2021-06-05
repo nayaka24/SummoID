@@ -172,7 +172,7 @@ class WisataController extends Controller
         $Wisata= Wisata::findorfail($id);
         $Wisata->delete();
 
-        return redirect('/wisatas')->with('success','Paket Wisata telah dihapus!(Silahkan Cek pada Daftar Hapus Paket Wisata)');
+        return redirect('/wisatas')->with('success','Paket Wisata telah dihapus! (Silahkan Cek pada Paket Wisata > Daftar Hapus Paket Wisata)');
     }
 
     //admin
@@ -181,7 +181,7 @@ class WisataController extends Controller
         $Wisata= Wisata::findorfail($id);
         $Wisata->delete();
 
-        return redirect('/wisatas-admin')->with('success','Paket Wisata telah dihapus!(Silahkan Cek pada Daftar Hapus Paket Wisata)');
+        return redirect('/wisatas-admin')->with('success','Paket Wisata telah dihapus! (Silahkan Cek pada Paket Wisata > Daftar Hapus Paket Wisata)');
     }
 
     public function tampil_hapus()
@@ -194,7 +194,7 @@ class WisataController extends Controller
     {
         $Wisata= Wisata::withTrashed()->where('id_wisata',$id)->first();
         $Wisata->restore();
-        return redirect('/wisatas-admin')->with('success','Paket Wisata telah direstore!(Silahkan cek pada Daftar Paket Wisata)');
+        return redirect('/wisatas-admin')->with('success','Paket Wisata telah direstore!');
     }
    
     public function kill($id)

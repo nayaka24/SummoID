@@ -83,7 +83,7 @@ class MotorController extends Controller
         
         $gmbr->move(public_path().'/bike',$namaFile);
         $surat->move(public_path().'/bike/stnk',$File);
-        return redirect('/motors')->with('success','Motor telah ditambahkan!');
+        return redirect('/motors')->with('success','Kendaraan telah ditambahkan!');
     }
 
     /**
@@ -201,7 +201,7 @@ class MotorController extends Controller
          }
         $Motor->update($motor_data);
         
-        return redirect('/motors')->with('success','Motor telah diedit!');
+        return redirect('/motors')->with('success','Kendaraan Telah Diedit!');
     }
 
     /**
@@ -216,7 +216,7 @@ class MotorController extends Controller
         $Motor= Motor::findorfail($id);
         $Motor->delete();
 
-        return redirect('/motors')->with('success','Motor telah diHapus!(Silahkan Cek pada Daftar Hapus Motor)');
+        return redirect('/motors')->with('success','Kendaraan telah dihapus! (Silahkan Cek pada Kendaraan > Daftar Hapus Kendaraan)');
     }
 
     //admin
@@ -225,7 +225,7 @@ class MotorController extends Controller
         $Motor= Motor::findorfail($id);
         $Motor->delete();
 
-        return redirect('/motors-admin')->with('success','Motor telah diHapus!(Silahkan Cek pada Daftar Hapus Motor)');
+        return redirect('/motors-admin')->with('success','Kendaraan telah dihapus! (Silahkan Cek pada Kendaraan > Daftar Hapus Kendaraan)');
     }
 
     public function tampil_hapus()
@@ -238,14 +238,14 @@ class MotorController extends Controller
     {
         $Motor= Motor::withTrashed()->where('id_motor',$id)->first();
         $Motor->restore();
-        return redirect('/motors-admin')->with('success','Berita telah direstore!(Silahkan cek pada Daftar Motor)');
+        return redirect('/motors-admin')->with('success','Kendaaraan telah direstore!');
     }
    
     public function kill($id)
     {
         $Motor= Motor::withTrashed()->where('id_motor',$id)->first();
         $Motor->forceDelete();
-        return redirect('/motors-admin')->with('success','Motor telah diHapus!');
+        return redirect('/motors-admin')->with('success','Kendaraan telah dihapus!');
 
     }
 
@@ -271,6 +271,6 @@ class MotorController extends Controller
 
         $Motor->update($motor_data);
         
-        return redirect('/motors-admin')->with('success','Motor telah terverifikasi!');
+        return redirect('/motors-admin')->with('success','Kendaraan telah terverifikasi!');
     }
 }

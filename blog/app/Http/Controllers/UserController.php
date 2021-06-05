@@ -88,7 +88,7 @@ class UserController extends Controller
         $User= User::findorfail($id);
         $User->delete();
 
-        return redirect('/admin')->with('success','Pengguna telah diHapus!');
+        return redirect('/admin')->with('success','Pengguna telah diHapus! (Silahkan cek pada Pengguna > Daftar Hapus Pengguna)');
     }
 
     public function tampil_hapus()
@@ -101,14 +101,14 @@ class UserController extends Controller
     {
         $User= User::withTrashed()->where('id_user',$id)->first();
         $User->restore();
-        return redirect('/admin')->with('success','pengguna telah direstore!(Silahkan cek pada Daftar pengguna)');
+        return redirect('/admin')->with('success','Pengguna telah direstore!');
     }
 
     public function kill($id)
     {
         $User= User::withTrashed()->where('id_user',$id)->first();
         $User->forceDelete();
-        return redirect('/admin')->with('success','pengguna telah diHapus!');
+        return redirect('/admin')->with('success','Pengguna telah diHapus!');
 
     }
 }
