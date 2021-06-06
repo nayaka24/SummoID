@@ -144,7 +144,7 @@
 						</div>
 						<h3>{{$hasil->nama}}</h3>
 						<p class="product-price"><span>Per Hari</span>Rp.{{$hasil->harga}} </p>
-						<a href="{{ url ('/keranjang') }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
+						<a href="{{ url ('/keranjang') }}" class="boxed-btn"><i class="fas fa-shopping-cart"></i> Sewa Sekarang</a>
 					</div>
 				</div>
 				@endif
