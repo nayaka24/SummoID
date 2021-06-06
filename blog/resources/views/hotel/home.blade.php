@@ -79,23 +79,21 @@
 
 								<li>
 									<div class="header-icons">
-										
 										@guest
 										<a class="login" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt">  Masuk</i></a>
 										<a class="register" href="{{ url('/register') }}"><i class="fas fa-user-plus">  Daftar</i></a>
 										@else
-										<a href="{{url ('/profiluser')}}" aria-haspopup="true" aria-expanded="false" v-pre>
-										{{ Auth::user()->name }} <span class="caret"></span>
-										</a>
-										<a onclick="event.preventDefault();
-											document.getElementById('logout-form').submit();">Keluar
-											<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-											@csrf
-											</form>
-										</a>
-										<a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i></a>
-										
-
+										<li><a href="{{url ('/profiluser')}}" aria-haspopup="true" aria-expanded="false" v-pre><span class="fas fa-user-alt"></span> {{ Auth::user()->name }}</a>
+											<ul class="sub-menu">
+												<li><a class="shopping-cart" href="{{ url('/keranjang') }}"><i class="fas fa-shopping-cart"></i> Keranjang</a></li>
+												<li><a onclick="event.preventDefault();
+													document.getElementById('logout-form').submit();"><span class="fas fa-sign-out-alt"></span> Keluar
+													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+													@csrf
+													</form>
+												</a></li>
+											</ul>
+										</li>
 										@endguest
 									</div>
 								</li>
